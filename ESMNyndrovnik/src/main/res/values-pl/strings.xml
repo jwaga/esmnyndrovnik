@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Nyndrownik ESM</string>
+    <string name="prostrations">pokłonów.</string>
+    <string name="action_edit_counter">Edytuj licznik</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Anuluj</string>
+    <string name="last_practice">Data ostatniej praktyki:</string>
+    <string name="prostrations_pace_to_date">Robiąc %1$d pokłonów dziennie,\n skończysz je %2$te %2$tB %2$tY.</string>
+</resources>

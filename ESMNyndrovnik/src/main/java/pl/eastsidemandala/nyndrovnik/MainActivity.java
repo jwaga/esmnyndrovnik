@@ -94,6 +94,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     @Override
     public void onClick(View view) {
         mMainCounter += mPace;
+        if (mMainCounter > 111111) { mMainCounter = 111111; }
         mDateOfLastPractice = new Date();
         computeProjectedFinishDate();
         refresh();
@@ -112,12 +113,16 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     @Override
     public void onEditCounterDialogPositiveClick(int value) {
         mMainCounter = value;
+        computeProjectedFinishDate();
         refresh();
     }
 
     protected void computeProjectedFinishDate() {
 //      remaining repetitions divided by currently selected pace, plus one day for the remainder
-        int remainingDays = (111111 - mMainCounter) / mPace + 1;
+        int remainingDays = 0;
+        if (mPace > 0) {
+             remainingDays = (111111 - mMainCounter) / mPace + 1;
+        }
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DAY_OF_YEAR, remainingDays);
         mProjectedFinishDate = c.getTime();
@@ -141,7 +146,13 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         dateView.setText(String.format("%te %<tB %<tY", mDateOfLastPractice));
         pace.setText(String.valueOf(mPace));
 //        computeProjectedFinishDate();
-        date.setText(mDateFormat.format(mProjectedFinishDate));
+        if (mPace != 0 && mMainCounter != 111111) {
+            date.setText(mDateFormat.format(mProjectedFinishDate));
+        } else if (mMainCounter == 111111 ) {
+            date.setText(R.string.finished);
+        } else if (mPace == 0 ) {
+            date.setText(R.string.never);
+        }
 //        paceToDateView.setText(getResources().getString(R.string.prostrations_pace_to_date, mPace, mProjectedFinishDate));
     }
 
@@ -179,7 +190,11 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         @Override
         public void onDateSet(DatePicker datePicker, int year, int month, int day) {
             Calendar c = Calendar.getInstance();
+            Calendar now = Calendar.getInstance();
             c.set(year, month, day);
+            if (c.before(now)) {
+                c = now;
+            }
             mProjectedFinishDate = c.getTime();
             computePace();
             refresh();

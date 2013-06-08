@@ -10,4 +10,6 @@
     <string name="pace_label">Zrób tyle pokłonów:</string>
     <string name="finish_date_label">By skończyć do:</string>
     <string name="pick_pace">Powtórzeń na sesję</string>
+    <string name="never">Nigdy!!!</string>
+    <string name="finished">Skończone!</string>
 </resources>

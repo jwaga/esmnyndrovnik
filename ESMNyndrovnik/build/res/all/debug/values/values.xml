@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string-array name="pace_values">
+        <item>0</item>
+        <item>50</item>
+        <item>100</item>
+        <item>200</item>
+        <item>300</item>
+        <item>500</item>
+    </string-array>
+
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
@@ -9,8 +18,10 @@
     <string name="app_name">ESM Nyndro Counter</string>
     <string name="cancel">Canel</string>
     <string name="finish_date_label">To finish by:</string>
+    <string name="finished">Finished!</string>
     <string name="hello_world">Hello world!</string>
     <string name="last_practice">Your last practice was:</string>
+    <string name="never">Never!!!!</string>
     <string name="ok">OK</string>
     <string name="pace_label">Do this many repetitions:</string>
     <string name="pick_pace">Repetitions per session</string>

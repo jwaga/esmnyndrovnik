@@ -84,7 +84,8 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_edit_counter:
-                EditCounterDialogFragment dialog = new EditCounterDialogFragment(mMainCounter);
+                EditCounterDialogFragment dialog = new EditCounterDialogFragment();
+                dialog.setInitialValue(mMainCounter);
                 dialog.show(getSupportFragmentManager(), "counter_edit");
         }
         return true;

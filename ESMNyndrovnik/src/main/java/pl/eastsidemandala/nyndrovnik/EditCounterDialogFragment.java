@@ -20,10 +20,15 @@ public class EditCounterDialogFragment extends DialogFragment {
     int mCount = 0;
     EditCounterDialogListener mListener;
 
-    public EditCounterDialogFragment (int count) {
+    public void setInitialValue (int count) {
         mCount = count;
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putInt("count", mCount);
+        super.onSaveInstanceState(outState);
+    }
 
     @Override
     public void onAttach(Activity activity) {
@@ -33,6 +38,9 @@ public class EditCounterDialogFragment extends DialogFragment {
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
+        if (savedInstanceState != null) {
+            mCount = savedInstanceState.getInt("count", 0);
+        }
         final EditText edit = new EditText(getActivity());
         edit.setText(String.valueOf(mCount));
         edit.setInputType(InputType.TYPE_CLASS_NUMBER);
@@ -51,4 +59,6 @@ public class EditCounterDialogFragment extends DialogFragment {
                     }
                 }).create();
     }
+
+
 }

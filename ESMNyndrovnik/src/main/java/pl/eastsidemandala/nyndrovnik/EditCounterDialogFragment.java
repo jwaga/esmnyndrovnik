@@ -24,13 +24,6 @@ public class EditCounterDialogFragment extends DialogFragment {
         mCount = count;
     }
 
-    public void setCount(int count) {
-        mCount = count;
-    }
-
-    public int getCount() {
-        return mCount;
-    }
 
     @Override
     public void onAttach(Activity activity) {

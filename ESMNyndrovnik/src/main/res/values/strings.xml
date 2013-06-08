@@ -13,6 +13,7 @@
     <string name="cancel">Canel</string>
     <string name="last_practice">Your last practice was:</string>
     <string name="prostrations_pace_to_date">By doing %1$d prostrations a day,\n you will finish them on %2$tB %2$te %2$tY§.
-    </string>
+    </string><string name="pace_label">Do this many repetitions:</string><string name="finish_date_label">To finish by:</string>
+    <string name="pick_pace">Repetitions per session</string>
 
 </resources>

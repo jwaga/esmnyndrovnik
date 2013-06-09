@@ -1,9 +1,5 @@
 package pl.eastsidemandala.nyndrovnik;
 
-import android.app.AlertDialog;
-import android.app.DatePickerDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
@@ -11,9 +7,7 @@ import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -21,8 +15,10 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+// TODO: encapsulate mPace and round to full hundreds on set
 public class MainActivity extends FragmentActivity implements View.OnClickListener,
-        EditCounterDialogFragment.EditCounterDialogListener {
+        EditCounterDialogFragment.EditCounterDialogListener,
+        PacePickerFragment.OnPaceSelectedListener {
 
     public static final String PROSTRATIONS_COUNTER_KEY = "prostrations_counter";
     public static final String DATE_OF_LAST_PRACTICE_KEY = "date_of_last_practice";
@@ -36,12 +32,29 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private Date mProjectedFinishDate;
     private DateFormat mDateFormat = SimpleDateFormat.getDateInstance();
 
+    public int getmMainCounter() {
+        return mMainCounter;
+    }
+
+    public void setmMainCounter(int mMainCounter) {
+        if  (mMainCounter > 111111) {
+            this.mMainCounter = 111111;
+        } else if (mMainCounter < 0) {
+            this.mMainCounter = 0;
+        }  else {
+            this.mMainCounter = mMainCounter;
+        }
+
+    }
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         SharedPreferences prefs = getPreferences(MODE_PRIVATE);
-        mMainCounter = prefs.getInt(PROSTRATIONS_COUNTER_KEY, 0);
+        setmMainCounter(prefs.getInt(PROSTRATIONS_COUNTER_KEY, 0));
         mPace = prefs.getInt(PROSTRATIONS_PACE_KEY, DEFAULT_PACE);
         long date = prefs.getLong(DATE_OF_LAST_PRACTICE_KEY, 0);
         mDateOfLastPractice = new Date();
@@ -66,7 +79,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     protected void onStop() {
         super.onStop();
         getPreferences(MODE_PRIVATE).edit()
-                .putInt(PROSTRATIONS_COUNTER_KEY, mMainCounter)
+                .putInt(PROSTRATIONS_COUNTER_KEY, getmMainCounter())
                 .putLong(DATE_OF_LAST_PRACTICE_KEY, mDateOfLastPractice.getTime())
                 .putInt(PROSTRATIONS_PACE_KEY, mPace)
                 .commit();
@@ -85,7 +98,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         switch (item.getItemId()) {
             case R.id.action_edit_counter:
                 EditCounterDialogFragment dialog = new EditCounterDialogFragment();
-                dialog.setInitialValue(mMainCounter);
+                dialog.setInitialValue(getmMainCounter());
                 dialog.show(getSupportFragmentManager(), "counter_edit");
         }
         return true;
@@ -94,8 +107,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
     @Override
     public void onClick(View view) {
-        mMainCounter += mPace;
-        if (mMainCounter > 111111) { mMainCounter = 111111; }
+        setmMainCounter(getmMainCounter() + mPace);
         mDateOfLastPractice = new Date();
         computeProjectedFinishDate();
         refresh();
@@ -106,6 +118,12 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         frag.show(getSupportFragmentManager(), "pace_dialog");
     }
 
+    public void onPaceSelected (int value) {
+        mPace = value;
+        computeProjectedFinishDate();
+        refresh();
+    }
+
     public void onDateClick(View view) {
         DialogFragment frag = new DatePickerFragment();
         frag.show(getSupportFragmentManager(), "date_dialog");
@@ -113,43 +131,45 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 
     @Override
     public void onEditCounterDialogPositiveClick(int value) {
-        mMainCounter = value;
+        setmMainCounter(value);
         computeProjectedFinishDate();
         refresh();
     }
+
+
 
     protected void computeProjectedFinishDate() {
 //      remaining repetitions divided by currently selected pace, plus one day for the remainder
         int remainingDays = 0;
         if (mPace > 0) {
-             remainingDays = (111111 - mMainCounter) / mPace + 1;
+             remainingDays = (111111 - getmMainCounter()) / mPace + 1;
         }
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DAY_OF_YEAR, remainingDays);
         mProjectedFinishDate = c.getTime();
     }
 
-    private void computePace() {
+    protected void computePace() {
         long now = new Date().getTime();
         long then = mProjectedFinishDate.getTime();
         int days = (int) ((then - now) / (1000 * 60 * 60 * 24))+1;
-        mPace = (111111 - mMainCounter) / days ;
+        mPace = (111111 - getmMainCounter()) / days ;
     }
 
-    private void refresh() {
+    protected void refresh() {
         TextView counterView = (TextView) findViewById(R.id.main_counter);
         TextView dateView = (TextView) findViewById(R.id.date_of_last_practice);
         Button plus = (Button) findViewById(R.id.add_repetitions_button);
         Button pace = (Button) findViewById(R.id.pace_button);
         Button date = (Button) findViewById(R.id.date_button);
-        counterView.setText(String.format("%,d", (Integer)mMainCounter));
+        counterView.setText(String.format("%,d", (Integer) getmMainCounter()));
         plus.setText("+" + String.valueOf(mPace));
         dateView.setText(String.format("%te %<tB %<tY", mDateOfLastPractice));
         pace.setText(String.valueOf(mPace));
 //        computeProjectedFinishDate();
-        if (mPace != 0 && mMainCounter != 111111) {
+        if (mPace != 0 && getmMainCounter() != 111111) {
             date.setText(mDateFormat.format(mProjectedFinishDate));
-        } else if (mMainCounter == 111111 ) {
+        } else if (getmMainCounter() == 111111 ) {
             date.setText(R.string.finished);
         } else if (mPace == 0 ) {
             date.setText(R.string.never);
@@ -157,51 +177,20 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 //        paceToDateView.setText(getResources().getString(R.string.prostrations_pace_to_date, mPace, mProjectedFinishDate));
     }
 
-    private class PacePickerFragment extends DialogFragment implements AlertDialog.OnClickListener{
-
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            AlertDialog dialog = new AlertDialog.Builder(getActivity())
-                    .setTitle(R.string.pick_pace)
-                    .setItems(R.array.pace_values, this)
-                    .create();
-            return dialog;
-        }
-        @Override
-        public void onClick(DialogInterface dialogInterface, int which) {
-            mPace = Integer.valueOf(getResources().getStringArray(R.array.pace_values)[which]);
-            computeProjectedFinishDate();
-            refresh();
-        }
-
+    public Date getProjectedFinishDate() {
+        return mProjectedFinishDate;
     }
 
-    private class DatePickerFragment extends DialogFragment
-            implements DatePickerDialog.OnDateSetListener {
-
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            Calendar c = Calendar.getInstance();
-            c.setTime(mProjectedFinishDate);
-            int day = c.get(Calendar.DAY_OF_MONTH);
-            int month = c.get(Calendar.MONTH);
-            int year = c.get(Calendar.YEAR);
-            return new DatePickerDialog(getActivity(), this, year, month, day);
+    public void setProjectedFinishDate(Date projectedFinishDate) {
+        Calendar now = Calendar.getInstance();
+        Calendar c = Calendar.getInstance();
+        c.setTime(projectedFinishDate);
+        if (c.before(now)) {
+            this.mProjectedFinishDate = now.getTime();
+        } else {
+            this.mProjectedFinishDate = c.getTime();
         }
-        @Override
-        public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-            Calendar c = Calendar.getInstance();
-            Calendar now = Calendar.getInstance();
-            c.set(year, month, day);
-            if (c.before(now)) {
-                c = now;
-            }
-            mProjectedFinishDate = c.getTime();
-            computePace();
-            refresh();
-
-
-        }
-
     }
+
+
 }

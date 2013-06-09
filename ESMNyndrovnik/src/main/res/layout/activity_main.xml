@@ -13,22 +13,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/main_counter"
-        android:textSize="24dp"
+        android:textSize="32sp"
         android:text="0"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
-
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/prostrations"
-            android:id="@+id/textView"
-            android:layout_alignParentEnd="false"
-            android:layout_alignParentStart="false"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="33dp"/>
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"/>
 
     <Button
             android:layout_width="wrap_content"
@@ -36,12 +25,11 @@
             android:text="+100"
             android:id="@+id/add_repetitions_button"
             android:onClick="onClick"
-            android:layout_below="@+id/textView"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"
             android:longClickable="false"
-            android:textSize="26sp"/>
+            android:textSize="20sp"
+            android:layout_marginTop="29dp"
+            android:layout_below="@+id/main_counter"
+            android:layout_alignLeft="@+id/date_of_last_practice"/>
 
     <TextView
             android:layout_width="wrap_content"

@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="pace_values">
-        <item>50</item>
-        <item>100</item>
-        <item>200</item>
-        <item>300</item>
-        <item>500</item>
-    </string-array>
-
     <string name="action_edit_counter">Edytuj licznik</string>
     <string name="app_name">Nyndrownik ESM</string>
     <string name="cancel">Anuluj</string>
@@ -17,7 +9,7 @@
     <string name="last_practice">Data ostatniej praktyki:</string>
     <string name="never">Nigdy!!!</string>
     <string name="ok">OK</string>
-    <string name="pace_label">Zrób tyle pokłonów:</string>
+    <string name="pace_label">Rób tyle powtórzeń:</string>
     <string name="pick_pace">Powtórzeń na sesję</string>
     <string name="prostrations">pokłonów.</string>
     <string name="prostrations_pace_to_date">Robiąc %1$d pokłonów dziennie,\n skończysz je %2$te %2$tB %2$tY.</string>

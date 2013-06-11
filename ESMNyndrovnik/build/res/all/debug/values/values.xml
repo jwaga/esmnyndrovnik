@@ -17,13 +17,13 @@
     <string name="action_settings">Settings</string>
     <string name="app_name">ESM Nyndro Counter</string>
     <string name="cancel">Canel</string>
-    <string name="finish_date_label">To finish by:</string>
+    <string name="finish_date_label">Finish by:</string>
     <string name="finished">Finished!</string>
     <string name="hello_world">Hello world!</string>
     <string name="last_practice">Your last practice was:</string>
     <string name="never">Never!!!!</string>
     <string name="ok">OK</string>
-    <string name="pace_label">Do this many repetitions:</string>
+    <string name="pace_label">Repetitions:</string>
     <string name="pick_pace">Repetitions per session</string>
     <string name="prostrations">prostrations.</string>
     <string name="prostrations_pace_to_date">By doing %1$d prostrations a day,\n you will finish them on %2$tB %2$te %2$tY§.</string>
@@ -38,6 +38,12 @@
 
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="nyndroButton">
+        <item name="android:shadowColor">#0f0f0f</item>
+        <item name="android:shadowRadius">2</item>
+        <item name="android:shadowDy">2</item>
     </style>
 
 </resources>

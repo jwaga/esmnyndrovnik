@@ -12,4 +12,6 @@
     <string name="pick_pace">Powtórzeń dziennie</string>
     <string name="never">Nigdy!!!</string>
     <string name="finished">Skończone!</string>
+    <string name="action_edit_pace">Edytuj liczbę powtórzeń dziennie</string>
+    <string name="action_add_repetitions">Dodaj inną liczbę</string>
 </resources>

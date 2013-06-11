@@ -12,45 +12,60 @@ import android.widget.EditText;
 /**
  * Created by konrad on 06.06.2013.
  */
-public class EditCounterDialogFragment extends DialogFragment {
+public class SingleEditDialogFragment extends DialogFragment {
 
-    public interface EditCounterDialogListener {
-        public void onEditCounterDialogPositiveClick(int value);
+    private int mTitleid;
+
+    public interface SingleEditDialogListener {
+        public void onSingleEditDialogPositiveClick(int value);
     }
-    int mCount = 0;
-    EditCounterDialogListener mListener;
+    int mValue;
+    SingleEditDialogListener mListener;
 
-    public void setInitialValue (int count) {
-        mCount = count;
+    public void setInitialValue (int value) {
+        mValue = value;
     }
 
+    public void setListener (SingleEditDialogListener listener) {
+        mListener = listener;
+    }
+
+    public void setTitle (int titleId) {
+        mTitleid = titleId;
+    }
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        outState.putInt("count", mCount);
+        outState.putInt("count", mValue);
         super.onSaveInstanceState(outState);
     }
 
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
-        mListener = (EditCounterDialogListener) activity;
+        if (mListener == null) {
+            mListener = (SingleEditDialogListener) activity;
+        }
     }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         if (savedInstanceState != null) {
-            mCount = savedInstanceState.getInt("count", 0);
+            mValue = savedInstanceState.getInt("count", 0);
         }
         final EditText edit = new EditText(getActivity());
-        edit.setText(String.valueOf(mCount));
+        String textValue = "";
+        if (mValue != 0) {
+            textValue = String.valueOf(mValue);
+        }
+        edit.setText(textValue);
         edit.setInputType(InputType.TYPE_CLASS_NUMBER);
         return new AlertDialog.Builder(getActivity())
-            .setTitle(R.string.action_edit_counter)
+            .setTitle(mTitleid)
             .setView(edit)
             .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-                    mListener.onEditCounterDialogPositiveClick(Integer.valueOf(edit.getText().toString()));
+                    mListener.onSingleEditDialogPositiveClick(Integer.valueOf(edit.getText().toString()));
                 }
             }).setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                     @Override

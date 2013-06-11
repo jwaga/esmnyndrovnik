@@ -17,7 +17,6 @@ import java.util.Date;
 
 // TODO: encapsulate mPace and round to full hundreds on set
 public class MainActivity extends FragmentActivity implements View.OnClickListener,
-        EditCounterDialogFragment.EditCounterDialogListener,
         PacePickerFragment.OnPaceSelectedListener {
 
     public static final String PROSTRATIONS_COUNTER_KEY = "prostrations_counter";
@@ -97,9 +96,25 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_edit_counter:
-                EditCounterDialogFragment dialog = new EditCounterDialogFragment();
-                dialog.setInitialValue(getmMainCounter());
-                dialog.show(getSupportFragmentManager(), "counter_edit");
+                SingleEditDialogFragment counterDialog = new SingleEditDialogFragment();
+                counterDialog.setInitialValue(getmMainCounter());
+                counterDialog.setTitle(R.string.action_edit_counter);
+                counterDialog.setListener(new EditCounterDialogListener());
+                counterDialog.show(getSupportFragmentManager(), "counter_edit");
+                break;
+            case R.id.action_edit_pace:
+                SingleEditDialogFragment paceDialog = new SingleEditDialogFragment();
+                paceDialog.setInitialValue(mPace);
+                paceDialog.setListener(new EditPaceDialogListener());
+                paceDialog.setTitle(R.string.action_edit_pace);
+                paceDialog.show(getSupportFragmentManager(), "pace_edit");
+                break;
+            case R.id.action_add_repetitions:
+                SingleEditDialogFragment addDialog = new SingleEditDialogFragment();
+                addDialog.setTitle(R.string.action_add_repetitions);
+                addDialog.setListener(new AddRepetitionsDialogListener());
+                addDialog.show(getSupportFragmentManager(), "add_repetitions");
+                break;
         }
         return true;
     }
@@ -129,11 +144,14 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         frag.show(getSupportFragmentManager(), "date_dialog");
     }
 
-    @Override
-    public void onEditCounterDialogPositiveClick(int value) {
-        setmMainCounter(value);
-        computeProjectedFinishDate();
-        refresh();
+
+    private class EditCounterDialogListener implements SingleEditDialogFragment.SingleEditDialogListener {
+        @Override
+        public void onSingleEditDialogPositiveClick(int value) {
+            setmMainCounter(value);
+            computeProjectedFinishDate();
+            refresh();
+        }
     }
 
 
@@ -193,4 +211,21 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     }
 
 
+    private class EditPaceDialogListener implements SingleEditDialogFragment.SingleEditDialogListener {
+        @Override
+        public void onSingleEditDialogPositiveClick(int value) {
+            mPace = value;
+            computeProjectedFinishDate();
+            refresh();
+        }
+    }
+
+    private class AddRepetitionsDialogListener implements SingleEditDialogFragment.SingleEditDialogListener {
+        @Override
+        public void onSingleEditDialogPositiveClick(int value) {
+            setmMainCounter(getmMainCounter() + value);
+            computeProjectedFinishDate();
+            refresh();
+        }
+    }
 }

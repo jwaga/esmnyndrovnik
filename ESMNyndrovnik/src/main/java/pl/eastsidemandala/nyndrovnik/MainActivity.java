@@ -31,6 +31,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     private Date mProjectedFinishDate;
     private DateFormat mDateFormat = SimpleDateFormat.getDateInstance();
 
+    // accessors
     public int getmMainCounter() {
         return mMainCounter;
     }
@@ -45,9 +46,23 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         }
 
     }
+    public Date getProjectedFinishDate() {
 
+        return mProjectedFinishDate;
+    }
 
+    public void setProjectedFinishDate(Date projectedFinishDate) {
+        Calendar now = Calendar.getInstance();
+        Calendar c = Calendar.getInstance();
+        c.setTime(projectedFinishDate);
+        if (c.before(now)) {
+            this.mProjectedFinishDate = now.getTime();
+        } else {
+            this.mProjectedFinishDate = c.getTime();
+        }
+    }
 
+    // Overrided superclass methods
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,16 +78,6 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         refresh();
     }
 
-/*
-    private void setUpSpinner() {
-        Spinner spinner = (Spinner) findViewById(R.id.pace_spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.pace_values, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new PaceSelectedListener());
-    }
-*/
 
     @Override
     protected void onStop() {
@@ -119,7 +124,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         return true;
     }
 
-
+//  Event handlers
     @Override
     public void onClick(View view) {
         setmMainCounter(getmMainCounter() + mPace);
@@ -133,18 +138,18 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         frag.show(getSupportFragmentManager(), "pace_dialog");
     }
 
+    public void onDateClick(View view) {
+        DialogFragment frag = new DatePickerFragment();
+        frag.show(getSupportFragmentManager(), "date_dialog");
+    }
+
     public void onPaceSelected (int value) {
         mPace = value;
         computeProjectedFinishDate();
         refresh();
     }
 
-    public void onDateClick(View view) {
-        DialogFragment frag = new DatePickerFragment();
-        frag.show(getSupportFragmentManager(), "date_dialog");
-    }
-
-
+//  Listeners
     private class EditCounterDialogListener implements SingleEditDialogFragment.SingleEditDialogListener {
         @Override
         public void onSingleEditDialogPositiveClick(int value) {
@@ -154,9 +159,26 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         }
     }
 
+    private class EditPaceDialogListener implements SingleEditDialogFragment.SingleEditDialogListener {
+        @Override
+        public void onSingleEditDialogPositiveClick(int value) {
+            mPace = value;
+            computeProjectedFinishDate();
+            refresh();
+        }
+    }
 
+    private class AddRepetitionsDialogListener implements SingleEditDialogFragment.SingleEditDialogListener {
+        @Override
+        public void onSingleEditDialogPositiveClick(int value) {
+            setmMainCounter(getmMainCounter() + value);
+            computeProjectedFinishDate();
+            refresh();
+        }
+    }
 
-    protected void computeProjectedFinishDate() {
+//  Internal methods
+    private void computeProjectedFinishDate() {
 //      remaining repetitions divided by currently selected pace, plus one day for the remainder
         int remainingDays = 0;
         if (mPace > 0) {
@@ -195,37 +217,5 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
 //        paceToDateView.setText(getResources().getString(R.string.prostrations_pace_to_date, mPace, mProjectedFinishDate));
     }
 
-    public Date getProjectedFinishDate() {
-        return mProjectedFinishDate;
-    }
 
-    public void setProjectedFinishDate(Date projectedFinishDate) {
-        Calendar now = Calendar.getInstance();
-        Calendar c = Calendar.getInstance();
-        c.setTime(projectedFinishDate);
-        if (c.before(now)) {
-            this.mProjectedFinishDate = now.getTime();
-        } else {
-            this.mProjectedFinishDate = c.getTime();
-        }
-    }
-
-
-    private class EditPaceDialogListener implements SingleEditDialogFragment.SingleEditDialogListener {
-        @Override
-        public void onSingleEditDialogPositiveClick(int value) {
-            mPace = value;
-            computeProjectedFinishDate();
-            refresh();
-        }
-    }
-
-    private class AddRepetitionsDialogListener implements SingleEditDialogFragment.SingleEditDialogListener {
-        @Override
-        public void onSingleEditDialogPositiveClick(int value) {
-            setmMainCounter(getmMainCounter() + value);
-            computeProjectedFinishDate();
-            refresh();
-        }
-    }
 }

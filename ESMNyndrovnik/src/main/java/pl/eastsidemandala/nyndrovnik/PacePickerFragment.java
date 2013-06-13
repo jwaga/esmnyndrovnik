@@ -1,6 +1,5 @@
 package pl.eastsidemandala.nyndrovnik;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -19,14 +18,14 @@ public class PacePickerFragment extends DialogFragment implements AlertDialog.On
 
     }
 
+    public void setListener (OnPaceSelectedListener listener) {
+        mListener = listener;
+    }
+
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        try {
-            mListener = (OnPaceSelectedListener) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString() + "must implement OnPaceSelectedListener");
-        }
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
     }
 
     @Override

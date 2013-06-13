@@ -16,8 +16,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 // TODO: encapsulate mPace and round to full hundreds on set
-public class MainActivity extends FragmentActivity implements View.OnClickListener,
-        PacePickerFragment.OnPaceSelectedListener {
+public class MainActivity extends FragmentActivity implements View.OnClickListener {
 
     public static final String PROSTRATIONS_COUNTER_KEY = "prostrations_counter";
     public static final String DATE_OF_LAST_PRACTICE_KEY = "date_of_last_practice";
@@ -134,7 +133,8 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     }
 
     public void onPaceClick(View view) {
-        DialogFragment frag = new PacePickerFragment();
+        PacePickerFragment frag = new PacePickerFragment();
+        frag.setListener(new SetPaceDialogListener());
         frag.show(getSupportFragmentManager(), "pace_dialog");
     }
 
@@ -143,10 +143,12 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         frag.show(getSupportFragmentManager(), "date_dialog");
     }
 
-    public void onPaceSelected (int value) {
-        mPace = value;
-        computeProjectedFinishDate();
-        refresh();
+    private class SetPaceDialogListener implements PacePickerFragment.OnPaceSelectedListener {
+        public void onPaceSelected (int value) {
+            mPace = value;
+            computeProjectedFinishDate();
+            refresh();
+        }
     }
 
 //  Listeners

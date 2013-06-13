@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="pace_values">
-        <item>50</item>
-        <item>100</item>
-        <item>200</item>
-        <item>300</item>
-        <item>500</item>
-    </string-array>
-
     <string name="action_add_repetitions">Dodaj inną liczbę</string>
     <string name="action_edit_counter">Edytuj licznik</string>
     <string name="action_edit_pace">Edytuj liczbę powtórzeń dziennie</string>

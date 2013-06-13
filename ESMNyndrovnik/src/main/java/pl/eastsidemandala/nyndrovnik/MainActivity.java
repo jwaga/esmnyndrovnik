@@ -1,13 +1,14 @@
 package pl.eastsidemandala.nyndrovnik;
 
+import android.app.DatePickerDialog;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -139,7 +140,8 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     }
 
     public void onDateClick(View view) {
-        DialogFragment frag = new DatePickerFragment();
+        DatePickerFragment frag = new DatePickerFragment();
+        frag.setListener(new FinishDateListener());
         frag.show(getSupportFragmentManager(), "date_dialog");
     }
 
@@ -152,6 +154,18 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     }
 
 //  Listeners
+    private class FinishDateListener implements DatePickerDialog.OnDateSetListener {
+
+        @Override
+        public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+            Calendar c = Calendar.getInstance();
+            c.set(year, month, day);
+            setProjectedFinishDate(c.getTime());
+            computePace();
+            refresh();
+        }
+    }
+
     private class EditCounterDialogListener implements SingleEditDialogFragment.SingleEditDialogListener {
         @Override
         public void onSingleEditDialogPositiveClick(int value) {

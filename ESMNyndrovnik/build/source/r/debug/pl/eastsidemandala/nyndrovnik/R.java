@@ -24,19 +24,21 @@ public final class R {
         public static final int nyndro_button=0x7f020003;
     }
     public static final class id {
-        public static final int action_add_repetitions=0x7f090009;
-        public static final int action_edit_counter=0x7f090007;
-        public static final int action_edit_pace=0x7f090008;
-        public static final int add_repetitions_button=0x7f090001;
-        public static final int date_button=0x7f090005;
-        public static final int date_of_last_practice=0x7f090002;
-        public static final int finish_date_label=0x7f090004;
-        public static final int main_counter=0x7f090000;
-        public static final int pace_button=0x7f090006;
-        public static final int pace_label=0x7f090003;
+        public static final int action_add_repetitions=0x7f09000a;
+        public static final int action_edit_counter=0x7f090008;
+        public static final int action_edit_pace=0x7f090009;
+        public static final int add_repetitions_button=0x7f090002;
+        public static final int date_button=0x7f090006;
+        public static final int date_of_last_practice=0x7f090003;
+        public static final int finish_date_label=0x7f090005;
+        public static final int main_counter=0x7f090001;
+        public static final int main_layout=0x7f090000;
+        public static final int pace_button=0x7f090007;
+        public static final int pace_label=0x7f090004;
     }
     public static final class layout {
-        public static final int activity_main=0x7f030000;
+        public static final int main_activity=0x7f030000;
+        public static final int nyndro_fragment=0x7f030001;
     }
     public static final class menu {
         public static final int main=0x7f080000;

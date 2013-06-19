@@ -20,5 +20,8 @@
     <string name="finished">Finished!</string>
     <string name="action_edit_pace">Edit repetitions per day</string>
     <string name="action_add_repetitions">Add different number</string>
+    <string name="diamond_mind">Diamond Mind</string>
+    <string name="mandala_offering">Mandala Offering</string>
+    <string name="guru_yoga">Guru Yoga</string>
 
 </resources>

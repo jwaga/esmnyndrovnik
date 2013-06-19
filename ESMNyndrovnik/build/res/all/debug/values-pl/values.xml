@@ -6,14 +6,17 @@
     <string name="action_edit_pace">Edytuj liczbę powtórzeń dziennie</string>
     <string name="app_name">Nyndrownik ESM</string>
     <string name="cancel">Anuluj</string>
+    <string name="diamond_mind">Diamentowy Umysł</string>
     <string name="finish_date_label">By skończyć do:</string>
     <string name="finished">Skończone!</string>
+    <string name="guru_yoga">Guru Joga</string>
     <string name="last_practice">Data ostatniej praktyki:</string>
+    <string name="mandala_offering">Podarowanie mandali</string>
     <string name="never">Nigdy!!!</string>
     <string name="ok">OK</string>
     <string name="pace_label">Rób codziennie:</string>
     <string name="pick_pace">Powtórzeń dziennie</string>
-    <string name="prostrations">pokłonów.</string>
+    <string name="prostrations">Pokłony</string>
     <string name="prostrations_pace_to_date">Robiąc %1$d pokłonów dziennie,\n skończysz je %2$te %2$tB %2$tY.</string>
 
 </resources>

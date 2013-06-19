@@ -9,16 +9,24 @@
     tools:context=".MainActivity"
     android:focusableInTouchMode="true"
         >
-
+    <TextView
+        android:id="@+id/practice_name"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Prostrations"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/pace_button"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/main_counter"
         android:textSize="40sp"
-        android:text="8 700"
+        android:text="100 000"
         android:layout_marginTop="14dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/practice_name"/>
 
     <Button
             android:layout_width="wrap_content"
@@ -42,7 +50,7 @@
             android:text="2012 XII 12"
             android:id="@+id/date_of_last_practice"
             android:layout_below="@+id/main_counter"
-            android:layout_centerHorizontal="true"/>
+            android:layout_alignLeft="@+id/main_counter"/>
 
     <TextView
             android:layout_width="wrap_content"

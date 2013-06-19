@@ -297,9 +297,9 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         Button pace = (Button) getView().findViewById(R.id.pace_button);
         Button date = (Button) getView().findViewById(R.id.date_button);
         counterView.setText(String.format("%,d", (Integer) getmMainCounter()));
-        plus.setText("+" + String.valueOf(mPace));
+        pace.setText("+" + String.valueOf(mPace));
         dateView.setText(String.format("%te %<tB %<tY", mDateOfLastPractice));
-        pace.setText(String.valueOf(mPace));
+//        pace.setText(String.valueOf(mPace));
 //        computeProjectedFinishDate();
         if (mPace != 0 && getmMainCounter() != 111111) {
             date.setText(mDateFormat.format(mProjectedFinishDate));

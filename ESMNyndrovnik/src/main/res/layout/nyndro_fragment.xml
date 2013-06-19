@@ -12,77 +12,76 @@
     <TextView
         android:id="@+id/practice_name"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Prostrations"
+        android:text="prostrations"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toLeftOf="@+id/pace_button"/>
+        android:fontFamily="sans-serif-light"
+        android:enabled="true"
+        android:layout_below="@+id/main_counter"
+        android:layout_alignLeft="@+id/main_counter"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/main_counter"
         android:textSize="40sp"
         android:text="100 000"
-        android:layout_marginTop="14dp"
-        android:layout_alignParentTop="false"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/practice_name"/>
+        android:fontFamily="sans-serif-light"
+        android:focusable="true"
+        android:layout_marginLeft="15dp"
+        android:layout_alignParentLeft="false"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"/>
 
     <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="+100"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:id="@+id/add_repetitions_button"
             android:onClick="onClick"
             android:longClickable="false"
             android:textSize="20sp"
-            android:layout_marginTop="24dp"
             android:alpha="0.9"
             android:textStyle="bold"
-            android:layout_below="@+id/date_of_last_practice"
-            android:layout_centerHorizontal="true"
             android:background="@drawable/main_button"
-            android:textColor="@android:color/white"/>
+            android:textColor="@android:color/white"
+            android:height="1dp"
+            android:focusableInTouchMode="false"
+            android:layout_alignBottom="@+id/main_counter"
+            android:layout_toRightOf="@+id/main_counter"
+            android:layout_marginLeft="8dp"
+            android:width="48dp"/>
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="2012 XII 12"
             android:id="@+id/date_of_last_practice"
-            android:layout_below="@+id/main_counter"
-            android:layout_alignLeft="@+id/main_counter"/>
-
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/pace_label"
-            android:id="@+id/pace_label"
-            android:layout_marginTop="48dp"
-            android:layout_below="@+id/add_repetitions_button"
-            android:layout_alignParentLeft="true"/>
-
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:text="@string/finish_date_label"
-            android:id="@+id/finish_date_label"
-            android:layout_marginTop="50dp"
-            android:layout_below="@+id/pace_label"
-            android:layout_alignLeft="@+id/pace_label"/>
+            android:singleLine="true"
+            android:layout_below="@+id/practice_name"
+            android:layout_alignLeft="@+id/practice_name"
+            android:fontFamily="sans-serif-light"/>
 
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1 May 2013"
             android:id="@+id/date_button"
-            android:layout_alignBaseline="@+id/finish_date_label"
             android:onClick="onDateClick"
-            android:layout_alignParentRight="true"
             android:padding="10dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableLeft="@drawable/date"
             android:alpha="0.9"
-            />
+            android:layout_alignTop="@+id/pace_button"
+            android:layout_alignLeft="@+id/button_divider"/>
+
+    <View
+            android:id="@+id/button_divider"
+        android:layout_height="24dp"
+        android:layout_width="1dp"
+        android:background="?android:attr/dividerVertical"
+        android:layout_alignTop="@+id/pace_button"
+        android:layout_alignBottom="@+id/pace_button"
+        android:layout_toRightOf="@+id/pace_button"/>
 
     <Button
             android:layout_width="wrap_content"
@@ -90,13 +89,26 @@
             android:text="100"
             android:id="@+id/pace_button"
             android:onClick="onPaceClick"
-            android:layout_alignBaseline="@+id/pace_label"
-            android:layout_alignRight="@+id/date_button"
-            android:layout_alignLeft="@+id/date_button"
             android:alpha="0.9"
             android:longClickable="true"
             android:textStyle="bold"
-            android:padding="10dp"
-            android:textColorHint="#ffcc00"/>
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableLeft="@drawable/session_length"
+            android:textColorHint="#ffcc00"
+            android:layout_marginTop="12dp"
+            android:layout_below="@+id/date_of_last_practice"
+            android:layout_alignLeft="@+id/date_of_last_practice"
+            android:paddingRight="10dp"/>
+
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/dm"
+            android:cropToPadding="false"
+            android:layout_marginBottom="20dp"
+            />
 
 </RelativeLayout>

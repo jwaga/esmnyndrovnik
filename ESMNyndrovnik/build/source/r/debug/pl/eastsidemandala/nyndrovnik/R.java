@@ -18,23 +18,28 @@ public final class R {
         public static final int activity_vertical_margin=0x7f050001;
     }
     public static final class drawable {
-        public static final int content_edit=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
-        public static final int main_button=0x7f020002;
-        public static final int nyndro_button=0x7f020003;
+        public static final int add=0x7f020000;
+        public static final int add_highlight=0x7f020001;
+        public static final int content_edit=0x7f020002;
+        public static final int date=0x7f020003;
+        public static final int dm=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
+        public static final int main_button=0x7f020006;
+        public static final int nyndro_button=0x7f020007;
+        public static final int session_length=0x7f020008;
     }
     public static final class id {
         public static final int action_add_repetitions=0x7f09000c;
         public static final int action_edit_counter=0x7f09000a;
         public static final int action_edit_pace=0x7f09000b;
-        public static final int add_repetitions_button=0x7f090004;
-        public static final int date_button=0x7f090008;
-        public static final int date_of_last_practice=0x7f090005;
-        public static final int finish_date_label=0x7f090007;
+        public static final int add_repetitions_button=0x7f090005;
+        public static final int button_divider=0x7f090009;
+        public static final int date_button=0x7f090007;
+        public static final int date_of_last_practice=0x7f090006;
+        public static final int imageView=0x7f090004;
         public static final int main_counter=0x7f090003;
         public static final int main_layout=0x7f090000;
-        public static final int pace_button=0x7f090009;
-        public static final int pace_label=0x7f090006;
+        public static final int pace_button=0x7f090008;
         public static final int pager=0x7f090001;
         public static final int practice_name=0x7f090002;
     }

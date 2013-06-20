@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -35,19 +36,23 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     public static final String GURU_YOGA = "guru_yoga";
 
     public static enum Practice {
-        PROSTRATIONS(R.string.prostrations),
-        DIAMOND_MIND(R.string.diamond_mind),
-        MANDALA_OFFERING(R.string.mandala_offering),
-        GURU_YOGA(R.string.guru_yoga);
+        PROSTRATIONS(R.string.prostrations, R.drawable.rtree),
+        DIAMOND_MIND(R.string.diamond_mind, R.drawable.dm),
+        MANDALA_OFFERING(R.string.mandala_offering, R.drawable.rtree),
+        GURU_YOGA(R.string.guru_yoga, R.drawable.dm);
         int name_res;
-        Practice(int name_res) {
+        int image_res;
+        Practice(int name_res, int image_res) {
             this.name_res = name_res;
+            this.image_res = image_res;
         }
         public int getNameRes() {
             return this.name_res;
         }
+        public int getImageRes() {
+            return this.image_res;
+        }
     }
-
 
     private static final int DEFAULT_PACE = 100;
 
@@ -102,7 +107,10 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.nyndro_fragment, container, false);
+        View layout = inflater.inflate(R.layout.nyndro_fragment, container, false);
+        ImageView image = (ImageView)layout.findViewById(R.id.imageView);
+        image.setImageResource(mPractice.getImageRes());
+        return layout;
     }
 
     @Override
@@ -298,11 +306,11 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         Button date = (Button) getView().findViewById(R.id.date_button);
         counterView.setText(String.format("%,d", (Integer) getmMainCounter()));
         pace.setText("+" + String.valueOf(mPace));
-        dateView.setText(String.format("%te %<tB %<tY", mDateOfLastPractice));
+        dateView.setText(String.format("ostatnio %te %<tB %<tY", mDateOfLastPractice));
 //        pace.setText(String.valueOf(mPace));
 //        computeProjectedFinishDate();
         if (mPace != 0 && getmMainCounter() != 111111) {
-            date.setText(mDateFormat.format(mProjectedFinishDate));
+            date.setText(String.format("do %te %<tB %<tY", mProjectedFinishDate));
         } else if (getmMainCounter() == 111111 ) {
             date.setText(R.string.finished);
         } else if (mPace == 0 ) {

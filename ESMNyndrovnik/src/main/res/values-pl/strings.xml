@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Nyndrownik ESM</string>
-    <string name="prostrations">Pokłony</string>
     <string name="action_edit_counter">Edytuj licznik</string>
     <string name="ok">OK</string>
     <string name="cancel">Anuluj</string>
@@ -14,7 +13,8 @@
     <string name="finished">Skończone!</string>
     <string name="action_edit_pace">Edytuj liczbę powtórzeń dziennie</string>
     <string name="action_add_repetitions">Dodaj inną liczbę</string>
-    <string name="diamond_mind">Diamentowy Umysł</string>
-    <string name="mandala_offering">Podarowanie mandali</string>
-    <string name="guru_yoga">Guru Joga</string>
+    <string name="prostrations">pokłonów</string>
+    <string name="diamond_mind">mantr Diamentowego Umysłu</string>
+    <string name="mandala_offering">podarowanych mandal</string>
+    <string name="guru_yoga">powtórzeń Guru Jogi</string>
 </resources>

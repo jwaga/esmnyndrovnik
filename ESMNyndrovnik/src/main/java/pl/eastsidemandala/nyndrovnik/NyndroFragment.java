@@ -7,8 +7,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -103,6 +101,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         mPractice = Practice.valueOf(getArguments().getString("practice"));
         Log.d(getTag(), "Fragment created:" + mPractice.toString());
         setRetainInstance(true);
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -161,11 +160,6 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
 
 
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        inflater.inflate(R.menu.main, menu);
-    }
 
 
     @Override

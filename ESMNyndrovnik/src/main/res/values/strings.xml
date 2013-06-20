@@ -7,7 +7,6 @@
     </string>
     <string name="hello_world">Hello world!
     </string>
-    <string name="prostrations">prostrations.</string>
     <string name="action_edit_counter">Edit Counter</string>
     <string name="ok">OK</string>
     <string name="cancel">Canel</string>
@@ -20,8 +19,13 @@
     <string name="finished">Finished!</string>
     <string name="action_edit_pace">Edit repetitions per day</string>
     <string name="action_add_repetitions">Add different number</string>
-    <string name="diamond_mind">Diamond Mind</string>
-    <string name="mandala_offering">Mandala Offering</string>
-    <string name="guru_yoga">Guru Yoga</string>
+    <string name="prostrations">prostrations</string>
+    <string name="prostrations_short">Prostrations</string>
+    <string name="diamond_mind">Diamond Mind mantras</string>
+    <string name="diamond_mind_short">Diamond Mind</string>
+    <string name="mandala_offering">Mandalas offered</string>
+    <string name="mandala_offering_short">Mandala</string>
+    <string name="guru_yoga">Guru Yoga mantras</string>
+    <string name="guru_yoga_short">Guru Yoga</string>
 
 </resources>

@@ -1,5 +1,6 @@
 package pl.eastsidemandala.nyndrovnik;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -9,8 +10,11 @@ import android.support.v4.app.FragmentPagerAdapter;
  * Created by konrad on 14.06.2013.
  */
 public class PracticePagerAdapter extends FragmentPagerAdapter {
-    public PracticePagerAdapter(FragmentManager fm) {
+    Context mContext;
+
+    public PracticePagerAdapter(FragmentManager fm, Context c) {
         super(fm);
+        mContext = c;
     }
 
     @Override
@@ -25,5 +29,13 @@ public class PracticePagerAdapter extends FragmentPagerAdapter {
     @Override
     public int getCount() {
         return 4;
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        int[] practice_page_names = {R.string.prostrations_short, R.string.diamond_mind_short,
+            R.string.mandala_offering_short, R.string.guru_yoga_short};
+        return mContext.getResources().getString(practice_page_names[position]);
+
     }
 }

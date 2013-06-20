@@ -20,7 +20,7 @@ public class MainActivity extends FragmentActivity {
 //            args.putString("practice", NyndroFragment.Practice.PROSTRATIONS.toString());
 //            fragment.setArguments(args);
 //            getSupportFragmentManager().beginTransaction().add(R.id.main_layout, fragment).commit();
-            PracticePagerAdapter adapter = new PracticePagerAdapter(getSupportFragmentManager());
+            PracticePagerAdapter adapter = new PracticePagerAdapter(getSupportFragmentManager(), this);
             ViewPager pager = (ViewPager) findViewById(R.id.pager);
             pager.setAdapter(adapter);
 //        }

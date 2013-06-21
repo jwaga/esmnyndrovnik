@@ -14,11 +14,11 @@
     <string name="action_edit_pace">Edytuj liczbę powtórzeń dziennie</string>
     <string name="action_add_repetitions">Dodaj inną liczbę</string>
     <string name="prostrations">pokłonów</string>
-    <string name="prostrations_short">Pokłony</string>
+    <string name="prostrations_short">POKŁONY</string>
     <string name="diamond_mind">mantr Diamentowego Umysłu</string>
-    <string name="diamond_mind_short">Diamentowy Umysł</string>
+    <string name="diamond_mind_short">DIAMENTOWY UMYSŁ</string>
     <string name="mandala_offering">podarowanych mandal</string>
-    <string name="mandala_offering_short">Mandala</string>
+    <string name="mandala_offering_short">MANDALA</string>
     <string name="guru_yoga">powtórzeń Guru Jogi</string>
-    <string name="guru_yoga_short">Guru Joga</string>
+    <string name="guru_yoga_short">GURU JOGA</string>
 </resources>

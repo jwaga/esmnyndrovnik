@@ -299,6 +299,8 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         Button pace = (Button) getView().findViewById(R.id.pace_button);
         Button date = (Button) getView().findViewById(R.id.date_button);
         counterView.setText(String.format("%,d", (Integer) getmMainCounter()));
+        NyndroProgressView progressView = (NyndroProgressView) getView().findViewById(R.id.progress);
+        progressView.setCount(mMainCounter);
         pace.setText("+" + String.valueOf(mPace));
         dateView.setText(String.format("ostatnio %te %<tB %<tY", mDateOfLastPractice));
 //        pace.setText(String.valueOf(mPace));

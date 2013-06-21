@@ -22,7 +22,7 @@
     <pl.eastsidemandala.nyndrovnik.NyndroProgressView
             android:id="@+id/progress"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         />
@@ -86,56 +86,37 @@
                 android:layout_alignLeft="@+id/practice_name"
                 android:fontFamily="sans-serif-light"/>
 
-        <LinearLayout
+        <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="+100"
+                android:id="@+id/pace_button"
+                android:onClick="onPaceClick"
+                android:alpha="0.9"
+                android:longClickable="true"
+                android:textStyle="bold"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableLeft="@drawable/session_length"
+                android:textColorHint="#ffcc00"
                 android:layout_below="@+id/date_of_last_practice"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentLeft="false"
-                android:layout_marginRight="20dp"
-                android:layout_alignParentRight="true">
+                android:layout_alignLeft="@+id/date_of_last_practice"
+                android:paddingRight="10dp"
+                android:layout_alignParentLeft="false"/>
 
-            <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="100"
-                    android:id="@+id/pace_button"
-                    android:onClick="onPaceClick"
-                    android:alpha="0.9"
-                    android:longClickable="true"
-                    android:textStyle="bold"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:drawableLeft="@drawable/session_length"
-                    android:textColorHint="#ffcc00"
-                    android:layout_below="@+id/date_of_last_practice"
-                    android:layout_alignLeft="@+id/date_of_last_practice"
-                    android:paddingRight="10dp"/>
-
-            <View
-                    android:id="@+id/button_divider"
-                    android:layout_height="24dp"
-                    android:layout_width="1dp"
-                    android:background="?android:attr/dividerVertical"
-                    android:layout_alignTop="@+id/pace_button"
-                    android:layout_alignBottom="@+id/pace_button"
-                    android:layout_toRightOf="@+id/pace_button"
-                    android:layout_gravity="center_vertical"/>
-
-            <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1 May 2013"
-                    android:id="@+id/date_button"
-                    android:onClick="onDateClick"
-                    android:padding="10dp"
-                    android:background="?android:attr/selectableItemBackground"
-                    android:drawableLeft="@drawable/date"
-                    android:alpha="0.9"
-                    android:layout_alignTop="@+id/pace_button"
-                    android:layout_alignLeft="@+id/button_divider"
-                    android:layout_gravity="center_vertical"/>
-
-        </LinearLayout>
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="26 August 2013"
+                android:id="@+id/date_button"
+                android:onClick="onDateClick"
+                android:padding="10dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableLeft="@drawable/date"
+                android:alpha="0.9"
+                android:layout_alignTop="@+id/pace_button"
+                android:layout_alignLeft="@+id/button_divider"
+                android:layout_gravity="center_vertical"
+                android:layout_alignParentRight="true"/>
 
 
     </RelativeLayout>

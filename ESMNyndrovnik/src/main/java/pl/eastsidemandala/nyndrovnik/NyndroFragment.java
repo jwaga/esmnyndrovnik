@@ -289,7 +289,14 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         long now = new Date().getTime();
         long then = mProjectedFinishDate.getTime();
         int days = (int) ((then - now) / (1000 * 60 * 60 * 24))+1;
-        mPace = (111111 - getmMainCounter()) / days ;
+        int pace = (111111 - getmMainCounter()) / days ;
+        // round up to the nearest 100: add 100 - remainder if remainder > 0
+//        mPace = pace + (pace % 100 > 0 ? 100 - (pace % 100) : 0);
+        if (pace % 100 > 0) {
+            mPace = pace + (100 - pace % 100);
+        } else {
+            mPace = pace;
+        }
     }
 
     protected void refresh() {

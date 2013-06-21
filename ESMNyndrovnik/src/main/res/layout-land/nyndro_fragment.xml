@@ -1,49 +1,52 @@
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
         >
 
     <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
             android:id="@+id/imageView"
             android:src="@drawable/rtree"
             android:cropToPadding="false"
-            android:layout_marginBottom="20dp"
             android:scaleType="centerCrop"
-            android:adjustViewBounds="true"
+            android:adjustViewBounds="false"
             android:layout_gravity="bottom"
             android:layout_weight="1"
             />
 
-    <pl.eastsidemandala.nyndrovnik.NyndroProgressView
-            android:id="@+id/progress"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        />
-
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                     xmlns:tools="http://schemas.android.com/tools"
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_width="0dp"
 
                     tools:context=".MainActivity"
                     android:focusableInTouchMode="true"
-            >
+                    android:layout_weight="1"
+                    android:gravity="top">
+
+        <pl.eastsidemandala.nyndrovnik.NyndroProgressView
+                android:id="@+id/progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="false"
+            android:layout_marginTop="8dp"/>
+
         <TextView
                 android:id="@+id/practice_name"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="prostrations"
+                android:text="@string/prostrations"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:fontFamily="sans-serif-light"
                 android:enabled="true"
-                android:layout_below="@+id/main_counter"
+                android:layout_above="@+id/date_of_last_practice"
                 android:layout_alignLeft="@+id/main_counter"/>
         <TextView
                 android:layout_width="wrap_content"
@@ -53,9 +56,8 @@
                 android:text="100 000"
                 android:fontFamily="sans-serif-light"
                 android:focusable="true"
-                android:layout_marginLeft="15dp"
-                android:layout_alignParentLeft="false"
-                />
+                android:layout_above="@+id/practice_name"
+                android:layout_alignLeft="@+id/progress"/>
 
         <Button
                 android:layout_width="48dp"
@@ -82,14 +84,14 @@
                 android:id="@+id/date_of_last_practice"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:singleLine="true"
-                android:layout_below="@+id/practice_name"
-                android:layout_alignLeft="@+id/practice_name"
-                android:fontFamily="sans-serif-light"/>
+                android:fontFamily="sans-serif-light"
+                android:layout_above="@+id/pace_button"
+                android:layout_alignLeft="@+id/practice_name"/>
 
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="+100"
+                android:text="100"
                 android:id="@+id/pace_button"
                 android:onClick="onPaceClick"
                 android:alpha="0.9"
@@ -98,25 +100,24 @@
                 android:background="?android:attr/selectableItemBackground"
                 android:drawableLeft="@drawable/session_length"
                 android:textColorHint="#ffcc00"
-                android:layout_below="@+id/date_of_last_practice"
-                android:layout_alignLeft="@+id/date_of_last_practice"
                 android:paddingRight="10dp"
-                android:layout_alignParentLeft="false"/>
+                android:layout_alignLeft="@+id/date_of_last_practice"
+                android:layout_alignParentBottom="true"/>
 
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="26 August 2013"
+                android:text="23 października 2013"
                 android:id="@+id/date_button"
                 android:onClick="onDateClick"
-                android:padding="10dp"
                 android:background="?android:attr/selectableItemBackground"
                 android:drawableLeft="@drawable/date"
                 android:alpha="0.9"
-                android:layout_alignTop="@+id/pace_button"
-                android:layout_alignLeft="@+id/button_divider"
                 android:layout_gravity="center_vertical"
-                android:layout_alignParentRight="true"/>
+                android:layout_alignParentBottom="true"
+                android:textAppearance="@android:style/TextAppearance.Small"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="8dp"/>
 
 
     </RelativeLayout>

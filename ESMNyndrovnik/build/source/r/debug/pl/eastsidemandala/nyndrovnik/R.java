@@ -9,11 +9,16 @@ package pl.eastsidemandala.nyndrovnik;
 
 public final class R {
     public static final class array {
+        /**  From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values/arrays.xml 
+         */
         public static final int pace_values=0x7f040000;
     }
     public static final class attr {
     }
     public static final class dimen {
+        /**  From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values/dimens.xml 
+ From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values-sw720dp-land/dimens.xml 
+         */
         public static final int activity_horizontal_margin=0x7f050000;
         public static final int activity_vertical_margin=0x7f050001;
     }
@@ -30,21 +35,23 @@ public final class R {
         public static final int session_length=0x7f020009;
     }
     public static final class id {
-        public static final int action_add_repetitions=0x7f09000e;
-        public static final int action_edit_counter=0x7f09000c;
-        public static final int action_edit_pace=0x7f09000d;
-        public static final int add_repetitions_button=0x7f090007;
-        public static final int button_divider=0x7f09000b;
-        public static final int date_button=0x7f09000a;
-        public static final int date_of_last_practice=0x7f090008;
+        public static final int action_add_repetitions=0x7f090010;
+        public static final int action_edit_counter=0x7f09000e;
+        public static final int action_edit_pace=0x7f09000f;
+        public static final int add_repetitions_button=0x7f090008;
+        public static final int button_divider=0x7f09000c;
+        public static final int calendarView=0x7f09000d;
+        public static final int date_button=0x7f09000b;
+        public static final int date_of_last_practice=0x7f090009;
         public static final int imageView=0x7f090003;
-        public static final int main_counter=0x7f090006;
+        public static final int lock_text=0x7f090004;
+        public static final int main_counter=0x7f090007;
         public static final int main_layout=0x7f090000;
-        public static final int pace_button=0x7f090009;
+        public static final int pace_button=0x7f09000a;
         public static final int pager=0x7f090001;
         public static final int pager_title_strip=0x7f090002;
-        public static final int practice_name=0x7f090005;
-        public static final int progress=0x7f090004;
+        public static final int practice_name=0x7f090006;
+        public static final int progress=0x7f090005;
     }
     public static final class layout {
         public static final int main_activity=0x7f030000;
@@ -55,6 +62,9 @@ public final class R {
         public static final int main=0x7f080000;
     }
     public static final class string {
+        /**  From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values/strings.xml 
+ From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values-pl/strings.xml 
+         */
         public static final int action_add_repetitions=0x7f060000;
         public static final int action_edit_counter=0x7f060001;
         public static final int action_edit_pace=0x7f060002;
@@ -63,28 +73,34 @@ public final class R {
         public static final int cancel=0x7f060005;
         public static final int diamond_mind=0x7f060006;
         public static final int diamond_mind_short=0x7f060007;
-        public static final int finish_date_label=0x7f060008;
-        public static final int finished=0x7f060009;
-        public static final int guru_yoga=0x7f06000a;
-        public static final int guru_yoga_short=0x7f06000b;
-        public static final int hello_world=0x7f06000c;
-        public static final int last_practice=0x7f06000d;
-        public static final int mandala_offering=0x7f06000e;
-        public static final int mandala_offering_short=0x7f06000f;
-        public static final int never=0x7f060010;
-        public static final int ok=0x7f060011;
-        public static final int pace_label=0x7f060012;
-        public static final int pick_pace=0x7f060013;
-        public static final int prostrations=0x7f060014;
-        public static final int prostrations_pace_to_date=0x7f060015;
-        public static final int prostrations_short=0x7f060016;
+        public static final int dm_lock=0x7f060008;
+        public static final int finish_date_dialog_title=0x7f060009;
+        public static final int finish_date_label=0x7f06000a;
+        public static final int finished=0x7f06000b;
+        public static final int guru_yoga=0x7f06000c;
+        public static final int guru_yoga_lock=0x7f06000d;
+        public static final int guru_yoga_short=0x7f06000e;
+        public static final int hello_world=0x7f06000f;
+        public static final int last_practice=0x7f060010;
+        public static final int mandala_lock=0x7f060011;
+        public static final int mandala_offering=0x7f060012;
+        public static final int mandala_offering_short=0x7f060013;
+        public static final int never=0x7f060014;
+        public static final int ok=0x7f060015;
+        public static final int pace_label=0x7f060016;
+        public static final int pick_pace=0x7f060017;
+        public static final int prostrations=0x7f060018;
+        public static final int prostrations_pace_to_date=0x7f060019;
+        public static final int prostrations_short=0x7f06001a;
     }
     public static final class style {
-        /** 
+        /**  From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values/styles.xml 
+
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         
+ From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values-v11/styles.xml 
  API 11 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f070000;

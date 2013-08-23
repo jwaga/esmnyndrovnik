@@ -27,5 +27,8 @@
     <string name="mandala_offering_short">Mandala</string>
     <string name="guru_yoga">Guru Yoga mantras</string>
     <string name="guru_yoga_short">Guru Yoga</string>
-
+    <string name="dm_lock">Kiedy zrobisz 30 000 pokłonów, zacznij medytację Diamentowego Umysłu</string>
+    <string name="mandala_lock">Kiedy skończysz Diamentowy Umysł, zacznij Podarowanie Mandali</string>
+    <string name="guru_yoga_lock">Kiedy skończysz Podarowanie Mandali, zacznij\nGuru Jogę</string>
+    <string name="finish_date_dialog_title">Finish before:</string>
 </resources>

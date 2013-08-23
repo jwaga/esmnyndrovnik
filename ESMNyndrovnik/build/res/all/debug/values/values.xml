@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values/arrays.xml -->
     <string-array name="pace_values">
         <item>0</item>
         <item>50</item>
@@ -9,10 +10,10 @@
         <item>300</item>
         <item>500</item>
     </string-array>
-
+    <!-- From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values/dimens.xml -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-
+    <!-- From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values/strings.xml -->
     <string name="action_add_repetitions">Add different number</string>
     <string name="action_edit_counter">Edit Counter</string>
     <string name="action_edit_pace">Edit repetitions per day</string>
@@ -21,12 +22,16 @@
     <string name="cancel">Canel</string>
     <string name="diamond_mind">Diamond Mind mantras</string>
     <string name="diamond_mind_short">Diamond Mind</string>
+    <string name="dm_lock">Kiedy zrobisz 30 000 pokłonów, zacznij medytację Diamentowego Umysłu</string>
+    <string name="finish_date_dialog_title">Finish before:</string>
     <string name="finish_date_label">Finish by:</string>
     <string name="finished">Finished!</string>
     <string name="guru_yoga">Guru Yoga mantras</string>
+    <string name="guru_yoga_lock">Kiedy skończysz Podarowanie Mandali, zacznij\nGuru Jogę</string>
     <string name="guru_yoga_short">Guru Yoga</string>
     <string name="hello_world">Hello world!</string>
     <string name="last_practice">Your last practice was:</string>
+    <string name="mandala_lock">Kiedy skończysz Diamentowy Umysł, zacznij Podarowanie Mandali</string>
     <string name="mandala_offering">Mandalas offered</string>
     <string name="mandala_offering_short">Mandala</string>
     <string name="never">Never!!!!</string>
@@ -36,7 +41,7 @@
     <string name="prostrations">prostrations</string>
     <string name="prostrations_pace_to_date">By doing %1$d prostrations a day,\n you will finish them on %2$tB %2$te %2$tY§.</string>
     <string name="prostrations_short">Prostrations</string>
-
+    <!-- From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values/styles.xml -->
     <style name="AppBaseTheme" parent="android:Theme.Light">
         <!--
             Theme customizations available in newer API levels can go in

@@ -1,10 +1,14 @@
 package pl.eastsidemandala.nyndrovnik;
 
 import android.app.DatePickerDialog;
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -28,10 +32,6 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     public static final String DATE_OF_LAST_PRACTICE_KEY = "_date_of_last_practice";
     public static final String PACE_KEY = "_pace";
 
-    public static final String PROSTRATIONS = "prostrations";
-    public static final String DIAMOND_MIND = "diamond_mind";
-    public static final String MANDALA_OFFERING = "mandala_offering";
-    public static final String GURU_YOGA = "guru_yoga";
 
     public static enum Practice {
         PROSTRATIONS(R.string.prostrations, R.drawable.rtree),
@@ -74,6 +74,33 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         }  else {
             this.mMainCounter = mMainCounter;
         }
+        MainActivity activity = (MainActivity) getActivity();
+        switch (this.mPractice) {
+            case PROSTRATIONS:
+                if (this.mMainCounter >= 30000) {
+                    activity.dmUnlocked = true;
+                } else {
+                    activity.dmUnlocked = false;
+                }
+                break;
+            case DIAMOND_MIND:
+                if (this.mMainCounter == 111111) {
+                    activity.mandalaUnlocked = true;
+                } else {
+                    activity.mandalaUnlocked = false;
+                }
+                break;
+            case MANDALA_OFFERING:
+                if (this.mMainCounter == 111111) {
+                    activity.guruYogaUnlocked = true;
+                } else {
+                    activity.guruYogaUnlocked = false;
+                }
+        }
+        LocalBroadcastManager.getInstance(getActivity()).sendBroadcast(
+                new Intent().setAction("pl.eastsidemandala.nyndrovnik.PRACTICE_UNLOCKED")
+                        );
+
 
     }
     public Date getProjectedFinishDate() {
@@ -129,8 +156,49 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         if (date > 0) { mDateOfLastPractice.setTime(date); }
         else { }
 //        setUpSpinner();
+
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("pl.eastsidemandala.nyndrovnik.PRACTICE_UNLOCKED");
+        LocalBroadcastManager.getInstance(getActivity()).registerReceiver(new PracticeUnlockReceiver(),
+                filter);
+        updatePracticeLock();
         computeProjectedFinishDate();
         refresh();
+    }
+
+    public void updatePracticeLock() {
+        TextView lock = (TextView) getView().findViewById(R.id.lock_text);
+        MainActivity activity = (MainActivity) getActivity();
+        switch (mPractice) {
+            case PROSTRATIONS:
+                lock.setVisibility(View.GONE);
+                break;
+            case DIAMOND_MIND:
+                if  (! activity.dmUnlocked) {
+                    lock.setVisibility(View.VISIBLE);
+                } else {
+                    lock.setVisibility(View.GONE);
+                }
+                break;
+            case MANDALA_OFFERING:
+                if  (! activity.mandalaUnlocked) {
+                    lock.setVisibility(View.VISIBLE);
+                    lock.setText(R.string.mandala_lock);
+                } else {
+                    lock.setVisibility(View.GONE);
+                }
+                break;
+            case GURU_YOGA:
+                if  (! activity.guruYogaUnlocked) {
+                    lock.setVisibility(View.VISIBLE);
+                    lock.setText(R.string.guru_yoga_lock);
+                } else {
+                    lock.setVisibility(View.GONE);
+                }
+                break;
+
+
+            }
     }
 
     @Override
@@ -273,6 +341,16 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         }
     }
 
+    private class PracticeUnlockReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if (getView() != null) {
+                updatePracticeLock();
+            }
+        }
+    }
+
 //  Internal methods
     private void computeProjectedFinishDate() {
 //      remaining repetitions divided by currently selected pace, plus one day for the remainder
@@ -290,13 +368,8 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         long then = mProjectedFinishDate.getTime();
         int days = (int) ((then - now) / (1000 * 60 * 60 * 24))+1;
         int pace = (111111 - getmMainCounter()) / days ;
-        // round up to the nearest 100: add 100 - remainder if remainder > 0
-//        mPace = pace + (pace % 100 > 0 ? 100 - (pace % 100) : 0);
-        if (pace % 100 > 0) {
-            mPace = pace + (100 - pace % 100);
-        } else {
-            mPace = pace;
-        }
+//        round up to the nearest 100: add 100 - remainder if remainder > 0
+        mPace = pace + (pace % 100 > 0 ? 100 - (pace % 100) : 0);
     }
 
     protected void refresh() {

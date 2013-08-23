@@ -12,20 +12,34 @@
             android:id="@+id/imageView"
             android:src="@drawable/rtree"
             android:cropToPadding="false"
-            android:layout_marginBottom="20dp"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"
             android:layout_gravity="bottom"
             android:layout_weight="1"
             />
 
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/dm_lock"
+            android:id="@+id/lock_text"
+            android:visibility="invisible"
+            android:fontFamily="sans-serif-light"
+            android:textSize="36dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:textIsSelectable="true"
+            android:background="#4400FFFF"
+            android:autoText="true"/>
+
     <pl.eastsidemandala.nyndrovnik.NyndroProgressView
             android:id="@+id/progress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        />
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"/>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                     xmlns:tools="http://schemas.android.com/tools"
@@ -123,3 +137,4 @@
     </LinearLayout>
 
 
+<!-- From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/layout/nyndro_fragment.xml -->

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.graphics.Region;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -71,10 +72,25 @@ public class NyndroProgressView extends View {
         for (float y = r+STROKE; y < s*6; y += s) {
             for (float x = r+STROKE; x < s*11 || (y < s*5 && x <= s*20) ; x+= s) {
                 mRect.set(x-r, y-r, x+r, y+r);
+                RectF clip = new RectF();
+                clip.set(mRect);
                 if (counter < mCount/1000) {
+                    // draw filled circles
                     c.drawOval(mRect, mFillPaint);
                 } else {
-                    c.drawOval(mRect, mPaint);
+                    if (counter >= (mCount/1000)+1) {
+                        // draw empty circles
+                        c.clipRect(0, 0, c.getWidth(), c.getHeight(), Region.Op.REPLACE);
+                        c.drawOval(mRect, mPaint);
+                    } else {
+                        // draw a partially filled circle
+                        c.drawOval(mRect, mPaint);
+                        float fillLevel = (mCount % 1000)/1000.0f;
+                        clip.bottom += 2*r - fillLevel*2*r;
+                        clip.top += 2*r - fillLevel*2*r;
+                        c.clipRect(clip);
+                        c.drawOval(mRect, mFillPaint);
+                    }
                 }
                 counter++;
             }

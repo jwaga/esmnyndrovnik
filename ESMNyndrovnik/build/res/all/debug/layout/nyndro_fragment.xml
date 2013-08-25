@@ -136,7 +136,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/dm_lock"
             android:id="@+id/lock_text"
-            android:visibility="visible"
+            android:visibility="gone"
             android:fontFamily="sans-serif-light"
             android:textSize="36dp"
             android:gravity="center_vertical"

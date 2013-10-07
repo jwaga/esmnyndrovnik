@@ -161,7 +161,9 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         filter.addAction("pl.eastsidemandala.nyndrovnik.PRACTICE_UNLOCKED");
         LocalBroadcastManager.getInstance(getActivity()).registerReceiver(new PracticeUnlockReceiver(),
                 filter);
-        updatePracticeLock();
+        if (getView() != null) {
+            updatePracticeLock();
+        }
         computeProjectedFinishDate();
         refresh();
     }

@@ -8,4 +8,8 @@
         <!-- API 11 theme customizations can go here. -->
     </style>
 
+    <style name="transparentButton">
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+
 </resources>

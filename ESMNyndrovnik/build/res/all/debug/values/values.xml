@@ -10,13 +10,15 @@
         <item>300</item>
         <item>500</item>
     </string-array>
+    <!-- From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values/colors.xml -->
+    <color name="pressed">#0099CC</color>
     <!-- From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values/dimens.xml -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <!-- From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values/strings.xml -->
-    <string name="action_add_repetitions">Add different number</string>
+    <string name="action_add_repetitions">Add repetitions</string>
     <string name="action_edit_counter">Edit Counter</string>
-    <string name="action_edit_pace">Edit repetitions per day</string>
+    <string name="action_edit_pace">Set repetitions per day</string>
     <string name="action_settings">Settings</string>
     <string name="app_name">ESM Nyndro Counter</string>
     <string name="cancel">Canel</string>
@@ -58,6 +60,10 @@
         <item name="android:shadowColor">#0f0f0f</item>
         <item name="android:shadowRadius">2</item>
         <item name="android:shadowDy">2</item>
+    </style>
+
+    <style name="transparentButton">
+        <item name="android:background">@drawable/transparent_button</item>
     </style>
 
 </resources>

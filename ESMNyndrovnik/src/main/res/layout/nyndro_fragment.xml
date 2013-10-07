@@ -5,42 +5,69 @@
         android:layout_height="match_parent"
         >
 
-    <LinearLayout
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/dm_lock"
+            android:id="@+id/lock_text"
+            android:visibility="gone"
+            android:fontFamily="sans-serif-light"
+            android:textSize="36dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:textIsSelectable="false"
+            android:background="#EEFFFFFF"
+            android:autoText="true"
+            android:textColor="#4a4a4a"/>
+
+    <RelativeLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            >
+            android:layout_gravity="center_horizontal|top">
 
         <ImageView
                 android:layout_width="fill_parent"
-                android:layout_height="0dp"
+                android:layout_height="fill_parent"
                 android:id="@+id/imageView"
                 android:src="@drawable/rtree"
                 android:cropToPadding="false"
                 android:scaleType="centerCrop"
                 android:adjustViewBounds="true"
                 android:layout_gravity="bottom"
-                android:layout_weight="1"
-                />
+                android:layout_weight="2"
+                android:layout_alignParentTop="false"
+                android:layout_alignParentLeft="false"
+                android:visibility="visible"
+                android:layout_above="@+id/progress"/>
 
         <pl.eastsidemandala.nyndrovnik.NyndroProgressView
                 android:id="@+id/progress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="16dp"/>
+                android:layout_marginBottom="0dp"
+                android:layout_alignParentBottom="false"
+                android:layout_alignParentLeft="false"
+                android:layout_above="@+id/info_layout"
+                android:layout_marginTop="6dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"/>
 
         <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                         xmlns:tools="http://schemas.android.com/tools"
+                        android:id="@+id/info_layout"
                         android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
+                        android:layout_width="fill_parent"
 
                         tools:context=".MainActivity"
                         android:focusableInTouchMode="true"
-                >
+            android:layout_weight="1.2"
+            android:clickable="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true">
 
             <TextView
                     android:id="@+id/practice_name"
@@ -96,20 +123,21 @@
 
             <Button
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="48dp"
                     android:text="+100"
                     android:id="@+id/pace_button"
                     android:onClick="onPaceClick"
                     android:alpha="0.9"
                     android:longClickable="true"
                     android:textStyle="bold"
-                    android:background="?android:attr/selectableItemBackground"
+                    style="@style/transparentButton"
                     android:drawableLeft="@drawable/session_length"
                     android:textColorHint="#ffcc00"
-                    android:layout_below="@+id/date_of_last_practice"
-                    android:layout_alignLeft="@+id/date_of_last_practice"
+                android:layout_alignLeft="@+id/date_of_last_practice"
                     android:paddingRight="10dp"
-                    android:layout_alignParentLeft="false"/>
+                    android:layout_alignParentLeft="false"
+                android:layout_alignParentBottom="false"
+                android:layout_below="@+id/date_of_last_practice"/>
 
             <Button
                     android:layout_width="wrap_content"
@@ -118,33 +146,17 @@
                     android:id="@+id/date_button"
                     android:onClick="onDateClick"
                     android:padding="10dp"
-                    android:background="?android:attr/selectableItemBackground"
+                    style="@style/transparentButton"
                     android:drawableLeft="@drawable/date"
                     android:alpha="0.9"
                     android:layout_alignTop="@+id/pace_button"
-                    android:layout_alignLeft="@+id/button_divider"
-                    android:layout_gravity="center_vertical"
-                    android:layout_alignParentRight="true"/>
+                android:layout_gravity="center_vertical"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignBottom="@+id/pace_button"/>
 
 
         </RelativeLayout>
-    </LinearLayout>
-
-    <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/dm_lock"
-            android:id="@+id/lock_text"
-            android:visibility="gone"
-            android:fontFamily="sans-serif-light"
-            android:textSize="36dp"
-            android:gravity="center_vertical"
-            android:paddingLeft="16dp"
-            android:textIsSelectable="true"
-            android:background="#EEFFFFFF"
-            android:autoText="true"
-            android:textColor="#4a4a4a"/>
+    </RelativeLayout>
 
 </FrameLayout>
 

@@ -2,9 +2,9 @@
 <resources>
 
     <!-- From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values-pl/strings.xml -->
-    <string name="action_add_repetitions">Dodaj inną liczbę</string>
+    <string name="action_add_repetitions">Dodaj powtórzenia</string>
     <string name="action_edit_counter">Edytuj licznik</string>
-    <string name="action_edit_pace">Edytuj liczbę powtórzeń dziennie</string>
+    <string name="action_edit_pace">Ustaw liczbę powtórzeń dziennie</string>
     <string name="app_name">Nyndrownik ESM</string>
     <string name="cancel">Anuluj</string>
     <string name="diamond_mind">mantr Diamentowego Umysłu</string>

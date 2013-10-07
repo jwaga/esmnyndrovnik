@@ -17,8 +17,8 @@
     <string name="pick_pace">Repetitions per session</string>
     <string name="never">Never!!!!</string>
     <string name="finished">Finished!</string>
-    <string name="action_edit_pace">Edit repetitions per day</string>
-    <string name="action_add_repetitions">Add different number</string>
+    <string name="action_edit_pace">Set repetitions per day</string>
+    <string name="action_add_repetitions">Add repetitions</string>
     <string name="prostrations">prostrations</string>
     <string name="prostrations_short">Prostrations</string>
     <string name="diamond_mind">Diamond Mind mantras</string>

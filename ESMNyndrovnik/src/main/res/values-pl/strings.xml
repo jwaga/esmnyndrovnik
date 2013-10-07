@@ -11,8 +11,8 @@
     <string name="pick_pace">Powtórzeń dziennie</string>
     <string name="never">Nigdy!!!</string>
     <string name="finished">Skończone!</string>
-    <string name="action_edit_pace">Edytuj liczbę powtórzeń dziennie</string>
-    <string name="action_add_repetitions">Dodaj inną liczbę</string>
+    <string name="action_edit_pace">Ustaw liczbę powtórzeń dziennie</string>
+    <string name="action_add_repetitions">Dodaj powtórzenia</string>
     <string name="prostrations">pokłonów</string>
     <string name="prostrations_short">POKŁONY</string>
     <string name="diamond_mind">mantr Diamentowego Umysłu</string>

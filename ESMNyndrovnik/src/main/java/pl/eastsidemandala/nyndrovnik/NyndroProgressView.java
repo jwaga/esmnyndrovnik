@@ -85,7 +85,15 @@ public class NyndroProgressView extends View {
                     } else {
                         // draw a partially filled circle
                         c.drawOval(mRect, mPaint);
-                        float fillLevel = (mCount % 1000)/1000.0f;
+                        double fillLevel = (mCount % 1000)/1000.0;
+                        // scale it to be less linear
+//                        fillLevel = ((fillLevel - 0.5f)*Math.abs(fillLevel-0.5f)*2) + 0.5f;
+//                        fillLevel = (fillLevel - 0.5)*Math.sqrt(Math.abs(fillLevel-0.5))*Math.sqrt(2) + 0.5;
+//                        this nicely approximates filling a cyllindrical tank: x^(0.768+x^2)
+//                        fillLevel = Math.pow(fillLevel, 0.768+Math.pow(fillLevel, 2));
+//                        and this is the formula for a spherical tank: (3-2x)(2x)^2/4
+//                        fillLevel = (3-2*fillLevel)*Math.pow(2*fillLevel, 2)/4;
+                        fillLevel = Math.pow(fillLevel, 0.57+fillLevel);
                         clip.bottom += 2*r - fillLevel*2*r;
                         clip.top += 2*r - fillLevel*2*r;
                         c.clipRect(clip);

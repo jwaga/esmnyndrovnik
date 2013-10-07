@@ -6,18 +6,20 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Region;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.View;
 
 /**
  * Created by konrad on 20.06.2013.
  */
 public class NyndroProgressView extends View {
-    private static final float STROKE = 2;
+    private static final float STROKE_WIDTH_DP = 1;
 
     private Paint mPaint, mFillPaint;
     float mWidth;
     float mHeight;
     float mRadius;
+    float mStrokeWidth;
     int mCount;
     RectF mRect;
 
@@ -31,8 +33,9 @@ public class NyndroProgressView extends View {
     private void init() {
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setARGB(0xFF, 0xCC, 0, 0);
+        mStrokeWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, STROKE_WIDTH_DP, getResources().getDisplayMetrics());
         mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setStrokeWidth(STROKE);
+        mPaint.setStrokeWidth(mStrokeWidth);
         mFillPaint = new Paint(mPaint);
         mFillPaint.setStyle(Paint.Style.FILL_AND_STROKE);
 
@@ -69,8 +72,8 @@ public class NyndroProgressView extends View {
         float s = mRadius*3;
         int counter = 0;
 // this is where most of the magic happens!
-        for (float y = r+STROKE; y < s*6; y += s) {
-            for (float x = r+STROKE; x < s*11 || (y < s*5 && x <= s*20) ; x+= s) {
+        for (float y = r+ mStrokeWidth; y < s*6; y += s) {
+            for (float x = r+ mStrokeWidth; x < s*11 || (y < s*5 && x <= s*20) ; x+= s) {
                 mRect.set(x-r, y-r, x+r, y+r);
                 RectF clip = new RectF();
                 clip.set(mRect);

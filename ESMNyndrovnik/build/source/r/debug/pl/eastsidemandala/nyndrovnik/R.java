@@ -44,20 +44,20 @@ public final class R {
         public static final int action_add_repetitions=0x7f0a0010;
         public static final int action_edit_counter=0x7f0a000e;
         public static final int action_edit_pace=0x7f0a000f;
-        public static final int add_repetitions_button=0x7f0a0009;
+        public static final int add_repetitions_button=0x7f0a0008;
         public static final int calendarView=0x7f0a000d;
-        public static final int date_button=0x7f0a000c;
-        public static final int date_of_last_practice=0x7f0a000a;
-        public static final int imageView=0x7f0a0004;
-        public static final int info_layout=0x7f0a0006;
-        public static final int lock_text=0x7f0a0003;
-        public static final int main_counter=0x7f0a0008;
+        public static final int date_button=0x7f0a000b;
+        public static final int date_of_last_practice=0x7f0a0009;
+        public static final int imageView=0x7f0a0003;
+        public static final int info_layout=0x7f0a0005;
+        public static final int lock_text=0x7f0a000c;
+        public static final int main_counter=0x7f0a0007;
         public static final int main_layout=0x7f0a0000;
-        public static final int pace_button=0x7f0a000b;
+        public static final int pace_button=0x7f0a000a;
         public static final int pager=0x7f0a0001;
         public static final int pager_title_strip=0x7f0a0002;
-        public static final int practice_name=0x7f0a0007;
-        public static final int progress=0x7f0a0005;
+        public static final int practice_name=0x7f0a0006;
+        public static final int progress=0x7f0a0004;
     }
     public static final class layout {
         public static final int main_activity=0x7f030000;

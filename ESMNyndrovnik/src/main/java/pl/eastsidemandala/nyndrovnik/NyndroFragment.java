@@ -31,6 +31,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     public static final String COUNTER_KEY = "_counter";
     public static final String DATE_OF_LAST_PRACTICE_KEY = "_date_of_last_practice";
     public static final String PACE_KEY = "_pace";
+    public static final String ACTIVE_PRACTICE_KEY = "active_practice";
 
 
     public static enum Practice {
@@ -60,6 +61,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     private Date mProjectedFinishDate;
     private DateFormat mDateFormat = SimpleDateFormat.getDateInstance();
     private Practice mPractice;
+    private boolean mUpdated = false;
 
     // accessors
     public int getmMainCounter() {
@@ -101,8 +103,8 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
                 new Intent().setAction("pl.eastsidemandala.nyndrovnik.PRACTICE_UNLOCKED")
                         );
 
-
     }
+
     public Date getProjectedFinishDate() {
 
         return mProjectedFinishDate;
@@ -213,11 +215,14 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onStop() {
         super.onStop();
-       getActivity().getPreferences(Context.MODE_PRIVATE).edit()
-                .putInt(mPractice.toString() + COUNTER_KEY, getmMainCounter())
+       SharedPreferences.Editor prefs = getActivity().getPreferences(Context.MODE_PRIVATE).edit();
+                prefs.putInt(mPractice.toString() + COUNTER_KEY, getmMainCounter())
                 .putLong(mPractice.toString() + DATE_OF_LAST_PRACTICE_KEY, mDateOfLastPractice.getTime())
-                .putInt(mPractice.toString() + PACE_KEY, mPace)
-                .commit();
+                .putInt(mPractice.toString() + PACE_KEY, mPace);
+                if (mUpdated) {
+                    prefs.putString(ACTIVE_PRACTICE_KEY, mPractice.toString());
+                }
+                prefs.commit();
     }
 
     @Override
@@ -226,6 +231,9 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         outState.putInt(mPractice.toString() + COUNTER_KEY, mMainCounter);
         outState.putInt(mPractice.toString() + PACE_KEY, mPace);
         outState.putLong(mPractice.toString() + DATE_OF_LAST_PRACTICE_KEY, mDateOfLastPractice.getTime());
+        if (mUpdated) {
+            outState.putString(ACTIVE_PRACTICE_KEY, mPractice.toString());
+        }
     }
 
 
@@ -265,6 +273,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         switch (view.getId()) {
             case R.id.add_repetitions_button:
                 setmMainCounter(getmMainCounter() + mPace);
+                mUpdated = true;
                 mDateOfLastPractice = new Date();
                 computeProjectedFinishDate();
                 refresh();
@@ -320,6 +329,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         @Override
         public void onSingleEditDialogPositiveClick(int value) {
             setmMainCounter(value);
+            mUpdated = true;
             computeProjectedFinishDate();
             refresh();
         }
@@ -338,6 +348,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         @Override
         public void onSingleEditDialogPositiveClick(int value) {
             setmMainCounter(getmMainCounter() + value);
+            mUpdated = true;
             computeProjectedFinishDate();
             refresh();
         }

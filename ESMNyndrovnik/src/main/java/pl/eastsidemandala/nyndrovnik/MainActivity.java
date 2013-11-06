@@ -6,11 +6,14 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 
+import pl.eastsidemandala.nyndrovnik.NyndroFragment.Practice;
+
 /**
  * Created by konrad on 13.06.2013.
  */
 public class MainActivity extends FragmentActivity {
     boolean dmUnlocked, mandalaUnlocked, guruYogaUnlocked;
+    Practice mActivePractice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +22,9 @@ public class MainActivity extends FragmentActivity {
         dmUnlocked = prefs.getBoolean("dm_unlocked", false);
         mandalaUnlocked = prefs.getBoolean("mandala_unlocked", false);
         guruYogaUnlocked = prefs.getBoolean("guru_yoga_unlocked", false);
+        mActivePractice = Practice.valueOf(
+                prefs.getString(NyndroFragment.ACTIVE_PRACTICE_KEY, Practice.PROSTRATIONS.toString()
+                ));
         setContentView(R.layout.main_activity);
 //        if (null == savedInstanceState) {
 //            NyndroFragment fragment = new NyndroFragment();
@@ -30,6 +36,7 @@ public class MainActivity extends FragmentActivity {
         PracticePagerAdapter adapter = new PracticePagerAdapter(getSupportFragmentManager(), this);
         final ViewPager pager = (ViewPager) findViewById(R.id.pager);
         pager.setAdapter(adapter);
+        pager.setCurrentItem(mActivePractice.ordinal(), true);
 //        }
     }
 

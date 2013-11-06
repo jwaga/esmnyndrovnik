@@ -11,4 +11,4 @@
             android:layout_height="wrap_content"
             android:id="@+id/calendarView"
             android:layout_gravity="center"/>
-</LinearLayout><!-- From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/layout/test_layout.xml -->
+</LinearLayout><!-- From: file:/Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/layout/test_layout.xml -->

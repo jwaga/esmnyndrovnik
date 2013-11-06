@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values-pl/strings.xml -->
+    <!-- From: file:/Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values-pl/strings.xml -->
+    <eat-comment />
+
     <string name="action_add_repetitions">Dodaj powtórzenia</string>
     <string name="action_edit_counter">Edytuj licznik</string>
     <string name="action_edit_pace">Ustaw liczbę powtórzeń dziennie</string>

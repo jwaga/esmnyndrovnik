@@ -9,21 +9,14 @@ package pl.eastsidemandala.nyndrovnik;
 
 public final class R {
     public static final class array {
-        /**  From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values/arrays.xml 
-         */
         public static final int pace_values=0x7f040000;
     }
     public static final class attr {
     }
     public static final class color {
-        /**  From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values/colors.xml 
-         */
         public static final int pressed=0x7f050000;
     }
     public static final class dimen {
-        /**  From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values/dimens.xml 
- From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values-sw720dp-land/dimens.xml 
-         */
         public static final int activity_horizontal_margin=0x7f060000;
         public static final int activity_vertical_margin=0x7f060001;
     }
@@ -68,9 +61,6 @@ public final class R {
         public static final int main=0x7f090000;
     }
     public static final class string {
-        /**  From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values/strings.xml 
- From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values-pl/strings.xml 
-         */
         public static final int action_add_repetitions=0x7f070000;
         public static final int action_edit_counter=0x7f070001;
         public static final int action_edit_pace=0x7f070002;
@@ -100,13 +90,11 @@ public final class R {
         public static final int prostrations_short=0x7f07001a;
     }
     public static final class style {
-        /**  From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values/styles.xml 
-
+        /** 
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         
- From: /Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values-v11/styles.xml 
  API 11 theme customizations can go here. 
          */
         public static final int AppBaseTheme=0x7f080000;

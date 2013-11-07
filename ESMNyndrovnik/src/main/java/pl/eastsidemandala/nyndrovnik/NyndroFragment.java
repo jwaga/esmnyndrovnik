@@ -79,30 +79,24 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         MainActivity activity = (MainActivity) getActivity();
         switch (this.mPractice) {
             case PROSTRATIONS:
-                if (this.mMainCounter >= 30000) {
-                    activity.dmUnlocked = true;
-                } else {
-                    activity.dmUnlocked = false;
-                }
+                activity.dmUnlocked = (this.mMainCounter >= 30000);
                 break;
             case DIAMOND_MIND:
-                if (this.mMainCounter == 111111) {
-                    activity.mandalaUnlocked = true;
-                } else {
-                    activity.mandalaUnlocked = false;
-                }
+                activity.mandalaUnlocked = (this.mMainCounter == 111111);
                 break;
             case MANDALA_OFFERING:
-                if (this.mMainCounter == 111111) {
-                    activity.guruYogaUnlocked = true;
-                } else {
-                    activity.guruYogaUnlocked = false;
-                }
+                activity.guruYogaUnlocked = (this.mMainCounter == 111111);
+                break;
         }
         LocalBroadcastManager.getInstance(getActivity()).sendBroadcast(
                 new Intent().setAction("pl.eastsidemandala.nyndrovnik.PRACTICE_UNLOCKED")
                         );
 
+    }
+
+    public void updateMainCounter(int count) {
+        setmMainCounter(count);
+        this.mUpdated = true;
     }
 
     public Date getProjectedFinishDate() {
@@ -272,8 +266,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.add_repetitions_button:
-                setmMainCounter(getmMainCounter() + mPace);
-                mUpdated = true;
+                updateMainCounter(getmMainCounter() + mPace);
                 mDateOfLastPractice = new Date();
                 computeProjectedFinishDate();
                 refresh();
@@ -328,8 +321,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     private class EditCounterDialogListener implements SingleEditDialogFragment.SingleEditDialogListener {
         @Override
         public void onSingleEditDialogPositiveClick(int value) {
-            setmMainCounter(value);
-            mUpdated = true;
+            updateMainCounter(value);
             computeProjectedFinishDate();
             refresh();
         }
@@ -347,8 +339,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     private class AddRepetitionsDialogListener implements SingleEditDialogFragment.SingleEditDialogListener {
         @Override
         public void onSingleEditDialogPositiveClick(int value) {
-            setmMainCounter(getmMainCounter() + value);
-            mUpdated = true;
+            updateMainCounter(getmMainCounter() + value);
             computeProjectedFinishDate();
             refresh();
         }
@@ -395,7 +386,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         NyndroProgressView progressView = (NyndroProgressView) getView().findViewById(R.id.progress);
         progressView.setCount(mMainCounter);
         pace.setText("+" + String.valueOf(mPace));
-        dateView.setText(String.format("ostatnio %te %<tB %<tY", mDateOfLastPractice));
+        dateView.setText(String.format("ostatnio %te %<tB %<tY o %<tH:%<tM", mDateOfLastPractice));
 //        pace.setText(String.valueOf(mPace));
 //        computeProjectedFinishDate();
         if (mPace != 0 && getmMainCounter() != 111111) {

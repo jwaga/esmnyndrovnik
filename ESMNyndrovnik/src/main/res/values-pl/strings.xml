@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">Nyndrownik ESM</string>
     <string name="action_edit_counter">Edytuj licznik</string>
+    <string name="action_undo">Cofnij</string>
     <string name="ok">OK</string>
     <string name="cancel">Anuluj</string>
     <string name="last_practice">Data ostatniej praktyki:</string>

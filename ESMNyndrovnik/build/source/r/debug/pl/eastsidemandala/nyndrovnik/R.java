@@ -32,11 +32,13 @@ public final class R {
         public static final int rtree=0x7f020008;
         public static final int session_length=0x7f020009;
         public static final int transparent_button=0x7f02000a;
+        public static final int undo=0x7f02000b;
     }
     public static final class id {
-        public static final int action_add_repetitions=0x7f0a0010;
-        public static final int action_edit_counter=0x7f0a000e;
-        public static final int action_edit_pace=0x7f0a000f;
+        public static final int action_add_repetitions=0x7f0a0011;
+        public static final int action_edit_counter=0x7f0a000f;
+        public static final int action_edit_pace=0x7f0a0010;
+        public static final int action_undo=0x7f0a000e;
         public static final int add_repetitions_button=0x7f0a0008;
         public static final int calendarView=0x7f0a000d;
         public static final int date_button=0x7f0a000b;
@@ -65,29 +67,30 @@ public final class R {
         public static final int action_edit_counter=0x7f070001;
         public static final int action_edit_pace=0x7f070002;
         public static final int action_settings=0x7f070003;
-        public static final int app_name=0x7f070004;
-        public static final int cancel=0x7f070005;
-        public static final int diamond_mind=0x7f070006;
-        public static final int diamond_mind_short=0x7f070007;
-        public static final int dm_lock=0x7f070008;
-        public static final int finish_date_dialog_title=0x7f070009;
-        public static final int finish_date_label=0x7f07000a;
-        public static final int finished=0x7f07000b;
-        public static final int guru_yoga=0x7f07000c;
-        public static final int guru_yoga_lock=0x7f07000d;
-        public static final int guru_yoga_short=0x7f07000e;
-        public static final int hello_world=0x7f07000f;
-        public static final int last_practice=0x7f070010;
-        public static final int mandala_lock=0x7f070011;
-        public static final int mandala_offering=0x7f070012;
-        public static final int mandala_offering_short=0x7f070013;
-        public static final int never=0x7f070014;
-        public static final int ok=0x7f070015;
-        public static final int pace_label=0x7f070016;
-        public static final int pick_pace=0x7f070017;
-        public static final int prostrations=0x7f070018;
-        public static final int prostrations_pace_to_date=0x7f070019;
-        public static final int prostrations_short=0x7f07001a;
+        public static final int action_undo=0x7f070004;
+        public static final int app_name=0x7f070005;
+        public static final int cancel=0x7f070006;
+        public static final int diamond_mind=0x7f070007;
+        public static final int diamond_mind_short=0x7f070008;
+        public static final int dm_lock=0x7f070009;
+        public static final int finish_date_dialog_title=0x7f07000a;
+        public static final int finish_date_label=0x7f07000b;
+        public static final int finished=0x7f07000c;
+        public static final int guru_yoga=0x7f07000d;
+        public static final int guru_yoga_lock=0x7f07000e;
+        public static final int guru_yoga_short=0x7f07000f;
+        public static final int hello_world=0x7f070010;
+        public static final int last_practice=0x7f070011;
+        public static final int mandala_lock=0x7f070012;
+        public static final int mandala_offering=0x7f070013;
+        public static final int mandala_offering_short=0x7f070014;
+        public static final int never=0x7f070015;
+        public static final int ok=0x7f070016;
+        public static final int pace_label=0x7f070017;
+        public static final int pick_pace=0x7f070018;
+        public static final int prostrations=0x7f070019;
+        public static final int prostrations_pace_to_date=0x7f07001a;
+        public static final int prostrations_short=0x7f07001b;
     }
     public static final class style {
         /** 

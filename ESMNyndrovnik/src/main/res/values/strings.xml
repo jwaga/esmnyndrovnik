@@ -31,4 +31,5 @@
     <string name="mandala_lock">Kiedy skończysz Diamentowy Umysł, zacznij Podarowanie Mandali</string>
     <string name="guru_yoga_lock">Kiedy skończysz Podarowanie Mandali, zacznij\nGuru Jogę</string>
     <string name="finish_date_dialog_title">Finish before:</string>
+    <string name="action_undo">Undo</string>
 </resources>

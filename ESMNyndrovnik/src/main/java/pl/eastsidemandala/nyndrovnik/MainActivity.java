@@ -23,7 +23,7 @@ public class MainActivity extends FragmentActivity {
         mandalaUnlocked = prefs.getBoolean("mandala_unlocked", false);
         guruYogaUnlocked = prefs.getBoolean("guru_yoga_unlocked", false);
         mActivePractice = Practice.valueOf(
-                prefs.getString(NyndroFragment.ACTIVE_PRACTICE_KEY, Practice.PROSTRATIONS.toString()
+                prefs.getString(PracticeData.ACTIVE_PRACTICE_KEY, Practice.PROSTRATIONS.toString()
                 ));
         setContentView(R.layout.main_activity);
 //        if (null == savedInstanceState) {

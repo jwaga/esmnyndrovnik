@@ -3,6 +3,13 @@
         <!--android:title="@string/action_settings"-->
         <!--android:orderInCategory="100"-->
         <!--android:showAsAction="never" />-->
+    <item android:id="@+id/action_undo"
+          android:title="@string/action_undo"
+          android:orderInCategory="40"
+          android:showAsAction="always"
+          android:icon="@drawable/undo"
+          android:enabled="true"
+          />
     <item android:id="@+id/action_edit_counter"
           android:title="@string/action_edit_counter"
           android:orderInCategory="50"

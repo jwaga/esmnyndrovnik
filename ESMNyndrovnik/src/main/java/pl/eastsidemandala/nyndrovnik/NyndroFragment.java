@@ -5,7 +5,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.LocalBroadcastManager;
@@ -19,8 +18,6 @@ import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -28,10 +25,7 @@ import java.util.Date;
 // TODO: encapsulate mPace and round to full hundreds on set
 public class NyndroFragment extends Fragment implements View.OnClickListener {
 
-    public static final String COUNTER_KEY = "_counter";
-    public static final String DATE_OF_LAST_PRACTICE_KEY = "_date_of_last_practice";
-    public static final String PACE_KEY = "_pace";
-    public static final String ACTIVE_PRACTICE_KEY = "active_practice";
+    private final PracticeData mData = new PracticeData();
 
 
     public static enum Practice {
@@ -53,67 +47,6 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    private static final int DEFAULT_PACE = 100;
-
-    private int mMainCounter;
-    private int mPace = 100;
-    private Date mDateOfLastPractice;
-    private Date mProjectedFinishDate;
-    private DateFormat mDateFormat = SimpleDateFormat.getDateInstance();
-    private Practice mPractice;
-    private boolean mUpdated = false;
-
-    // accessors
-    public int getmMainCounter() {
-        return mMainCounter;
-    }
-
-    public void setmMainCounter(int mMainCounter) {
-        if  (mMainCounter > 111111) {
-            this.mMainCounter = 111111;
-        } else if (mMainCounter < 0) {
-            this.mMainCounter = 0;
-        }  else {
-            this.mMainCounter = mMainCounter;
-        }
-        MainActivity activity = (MainActivity) getActivity();
-        switch (this.mPractice) {
-            case PROSTRATIONS:
-                activity.dmUnlocked = (this.mMainCounter >= 30000);
-                break;
-            case DIAMOND_MIND:
-                activity.mandalaUnlocked = (this.mMainCounter == 111111);
-                break;
-            case MANDALA_OFFERING:
-                activity.guruYogaUnlocked = (this.mMainCounter == 111111);
-                break;
-        }
-        LocalBroadcastManager.getInstance(getActivity()).sendBroadcast(
-                new Intent().setAction("pl.eastsidemandala.nyndrovnik.PRACTICE_UNLOCKED")
-                        );
-
-    }
-
-    public void updateMainCounter(int count) {
-        setmMainCounter(count);
-        this.mUpdated = true;
-    }
-
-    public Date getProjectedFinishDate() {
-
-        return mProjectedFinishDate;
-    }
-
-    public void setProjectedFinishDate(Date projectedFinishDate) {
-        Calendar now = Calendar.getInstance();
-        Calendar c = Calendar.getInstance();
-        c.setTime(projectedFinishDate);
-        if (c.before(now)) {
-            this.mProjectedFinishDate = now.getTime();
-        } else {
-            this.mProjectedFinishDate = c.getTime();
-        }
-    }
 
     // Overriden superclass methods
 
@@ -121,8 +54,8 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mPractice = Practice.valueOf(getArguments().getString("practice"));
-        Log.d(getTag(), "Fragment created:" + mPractice.toString());
+        mData.setmPractice(Practice.valueOf(getArguments().getString("practice")));
+        Log.d(getTag(), "Fragment created:" + mData.getPractice().toString());
         setRetainInstance(true);
         setHasOptionsMenu(true);
     }
@@ -131,27 +64,21 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View layout = inflater.inflate(R.layout.nyndro_fragment, container, false);
         ImageView image = (ImageView)layout.findViewById(R.id.imageView);
-        image.setImageResource(mPractice.getImageRes());
+        image.setImageResource(mData.getPractice().getImageRes());
         return layout;
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        Log.d(getTag(), "fragment.onActivityCreated:" + mPractice);
+        mData.setActivity(getActivity());
+        Log.d(getTag(), "fragment.onActivityCreated:" + mData.getPractice());
         TextView name =  (TextView) getView().findViewById(R.id.practice_name);
-        name.setText(mPractice.getNameRes());
+        name.setText(mData.getPractice().getNameRes());
         getView().findViewById(R.id.add_repetitions_button).setOnClickListener(this);
         getView().findViewById(R.id.pace_button).setOnClickListener(this);
         getView().findViewById(R.id.date_button).setOnClickListener(this);
-        SharedPreferences prefs = getActivity().getPreferences(Context.MODE_PRIVATE);
-        setmMainCounter(prefs.getInt(mPractice + COUNTER_KEY, 0));
-        mPace = prefs.getInt(mPractice + PACE_KEY, DEFAULT_PACE);
-        long date = prefs.getLong(mPractice + DATE_OF_LAST_PRACTICE_KEY, 0);
-        mDateOfLastPractice = new Date();
-        if (date > 0) { mDateOfLastPractice.setTime(date); }
-        else { }
-//        setUpSpinner();
+        mData.loadData(this);
 
         IntentFilter filter = new IntentFilter();
         filter.addAction("pl.eastsidemandala.nyndrovnik.PRACTICE_UNLOCKED");
@@ -167,7 +94,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     public void updatePracticeLock() {
         TextView lock = (TextView) getView().findViewById(R.id.lock_text);
         MainActivity activity = (MainActivity) getActivity();
-        switch (mPractice) {
+        switch (mData.getPractice()) {
             case PROSTRATIONS:
                 lock.setVisibility(View.GONE);
                 break;
@@ -209,29 +136,14 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onStop() {
         super.onStop();
-       SharedPreferences.Editor prefs = getActivity().getPreferences(Context.MODE_PRIVATE).edit();
-                prefs.putInt(mPractice.toString() + COUNTER_KEY, getmMainCounter())
-                .putLong(mPractice.toString() + DATE_OF_LAST_PRACTICE_KEY, mDateOfLastPractice.getTime())
-                .putInt(mPractice.toString() + PACE_KEY, mPace);
-                if (mUpdated) {
-                    prefs.putString(ACTIVE_PRACTICE_KEY, mPractice.toString());
-                }
-                prefs.commit();
+        mData.saveData(this);
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt(mPractice.toString() + COUNTER_KEY, mMainCounter);
-        outState.putInt(mPractice.toString() + PACE_KEY, mPace);
-        outState.putLong(mPractice.toString() + DATE_OF_LAST_PRACTICE_KEY, mDateOfLastPractice.getTime());
-        if (mUpdated) {
-            outState.putString(ACTIVE_PRACTICE_KEY, mPractice.toString());
-        }
+        mData.saveDataToInstanceState(outState);
     }
-
-
-
 
 
     @Override
@@ -239,14 +151,14 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         switch (item.getItemId()) {
             case R.id.action_edit_counter:
                 SingleEditDialogFragment counterDialog = new SingleEditDialogFragment();
-                counterDialog.setInitialValue(getmMainCounter());
+                counterDialog.setInitialValue(mData.getMainCounter());
                 counterDialog.setTitle(R.string.action_edit_counter);
                 counterDialog.setListener(new EditCounterDialogListener());
                 counterDialog.show(getActivity().getSupportFragmentManager(), "counter_edit");
                 break;
             case R.id.action_edit_pace:
                 SingleEditDialogFragment paceDialog = new SingleEditDialogFragment();
-                paceDialog.setInitialValue(mPace);
+                paceDialog.setInitialValue(mData.getmPace());
                 paceDialog.setListener(new EditPaceDialogListener());
                 paceDialog.setTitle(R.string.action_edit_pace);
                 paceDialog.show(getActivity().getSupportFragmentManager(), "pace_edit");
@@ -257,6 +169,8 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
                 addDialog.setListener(new AddRepetitionsDialogListener());
                 addDialog.show(getActivity().getSupportFragmentManager(), "add_repetitions");
                 break;
+            case R.id.action_undo:
+                onUndoClick();
         }
         return true;
     }
@@ -266,8 +180,8 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.add_repetitions_button:
-                updateMainCounter(getmMainCounter() + mPace);
-                mDateOfLastPractice = new Date();
+                mData.updateMainCounter(mData.getMainCounter() + mData.getmPace());
+                mData.setmDateOfLastPractice(new Date());
                 computeProjectedFinishDate();
                 refresh();
                 break;
@@ -290,14 +204,21 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         DatePickerFragment frag = new DatePickerFragment();
         frag.setListener(new FinishDateListener());
         Bundle args = new Bundle();
-        args.putLong("date", getProjectedFinishDate().getTime());
+        args.putLong("date", mData.getProjectedFinishDate().getTime());
         frag.setArguments(args);
         frag.show(getActivity().getSupportFragmentManager(), "date_dialog");
     }
 
+    public void onUndoClick() {
+        int currentCount = mData.getMainCounter();
+        mData.setMainCounter(mData.getPreviousCount());
+        mData.setPreviousCount(currentCount);
+        refresh();
+    }
+
     private class SetPaceDialogListener implements PacePickerFragment.OnPaceSelectedListener {
         public void onPaceSelected (int value) {
-            mPace = value;
+            mData.setPace(value);
             computeProjectedFinishDate();
             refresh();
         }
@@ -310,7 +231,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         public void onDateSet(DatePicker datePicker, int year, int month, int day) {
             Calendar c = Calendar.getInstance();
             c.set(year, month, day);
-            setProjectedFinishDate(c.getTime());
+            mData.setProjectedFinishDate(c.getTime());
             computePace();
             if (NyndroFragment.this.getView() != null) {
                 refresh();
@@ -321,7 +242,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     private class EditCounterDialogListener implements SingleEditDialogFragment.SingleEditDialogListener {
         @Override
         public void onSingleEditDialogPositiveClick(int value) {
-            updateMainCounter(value);
+            mData.updateMainCounter(value);
             computeProjectedFinishDate();
             refresh();
         }
@@ -330,7 +251,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     private class EditPaceDialogListener implements SingleEditDialogFragment.SingleEditDialogListener {
         @Override
         public void onSingleEditDialogPositiveClick(int value) {
-            mPace = value;
+            mData.setPace(value);
             computeProjectedFinishDate();
             refresh();
         }
@@ -339,7 +260,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     private class AddRepetitionsDialogListener implements SingleEditDialogFragment.SingleEditDialogListener {
         @Override
         public void onSingleEditDialogPositiveClick(int value) {
-            updateMainCounter(getmMainCounter() + value);
+            mData.updateMainCounter(mData.getMainCounter() + value);
             computeProjectedFinishDate();
             refresh();
         }
@@ -359,21 +280,21 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     private void computeProjectedFinishDate() {
 //      remaining repetitions divided by currently selected pace, plus one day for the remainder
         int remainingDays = 0;
-        if (mPace > 0) {
-             remainingDays = (111111 - getmMainCounter()) / mPace + 1;
+        if (mData.getmPace() > 0) {
+             remainingDays = (111111 - mData.getMainCounter()) / mData.getmPace() + 1;
         }
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DAY_OF_YEAR, remainingDays);
-        mProjectedFinishDate = c.getTime();
+        mData.setmProjectedFinishDate(c.getTime());
     }
 
     protected void computePace() {
         long now = new Date().getTime();
-        long then = mProjectedFinishDate.getTime();
+        long then = mData.getmProjectedFinishDate().getTime();
         int days = (int) ((then - now) / (1000 * 60 * 60 * 24))+1;
-        int pace = (111111 - getmMainCounter()) / days ;
+        int pace = (111111 - mData.getMainCounter()) / days ;
 //        round up to the nearest 100: add 100 - remainder if remainder > 0
-        mPace = pace + (pace % 100 > 0 ? 100 - (pace % 100) : 0);
+        mData.setPace(pace + (pace % 100 > 0 ? 100 - (pace % 100) : 0));
     }
 
     protected void refresh() {
@@ -382,18 +303,18 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         Button plus = (Button) getView().findViewById(R.id.add_repetitions_button);
         Button pace = (Button) getView().findViewById(R.id.pace_button);
         Button date = (Button) getView().findViewById(R.id.date_button);
-        counterView.setText(String.format("%,d", (Integer) getmMainCounter()));
+        counterView.setText(String.format("%,d", (Integer) mData.getMainCounter()));
         NyndroProgressView progressView = (NyndroProgressView) getView().findViewById(R.id.progress);
-        progressView.setCount(mMainCounter);
-        pace.setText("+" + String.valueOf(mPace));
-        dateView.setText(String.format("ostatnio %te %<tB %<tY o %<tH:%<tM", mDateOfLastPractice));
+        progressView.setCount(mData.getMainCounter());
+        pace.setText("+" + String.valueOf(mData.getmPace()));
+        dateView.setText(String.format("ostatnio %te %<tB %<tY o %<tH:%<tM", mData.getmDateOfLastPractice()));
 //        pace.setText(String.valueOf(mPace));
 //        computeProjectedFinishDate();
-        if (mPace != 0 && getmMainCounter() != 111111) {
-            date.setText(String.format("do %te %<tB %<tY", mProjectedFinishDate));
-        } else if (getmMainCounter() == 111111 ) {
+        if (mData.getmPace() != 0 && mData.getMainCounter() != 111111) {
+            date.setText(String.format("do %te %<tB %<tY", mData.getmProjectedFinishDate()));
+        } else if (mData.getMainCounter() == 111111 ) {
             date.setText(R.string.finished);
-        } else if (mPace == 0 ) {
+        } else if (mData.getmPace() == 0 ) {
             date.setText(R.string.never);
         }
 //        paceToDateView.setText(getResources().getString(R.string.prostrations_pace_to_date, mPace, mProjectedFinishDate));

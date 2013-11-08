@@ -13,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
@@ -180,10 +182,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.add_repetitions_button:
-                mData.updateMainCounter(mData.getMainCounter() + mData.getmPace());
-                mData.setmDateOfLastPractice(new Date());
-                computeProjectedFinishDate();
-                refresh();
+                onAddClick();
                 break;
             case R.id.pace_button:
                 onPaceClick(view);
@@ -192,6 +191,18 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
                 onDateClick(view);
                 break;
         }
+    }
+
+    private void onAddClick() {
+        mData.updateMainCounter(mData.getMainCounter() + mData.getmPace());
+        mData.setmDateOfLastPractice(new Date());
+        computeProjectedFinishDate();
+        refresh();
+        TextView feedback = (TextView) getView().findViewById(R.id.feedback);
+        feedback.setText(String.format("+%s", String.valueOf(mData.getmPace())));
+//        feedback.setVisibility(View.VISIBLE);
+        Animation feedbackAnimation = AnimationUtils.loadAnimation(getActivity(), R.anim.add_feedback);
+        feedback.startAnimation(feedbackAnimation);
     }
 
     public void onPaceClick(View view) {

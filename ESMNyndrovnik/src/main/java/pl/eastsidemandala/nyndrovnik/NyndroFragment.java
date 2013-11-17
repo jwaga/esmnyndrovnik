@@ -1,15 +1,18 @@
 package pl.eastsidemandala.nyndrovnik;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,6 +56,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     // Overriden superclass methods
 
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,6 +95,16 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         }
         computeProjectedFinishDate();
         refresh();
+    }
+
+    @Override
+    public void onPrepareOptionsMenu(Menu menu) {
+        super.onPrepareOptionsMenu(menu);
+        if (mData.mUndo.empty()) {
+            menu.findItem(R.id.action_undo).setEnabled(false).setIcon(R.drawable.undo_disabled);
+        } else {
+            menu.findItem(R.id.action_undo).setEnabled(true).setIcon(R.drawable.undo);
+        }
     }
 
     public void updatePracticeLock() {
@@ -139,6 +153,11 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     public void onStop() {
         super.onStop();
         mData.saveData(this);
+        mData.mUndo.clear();
+        Activity a = getActivity();
+        if (a != null && Build.VERSION.SDK_INT >= 11) {
+            a.invalidateOptionsMenu();
+        }
     }
 
     @Override
@@ -195,7 +214,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
 
     private void onAddClick() {
         mData.updateMainCounter(mData.getMainCounter() + mData.getmPace());
-        mData.setmDateOfLastPractice(new Date());
+        mData.setDateOfLastPractice(new Date());
         computeProjectedFinishDate();
         refresh();
         TextView feedback = (TextView) getView().findViewById(R.id.feedback);
@@ -221,10 +240,15 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     }
 
     public void onUndoClick() {
-        int currentCount = mData.getMainCounter();
-        mData.setMainCounter(mData.getPreviousCount());
-        mData.setPreviousCount(currentCount);
-        refresh();
+        if (! mData.mUndo.empty()) {
+                PracticeData.PracticeSession previous = (PracticeData.PracticeSession) mData.mUndo.pop();
+                mData.setMainCounter(previous.counter);
+                mData.setDateOfLastPractice(previous.date);
+            if (Build.VERSION.SDK_INT >= 11) {
+                getActivity().invalidateOptionsMenu();
+            }
+            refresh();
+        }
     }
 
     private class SetPaceDialogListener implements PacePickerFragment.OnPaceSelectedListener {

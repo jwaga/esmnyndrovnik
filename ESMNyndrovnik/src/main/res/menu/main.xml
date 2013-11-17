@@ -6,9 +6,9 @@
     <item android:id="@+id/action_undo"
           android:title="@string/action_undo"
           android:orderInCategory="40"
-          android:showAsAction="always"
+          android:showAsAction="never"
           android:icon="@drawable/undo"
-          android:enabled="true"
+          android:enabled="false"
           />
     <item android:id="@+id/action_edit_counter"
           android:title="@string/action_edit_counter"

@@ -8,17 +8,20 @@
 package pl.eastsidemandala.nyndrovnik;
 
 public final class R {
+    public static final class anim {
+        public static final int add_feedback=0x7f040000;
+    }
     public static final class array {
-        public static final int pace_values=0x7f040000;
+        public static final int pace_values=0x7f050000;
     }
     public static final class attr {
     }
     public static final class color {
-        public static final int pressed=0x7f050000;
+        public static final int pressed=0x7f060000;
     }
     public static final class dimen {
-        public static final int activity_horizontal_margin=0x7f060000;
-        public static final int activity_vertical_margin=0x7f060001;
+        public static final int activity_horizontal_margin=0x7f070000;
+        public static final int activity_vertical_margin=0x7f070001;
     }
     public static final class drawable {
         public static final int add=0x7f020000;
@@ -33,26 +36,28 @@ public final class R {
         public static final int session_length=0x7f020009;
         public static final int transparent_button=0x7f02000a;
         public static final int undo=0x7f02000b;
+        public static final int undo_disabled=0x7f02000c;
     }
     public static final class id {
-        public static final int action_add_repetitions=0x7f0a0011;
-        public static final int action_edit_counter=0x7f0a000f;
-        public static final int action_edit_pace=0x7f0a0010;
-        public static final int action_undo=0x7f0a000e;
-        public static final int add_repetitions_button=0x7f0a0008;
-        public static final int calendarView=0x7f0a000d;
-        public static final int date_button=0x7f0a000b;
-        public static final int date_of_last_practice=0x7f0a0009;
-        public static final int imageView=0x7f0a0003;
-        public static final int info_layout=0x7f0a0005;
-        public static final int lock_text=0x7f0a000c;
-        public static final int main_counter=0x7f0a0007;
-        public static final int main_layout=0x7f0a0000;
-        public static final int pace_button=0x7f0a000a;
-        public static final int pager=0x7f0a0001;
-        public static final int pager_title_strip=0x7f0a0002;
-        public static final int practice_name=0x7f0a0006;
-        public static final int progress=0x7f0a0004;
+        public static final int action_add_repetitions=0x7f0b0012;
+        public static final int action_edit_counter=0x7f0b0010;
+        public static final int action_edit_pace=0x7f0b0011;
+        public static final int action_undo=0x7f0b000f;
+        public static final int add_repetitions_button=0x7f0b0009;
+        public static final int calendarView=0x7f0b000e;
+        public static final int date_button=0x7f0b000c;
+        public static final int date_of_last_practice=0x7f0b000a;
+        public static final int feedback=0x7f0b0008;
+        public static final int imageView=0x7f0b0003;
+        public static final int info_layout=0x7f0b0005;
+        public static final int lock_text=0x7f0b000d;
+        public static final int main_counter=0x7f0b0007;
+        public static final int main_layout=0x7f0b0000;
+        public static final int pace_button=0x7f0b000b;
+        public static final int pager=0x7f0b0001;
+        public static final int pager_title_strip=0x7f0b0002;
+        public static final int practice_name=0x7f0b0006;
+        public static final int progress=0x7f0b0004;
     }
     public static final class layout {
         public static final int main_activity=0x7f030000;
@@ -60,37 +65,37 @@ public final class R {
         public static final int test_layout=0x7f030002;
     }
     public static final class menu {
-        public static final int main=0x7f090000;
+        public static final int main=0x7f0a0000;
     }
     public static final class string {
-        public static final int action_add_repetitions=0x7f070000;
-        public static final int action_edit_counter=0x7f070001;
-        public static final int action_edit_pace=0x7f070002;
-        public static final int action_settings=0x7f070003;
-        public static final int action_undo=0x7f070004;
-        public static final int app_name=0x7f070005;
-        public static final int cancel=0x7f070006;
-        public static final int diamond_mind=0x7f070007;
-        public static final int diamond_mind_short=0x7f070008;
-        public static final int dm_lock=0x7f070009;
-        public static final int finish_date_dialog_title=0x7f07000a;
-        public static final int finish_date_label=0x7f07000b;
-        public static final int finished=0x7f07000c;
-        public static final int guru_yoga=0x7f07000d;
-        public static final int guru_yoga_lock=0x7f07000e;
-        public static final int guru_yoga_short=0x7f07000f;
-        public static final int hello_world=0x7f070010;
-        public static final int last_practice=0x7f070011;
-        public static final int mandala_lock=0x7f070012;
-        public static final int mandala_offering=0x7f070013;
-        public static final int mandala_offering_short=0x7f070014;
-        public static final int never=0x7f070015;
-        public static final int ok=0x7f070016;
-        public static final int pace_label=0x7f070017;
-        public static final int pick_pace=0x7f070018;
-        public static final int prostrations=0x7f070019;
-        public static final int prostrations_pace_to_date=0x7f07001a;
-        public static final int prostrations_short=0x7f07001b;
+        public static final int action_add_repetitions=0x7f080000;
+        public static final int action_edit_counter=0x7f080001;
+        public static final int action_edit_pace=0x7f080002;
+        public static final int action_settings=0x7f080003;
+        public static final int action_undo=0x7f080004;
+        public static final int app_name=0x7f080005;
+        public static final int cancel=0x7f080006;
+        public static final int diamond_mind=0x7f080007;
+        public static final int diamond_mind_short=0x7f080008;
+        public static final int dm_lock=0x7f080009;
+        public static final int finish_date_dialog_title=0x7f08000a;
+        public static final int finish_date_label=0x7f08000b;
+        public static final int finished=0x7f08000c;
+        public static final int guru_yoga=0x7f08000d;
+        public static final int guru_yoga_lock=0x7f08000e;
+        public static final int guru_yoga_short=0x7f08000f;
+        public static final int hello_world=0x7f080010;
+        public static final int last_practice=0x7f080011;
+        public static final int mandala_lock=0x7f080012;
+        public static final int mandala_offering=0x7f080013;
+        public static final int mandala_offering_short=0x7f080014;
+        public static final int never=0x7f080015;
+        public static final int ok=0x7f080016;
+        public static final int pace_label=0x7f080017;
+        public static final int pick_pace=0x7f080018;
+        public static final int prostrations=0x7f080019;
+        public static final int prostrations_pace_to_date=0x7f08001a;
+        public static final int prostrations_short=0x7f08001b;
     }
     public static final class style {
         /** 
@@ -100,11 +105,11 @@ public final class R {
         
  API 11 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f080000;
+        public static final int AppBaseTheme=0x7f090000;
         /**  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f080001;
-        public static final int nyndroButton=0x7f080002;
-        public static final int transparentButton=0x7f080003;
+        public static final int AppTheme=0x7f090001;
+        public static final int nyndroButton=0x7f090002;
+        public static final int transparentButton=0x7f090003;
     }
 }

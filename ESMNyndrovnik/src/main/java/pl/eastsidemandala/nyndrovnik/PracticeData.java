@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 
@@ -11,6 +12,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Stack;
 
 public class PracticeData {
 
@@ -51,6 +53,18 @@ public class PracticeData {
         this.mPreviousCount = mPreviousCount;
     }
 
+    class PracticeSession {
+        int counter;
+        Date date;
+
+        PracticeSession(int counter, Date date) {
+            this.counter = counter;
+            this.date = date;
+        }
+    }
+
+    Stack mUndo = new Stack<PracticeSession>();
+
     int mPreviousCount;
 
     Date mDateOfLastPractice;
@@ -59,7 +73,7 @@ public class PracticeData {
         return mDateOfLastPractice;
     }
 
-    public void setmDateOfLastPractice(Date mDateOfLastPractice) {
+    public void setDateOfLastPractice(Date mDateOfLastPractice) {
         this.mDateOfLastPractice = mDateOfLastPractice;
     }
 
@@ -124,7 +138,10 @@ public class PracticeData {
     }
 
     public void updateMainCounter(int count) {
-        setPreviousCount(getMainCounter());
+        mUndo.push(new PracticeSession(getMainCounter(), getmDateOfLastPractice()));
+        if (Build.VERSION.SDK_INT >= 11) {
+            getActivity().invalidateOptionsMenu();
+        }
         setMainCounter(count);
         this.mUpdated = true;
     }
@@ -173,7 +190,7 @@ public class PracticeData {
         setPreviousCount(prefs.getInt(getPractice() + PREVIOUS_COUNT_KEY, 0));
         setPace(prefs.getInt(getPractice() + PACE_KEY, DEFAULT_PACE));
         long date = prefs.getLong(getPractice() + DATE_OF_LAST_PRACTICE_KEY, 0);
-        setmDateOfLastPractice(new Date());
+        setDateOfLastPractice(new Date());
         if (date > 0) {
             getmDateOfLastPractice().setTime(date); }
     }

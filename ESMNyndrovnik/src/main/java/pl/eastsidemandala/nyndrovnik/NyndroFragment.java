@@ -34,10 +34,10 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
 
 
     public static enum Practice {
-        PROSTRATIONS(R.string.prostrations, R.drawable.rtree),
+        PROSTRATIONS(R.string.prostrations, R.drawable.prostr),
         DIAMOND_MIND(R.string.diamond_mind, R.drawable.dm),
-        MANDALA_OFFERING(R.string.mandala_offering, R.drawable.rtree),
-        GURU_YOGA(R.string.guru_yoga, R.drawable.dm);
+        MANDALA_OFFERING(R.string.mandala_offering, R.drawable.mandala),
+        GURU_YOGA(R.string.guru_yoga, R.drawable.guru);
         int name_res;
         int image_res;
         Practice(int name_res, int image_res) {
@@ -192,11 +192,18 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.action_undo:
                 onUndoClick();
+            case R.id.action_about:
+                actionAbout();
         }
         return true;
     }
 
-//  Event handlers
+    private void actionAbout() {
+        Intent intent = new Intent(getActivity(), AboutActivity.class);
+        startActivity(intent);
+    }
+
+    //  Event handlers
     @Override
     public void onClick(View view) {
         switch (view.getId()) {

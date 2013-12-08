@@ -26,4 +26,5 @@
     <string name="mandala_lock">Kiedy skończysz Diamentowy Umysł, zacznij Podarowanie Mandali</string>
     <string name="guru_yoga_lock">Kiedy skończysz Podarowanie Mandali, zacznij Guru Jogę</string>
     <string name="finish_date_dialog_title">Chcę skończyć do:</string>
+    <string name="action_about">O projekcie ESM…</string>
 </resources>

@@ -17,7 +17,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:id="@+id/imageView"
-                android:src="@drawable/rtree"
+                android:src="@drawable/dm"
                 android:cropToPadding="false"
                 android:scaleType="centerCrop"
                 android:adjustViewBounds="true"

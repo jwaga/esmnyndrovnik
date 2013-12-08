@@ -4,6 +4,7 @@
     <!-- From: file:/Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values-pl/strings.xml -->
     <eat-comment />
 
+    <string name="action_about">O projekcie ESM…</string>
     <string name="action_add_repetitions">Dodaj powtórzenia</string>
     <string name="action_edit_counter">Edytuj licznik</string>
     <string name="action_edit_pace">Ustaw liczbę powtórzeń dziennie</string>

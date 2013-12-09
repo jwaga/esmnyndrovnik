@@ -17,6 +17,7 @@
     <string name="finish_date_dialog_title">Chcę skończyć do:</string>
     <string name="finish_date_label">By skończyć do:</string>
     <string name="finished">Skończone!</string>
+    <string name="good_luck">Powodzenia w praktyce!</string>
     <string name="guru_yoga">powtórzeń Guru Jogi</string>
     <string name="guru_yoga_lock">Kiedy skończysz Podarowanie Mandali, zacznij Guru Jogę</string>
     <string name="guru_yoga_short">GURU JOGA</string>
@@ -31,5 +32,8 @@
     <string name="prostrations">pokłonów</string>
     <string name="prostrations_pace_to_date">Robiąc %1$d pokłonów dziennie,\n skończysz je %2$te %2$tB %2$tY.</string>
     <string name="prostrations_short">POKŁONY</string>
+    <string name="splash_go">Praktykuj!</string>
+    <string name="splash_more">Więcej o ESM...</string>
+    <string name="splash_text">Jeśli polubisz naszą aplikację, wesprzyj nasz projekt.</string>
 
 </resources>

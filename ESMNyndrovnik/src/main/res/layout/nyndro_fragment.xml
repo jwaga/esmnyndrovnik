@@ -126,14 +126,14 @@
                     android:alpha="0.9"
                     android:longClickable="true"
                     android:textStyle="bold"
-                    style="@style/transparentButton"
-                    android:drawableLeft="@drawable/session_length"
+                android:drawableLeft="@drawable/session_length"
                     android:textColorHint="#ffcc00"
                 android:layout_alignLeft="@+id/date_of_last_practice"
                     android:paddingRight="10dp"
                     android:layout_alignParentLeft="false"
                 android:layout_alignParentBottom="false"
-                android:layout_below="@+id/date_of_last_practice"/>
+                android:layout_below="@+id/date_of_last_practice"
+                style="@style/transparentButton" />
 
             <Button
                     android:layout_width="wrap_content"

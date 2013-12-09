@@ -875,8 +875,8 @@ containing a value of this type.
     }
     public static final class id {
         public static final int about_textview=0x7f080043;
-        public static final int action_about=0x7f080057;
-        public static final int action_add_repetitions=0x7f080056;
+        public static final int action_about=0x7f08005d;
+        public static final int action_add_repetitions=0x7f08005c;
         public static final int action_bar=0x7f08001a;
         public static final int action_bar_activity_content=0x7f080014;
         public static final int action_bar_container=0x7f080019;
@@ -885,20 +885,22 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f080021;
         public static final int action_bar_title=0x7f080020;
         public static final int action_context_bar=0x7f08001b;
-        public static final int action_edit_counter=0x7f080054;
-        public static final int action_edit_pace=0x7f080055;
+        public static final int action_edit_counter=0x7f08005a;
+        public static final int action_edit_pace=0x7f08005b;
         public static final int action_menu_divider=0x7f080015;
         public static final int action_menu_presenter=0x7f080016;
         public static final int action_mode_bar=0x7f08002f;
         public static final int action_mode_bar_stub=0x7f08002e;
         public static final int action_mode_close_button=0x7f080022;
-        public static final int action_settings=0x7f080052;
-        public static final int action_undo=0x7f080053;
+        public static final int action_settings=0x7f080058;
+        public static final int action_undo=0x7f080059;
         public static final int activity_chooser_view_content=0x7f080023;
         public static final int add_repetitions_button=0x7f08004c;
         public static final int always=0x7f08000f;
         public static final int beginning=0x7f08000a;
-        public static final int calendarView=0x7f080051;
+        public static final int button=0x7f080054;
+        public static final int button2=0x7f080056;
+        public static final int calendarView=0x7f080057;
         public static final int checkbox=0x7f08002b;
         public static final int collapseActionView=0x7f080011;
         public static final int date_button=0x7f08004f;
@@ -953,9 +955,13 @@ containing a value of this type.
         public static final int showCustom=0x7f080007;
         public static final int showHome=0x7f080004;
         public static final int showTitle=0x7f080006;
+        public static final int space=0x7f080055;
+        public static final int splash_logo=0x7f080051;
+        public static final int splash_text_view=0x7f080053;
         public static final int split_action_bar=0x7f08001c;
         public static final int submit_area=0x7f08003f;
         public static final int tabMode=0x7f080002;
+        public static final int textView=0x7f080052;
         public static final int title=0x7f080029;
         public static final int title_container=0x7f080030;
         public static final int top_action_bar=0x7f08001e;
@@ -995,8 +1001,9 @@ containing a value of this type.
         public static final int fragment_main=0x7f030019;
         public static final int main_activity=0x7f03001a;
         public static final int nyndro_fragment=0x7f03001b;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001c;
-        public static final int test_layout=0x7f03001d;
+        public static final int splash_screen=0x7f03001c;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
+        public static final int test_layout=0x7f03001e;
     }
     public static final class menu {
         public static final int about=0x7f0d0000;
@@ -1031,6 +1038,7 @@ containing a value of this type.
         public static final int finish_date_dialog_title=0x7f0b0019;
         public static final int finish_date_label=0x7f0b001a;
         public static final int finished=0x7f0b001b;
+        public static final int good_luck=0x7f0b002c;
         public static final int guru_yoga=0x7f0b001c;
         public static final int guru_yoga_lock=0x7f0b001d;
         public static final int guru_yoga_short=0x7f0b001e;
@@ -1046,6 +1054,9 @@ containing a value of this type.
         public static final int prostrations=0x7f0b0028;
         public static final int prostrations_pace_to_date=0x7f0b0029;
         public static final int prostrations_short=0x7f0b002a;
+        public static final int splash_go=0x7f0b002d;
+        public static final int splash_more=0x7f0b002e;
+        public static final int splash_text=0x7f0b002f;
         public static final int title_activity_about=0x7f0b002b;
     }
     public static final class style {

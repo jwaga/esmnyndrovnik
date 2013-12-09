@@ -192,8 +192,10 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.action_undo:
                 onUndoClick();
+                break;
             case R.id.action_about:
                 actionAbout();
+                break;
         }
         return true;
     }

@@ -3,15 +3,22 @@ package pl.eastsidemandala.nyndrovnik;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
+import android.view.View;
 
 import pl.eastsidemandala.nyndrovnik.NyndroFragment.Practice;
 
 /**
  * Created by konrad on 13.06.2013.
  */
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends FragmentActivity implements SplashScreen.Splashable {
+    @Override
+    public void closeSplashScreen() {
+        findViewById(R.id.splash_container).setVisibility(View.GONE);
+    }
+
     boolean dmUnlocked, mandalaUnlocked, guruYogaUnlocked;
     Practice mActivePractice;
 
@@ -38,6 +45,13 @@ public class MainActivity extends FragmentActivity {
         pager.setAdapter(adapter);
         pager.setCurrentItem(mActivePractice.ordinal(), true);
 //        }
+        SplashScreen splash = (SplashScreen) getSupportFragmentManager().findFragmentByTag("splash_screen");
+        if (splash == null && savedInstanceState == null) {
+            splash = new SplashScreen();
+            getSupportFragmentManager().beginTransaction().
+                    setTransition(FragmentTransaction.TRANSIT_ENTER_MASK).
+                    add(R.id.splash_container, splash, "splash_screen").commit();
+        }
     }
 
     @Override

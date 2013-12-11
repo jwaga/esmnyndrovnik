@@ -37,7 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/splash_more"
-        android:id="@+id/button"
+        android:id="@+id/splash_button_more"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/space"
         android:layout_alignLeft="@+id/splash_text_view"
@@ -47,8 +47,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/splash_go"
-        android:id="@+id/button2"
-        android:layout_alignTop="@+id/button"
+        android:id="@+id/splash_button_go"
+        android:layout_alignTop="@+id/splash_button_more"
         android:layout_alignRight="@+id/splash_text_view" />
 
     <Space

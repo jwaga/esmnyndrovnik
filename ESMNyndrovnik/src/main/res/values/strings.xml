@@ -24,12 +24,17 @@
     <string name="mandala_offering_short">Mandala</string>
     <string name="guru_yoga">Guru Yoga mantras</string>
     <string name="guru_yoga_short">Guru Yoga</string>
-    <string name="dm_lock">Kiedy zrobisz 30 000 pokłonów, zacznij medytację Diamentowego Umysłu</string>
-    <string name="mandala_lock">Kiedy skończysz Diamentowy Umysł, zacznij Podarowanie Mandali</string>
-    <string name="guru_yoga_lock">Kiedy skończysz Podarowanie Mandali, zacznij\nGuru Jogę</string>
+    <string name="dm_lock">After doing at least 70,000 prostrations, begin Diamond Mind</string>
+    <string name="mandala_lock">After finishing Diamond Mind, begin Mandala Offering</string>
+    <string name="guru_yoga_lock">After finishing Mandala Offering, begin Guru Yoga</string>
     <string name="finish_date_dialog_title">Finish before:</string>
     <string name="action_undo">Undo</string>
-    <string name="title_activity_about">O Projekcie ESM</string>
-    <string name="action_about">About the ESM Project...</string>
-
+    <string name="title_activity_about">About ESM</string>
+    <string name="action_about">About the ESM Project…</string>
+    <string name="good_luck">Good luck in your practice!</string>
+    <string name="splash_text">If you like our app,\nsupport our project</string>
+    <string name="splash_more">About ESM…</string>
+    <string name="splash_go">Practice!</string>
+    <string name="website">http://www.eastsidemandala.pl/eng_index.html</string>
+    <string name="website_button_text">Website</string>
 </resources>

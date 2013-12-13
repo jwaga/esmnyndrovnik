@@ -1,9 +1,8 @@
 package pl.eastsidemandala.nyndrovnik;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +12,7 @@ import android.widget.Button;
 /**
  * Created by konrad on 09.12.2013.
  */
-public class SplashScreen extends Fragment implements View.OnClickListener {
+public class SplashScreen extends DialogFragment implements View.OnClickListener {
     public interface Splashable {
         void closeSplashScreen();
     }
@@ -29,19 +28,17 @@ public class SplashScreen extends Fragment implements View.OnClickListener {
     }
 
 
-    public void close() {
-        FragmentActivity a = getActivity();
-        a.getSupportFragmentManager().beginTransaction().
-                setTransition(FragmentTransaction.TRANSIT_EXIT_MASK).remove(this).commit();
-        ((Splashable) a).closeSplashScreen();
-
-    }
-
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.splash_button_go:
-                close();
+                dismiss();
+                break;
+            case R.id.splash_button_more:
+                Intent intent = new Intent(getActivity(), AboutActivity.class);
+                startActivity(intent);
+                dismiss();
+                break;
 
         }
     }

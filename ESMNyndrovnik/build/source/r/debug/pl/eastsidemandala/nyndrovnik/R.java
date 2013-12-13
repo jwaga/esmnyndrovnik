@@ -924,14 +924,14 @@ containing a value of this type.
         public static final int list_item=0x7f080027;
         public static final int lock_text=0x7f080051;
         public static final int main_counter=0x7f08004b;
-        public static final int main_layout=0x7f080044;
+        public static final int main_layout=0x7f080045;
         public static final int middle=0x7f08000b;
         public static final int never=0x7f08000d;
         public static final int none=0x7f080009;
         public static final int normal=0x7f080000;
         public static final int pace_button=0x7f08004f;
-        public static final int pager=0x7f080045;
-        public static final int pager_title_strip=0x7f080046;
+        public static final int pager=0x7f080046;
+        public static final int pager_title_strip=0x7f080047;
         public static final int practice_name=0x7f08004a;
         public static final int progress=0x7f080048;
         public static final int progress_circular=0x7f080034;
@@ -956,7 +956,6 @@ containing a value of this type.
         public static final int space=0x7f080056;
         public static final int splash_button_go=0x7f080057;
         public static final int splash_button_more=0x7f080055;
-        public static final int splash_container=0x7f080047;
         public static final int splash_logo=0x7f080052;
         public static final int splash_text_view=0x7f080054;
         public static final int split_action_bar=0x7f08001c;
@@ -968,6 +967,7 @@ containing a value of this type.
         public static final int top_action_bar=0x7f08001e;
         public static final int up=0x7f08001f;
         public static final int useLogo=0x7f080003;
+        public static final int website_button=0x7f080044;
         public static final int withText=0x7f080010;
     }
     public static final class integer {
@@ -1039,26 +1039,28 @@ containing a value of this type.
         public static final int finish_date_dialog_title=0x7f0b0019;
         public static final int finish_date_label=0x7f0b001a;
         public static final int finished=0x7f0b001b;
-        public static final int good_luck=0x7f0b002c;
-        public static final int guru_yoga=0x7f0b001c;
-        public static final int guru_yoga_lock=0x7f0b001d;
-        public static final int guru_yoga_short=0x7f0b001e;
-        public static final int hello_world=0x7f0b001f;
-        public static final int last_practice=0x7f0b0020;
-        public static final int mandala_lock=0x7f0b0021;
-        public static final int mandala_offering=0x7f0b0022;
-        public static final int mandala_offering_short=0x7f0b0023;
-        public static final int never=0x7f0b0024;
-        public static final int ok=0x7f0b0025;
-        public static final int pace_label=0x7f0b0026;
-        public static final int pick_pace=0x7f0b0027;
-        public static final int prostrations=0x7f0b0028;
-        public static final int prostrations_pace_to_date=0x7f0b0029;
-        public static final int prostrations_short=0x7f0b002a;
-        public static final int splash_go=0x7f0b002d;
-        public static final int splash_more=0x7f0b002e;
-        public static final int splash_text=0x7f0b002f;
-        public static final int title_activity_about=0x7f0b002b;
+        public static final int good_luck=0x7f0b001c;
+        public static final int guru_yoga=0x7f0b001d;
+        public static final int guru_yoga_lock=0x7f0b001e;
+        public static final int guru_yoga_short=0x7f0b001f;
+        public static final int hello_world=0x7f0b0020;
+        public static final int last_practice=0x7f0b0021;
+        public static final int mandala_lock=0x7f0b0022;
+        public static final int mandala_offering=0x7f0b0023;
+        public static final int mandala_offering_short=0x7f0b0024;
+        public static final int never=0x7f0b0025;
+        public static final int ok=0x7f0b0026;
+        public static final int pace_label=0x7f0b0027;
+        public static final int pick_pace=0x7f0b0028;
+        public static final int prostrations=0x7f0b0029;
+        public static final int prostrations_pace_to_date=0x7f0b002a;
+        public static final int prostrations_short=0x7f0b002b;
+        public static final int splash_go=0x7f0b002c;
+        public static final int splash_more=0x7f0b002d;
+        public static final int splash_text=0x7f0b002e;
+        public static final int title_activity_about=0x7f0b002f;
+        public static final int website=0x7f0b0030;
+        public static final int website_button_text=0x7f0b0031;
     }
     public static final class style {
         /** 
@@ -1209,27 +1211,27 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ActionBar_background pl.eastsidemandala.nyndrovnik:background}</code></td><td> Specifies a background drawable for the action bar.</td></tr>
-           <tr><td><code>{@link #ActionBar_backgroundSplit pl.eastsidemandala.nyndrovnik:backgroundSplit}</code></td><td> Specifies a background drawable for the bottom component of a split action bar.</td></tr>
-           <tr><td><code>{@link #ActionBar_backgroundStacked pl.eastsidemandala.nyndrovnik:backgroundStacked}</code></td><td> Specifies a background drawable for a second stacked row of the action bar.</td></tr>
-           <tr><td><code>{@link #ActionBar_customNavigationLayout pl.eastsidemandala.nyndrovnik:customNavigationLayout}</code></td><td> Specifies a layout for custom navigation.</td></tr>
-           <tr><td><code>{@link #ActionBar_displayOptions pl.eastsidemandala.nyndrovnik:displayOptions}</code></td><td> Options affecting how the action bar is displayed.</td></tr>
-           <tr><td><code>{@link #ActionBar_divider pl.eastsidemandala.nyndrovnik:divider}</code></td><td> Specifies the drawable used for item dividers.</td></tr>
-           <tr><td><code>{@link #ActionBar_height pl.eastsidemandala.nyndrovnik:height}</code></td><td> Specifies a fixed height.</td></tr>
-           <tr><td><code>{@link #ActionBar_homeLayout pl.eastsidemandala.nyndrovnik:homeLayout}</code></td><td> Specifies a layout to use for the "home" section of the action bar.</td></tr>
-           <tr><td><code>{@link #ActionBar_icon pl.eastsidemandala.nyndrovnik:icon}</code></td><td> Specifies the drawable used for the application icon.</td></tr>
-           <tr><td><code>{@link #ActionBar_indeterminateProgressStyle pl.eastsidemandala.nyndrovnik:indeterminateProgressStyle}</code></td><td> Specifies a style resource to use for an indeterminate progress spinner.</td></tr>
-           <tr><td><code>{@link #ActionBar_itemPadding pl.eastsidemandala.nyndrovnik:itemPadding}</code></td><td>
+           <tr><td><code>{@link #ActionBar_background pl.eastsidemandala.nyndrovnik.debug:background}</code></td><td> Specifies a background drawable for the action bar.</td></tr>
+           <tr><td><code>{@link #ActionBar_backgroundSplit pl.eastsidemandala.nyndrovnik.debug:backgroundSplit}</code></td><td> Specifies a background drawable for the bottom component of a split action bar.</td></tr>
+           <tr><td><code>{@link #ActionBar_backgroundStacked pl.eastsidemandala.nyndrovnik.debug:backgroundStacked}</code></td><td> Specifies a background drawable for a second stacked row of the action bar.</td></tr>
+           <tr><td><code>{@link #ActionBar_customNavigationLayout pl.eastsidemandala.nyndrovnik.debug:customNavigationLayout}</code></td><td> Specifies a layout for custom navigation.</td></tr>
+           <tr><td><code>{@link #ActionBar_displayOptions pl.eastsidemandala.nyndrovnik.debug:displayOptions}</code></td><td> Options affecting how the action bar is displayed.</td></tr>
+           <tr><td><code>{@link #ActionBar_divider pl.eastsidemandala.nyndrovnik.debug:divider}</code></td><td> Specifies the drawable used for item dividers.</td></tr>
+           <tr><td><code>{@link #ActionBar_height pl.eastsidemandala.nyndrovnik.debug:height}</code></td><td> Specifies a fixed height.</td></tr>
+           <tr><td><code>{@link #ActionBar_homeLayout pl.eastsidemandala.nyndrovnik.debug:homeLayout}</code></td><td> Specifies a layout to use for the "home" section of the action bar.</td></tr>
+           <tr><td><code>{@link #ActionBar_icon pl.eastsidemandala.nyndrovnik.debug:icon}</code></td><td> Specifies the drawable used for the application icon.</td></tr>
+           <tr><td><code>{@link #ActionBar_indeterminateProgressStyle pl.eastsidemandala.nyndrovnik.debug:indeterminateProgressStyle}</code></td><td> Specifies a style resource to use for an indeterminate progress spinner.</td></tr>
+           <tr><td><code>{@link #ActionBar_itemPadding pl.eastsidemandala.nyndrovnik.debug:itemPadding}</code></td><td>
              Specifies padding that should be applied to the left and right sides of
              system-provided items in the bar.</td></tr>
-           <tr><td><code>{@link #ActionBar_logo pl.eastsidemandala.nyndrovnik:logo}</code></td><td> Specifies the drawable used for the application logo.</td></tr>
-           <tr><td><code>{@link #ActionBar_navigationMode pl.eastsidemandala.nyndrovnik:navigationMode}</code></td><td> The type of navigation to use.</td></tr>
-           <tr><td><code>{@link #ActionBar_progressBarPadding pl.eastsidemandala.nyndrovnik:progressBarPadding}</code></td><td> Specifies the horizontal padding on either end for an embedded progress bar.</td></tr>
-           <tr><td><code>{@link #ActionBar_progressBarStyle pl.eastsidemandala.nyndrovnik:progressBarStyle}</code></td><td> Specifies a style resource to use for an embedded progress bar.</td></tr>
-           <tr><td><code>{@link #ActionBar_subtitle pl.eastsidemandala.nyndrovnik:subtitle}</code></td><td> Specifies subtitle text used for navigationMode="normal" </td></tr>
-           <tr><td><code>{@link #ActionBar_subtitleTextStyle pl.eastsidemandala.nyndrovnik:subtitleTextStyle}</code></td><td> Specifies a style to use for subtitle text.</td></tr>
-           <tr><td><code>{@link #ActionBar_title pl.eastsidemandala.nyndrovnik:title}</code></td><td> Specifies title text used for navigationMode="normal" </td></tr>
-           <tr><td><code>{@link #ActionBar_titleTextStyle pl.eastsidemandala.nyndrovnik:titleTextStyle}</code></td><td> Specifies a style to use for title text.</td></tr>
+           <tr><td><code>{@link #ActionBar_logo pl.eastsidemandala.nyndrovnik.debug:logo}</code></td><td> Specifies the drawable used for the application logo.</td></tr>
+           <tr><td><code>{@link #ActionBar_navigationMode pl.eastsidemandala.nyndrovnik.debug:navigationMode}</code></td><td> The type of navigation to use.</td></tr>
+           <tr><td><code>{@link #ActionBar_progressBarPadding pl.eastsidemandala.nyndrovnik.debug:progressBarPadding}</code></td><td> Specifies the horizontal padding on either end for an embedded progress bar.</td></tr>
+           <tr><td><code>{@link #ActionBar_progressBarStyle pl.eastsidemandala.nyndrovnik.debug:progressBarStyle}</code></td><td> Specifies a style resource to use for an embedded progress bar.</td></tr>
+           <tr><td><code>{@link #ActionBar_subtitle pl.eastsidemandala.nyndrovnik.debug:subtitle}</code></td><td> Specifies subtitle text used for navigationMode="normal" </td></tr>
+           <tr><td><code>{@link #ActionBar_subtitleTextStyle pl.eastsidemandala.nyndrovnik.debug:subtitleTextStyle}</code></td><td> Specifies a style to use for subtitle text.</td></tr>
+           <tr><td><code>{@link #ActionBar_title pl.eastsidemandala.nyndrovnik.debug:title}</code></td><td> Specifies title text used for navigationMode="normal" </td></tr>
+           <tr><td><code>{@link #ActionBar_titleTextStyle pl.eastsidemandala.nyndrovnik.debug:titleTextStyle}</code></td><td> Specifies a style to use for title text.</td></tr>
            </table>
            @see #ActionBar_background
            @see #ActionBar_backgroundSplit
@@ -1544,7 +1546,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ActionBarLayout_android_layout_gravity pl.eastsidemandala.nyndrovnik:android_layout_gravity}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBarLayout_android_layout_gravity pl.eastsidemandala.nyndrovnik.debug:android_layout_gravity}</code></td><td></td></tr>
            </table>
            @see #ActionBarLayout_android_layout_gravity
          */
@@ -1552,7 +1554,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x010100b3
         };
         /**
-          <p>This symbol is the offset where the {@link pl.eastsidemandala.nyndrovnik.R.attr#android_layout_gravity}
+          <p>This symbol is the offset where the {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_layout_gravity}
           attribute's value can be found in the {@link #ActionBarLayout} array.
           @attr name android:android_layout_gravity
         */
@@ -1563,9 +1565,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ActionBarWindow_windowActionBar pl.eastsidemandala.nyndrovnik:windowActionBar}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBarWindow_windowActionBarOverlay pl.eastsidemandala.nyndrovnik:windowActionBarOverlay}</code></td><td></td></tr>
-           <tr><td><code>{@link #ActionBarWindow_windowSplitActionBar pl.eastsidemandala.nyndrovnik:windowSplitActionBar}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBarWindow_windowActionBar pl.eastsidemandala.nyndrovnik.debug:windowActionBar}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBarWindow_windowActionBarOverlay pl.eastsidemandala.nyndrovnik.debug:windowActionBarOverlay}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionBarWindow_windowSplitActionBar pl.eastsidemandala.nyndrovnik.debug:windowSplitActionBar}</code></td><td></td></tr>
            </table>
            @see #ActionBarWindow_windowActionBar
            @see #ActionBarWindow_windowActionBarOverlay
@@ -1575,7 +1577,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
             0x7f010050, 0x7f010051, 0x7f010052
         };
         /**
-          <p>This symbol is the offset where the {@link pl.eastsidemandala.nyndrovnik.R.attr#windowActionBar}
+          <p>This symbol is the offset where the {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#windowActionBar}
           attribute's value can be found in the {@link #ActionBarWindow} array.
 
 
@@ -1589,7 +1591,7 @@ containing a value of this type.
         */
         public static final int ActionBarWindow_windowActionBar = 0;
         /**
-          <p>This symbol is the offset where the {@link pl.eastsidemandala.nyndrovnik.R.attr#windowActionBarOverlay}
+          <p>This symbol is the offset where the {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#windowActionBarOverlay}
           attribute's value can be found in the {@link #ActionBarWindow} array.
 
 
@@ -1603,7 +1605,7 @@ containing a value of this type.
         */
         public static final int ActionBarWindow_windowActionBarOverlay = 1;
         /**
-          <p>This symbol is the offset where the {@link pl.eastsidemandala.nyndrovnik.R.attr#windowSplitActionBar}
+          <p>This symbol is the offset where the {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#windowSplitActionBar}
           attribute's value can be found in the {@link #ActionBarWindow} array.
 
 
@@ -1622,7 +1624,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ActionMenuItemView_android_minWidth pl.eastsidemandala.nyndrovnik:android_minWidth}</code></td><td></td></tr>
+           <tr><td><code>{@link #ActionMenuItemView_android_minWidth pl.eastsidemandala.nyndrovnik.debug:android_minWidth}</code></td><td></td></tr>
            </table>
            @see #ActionMenuItemView_android_minWidth
          */
@@ -1630,7 +1632,7 @@ containing a value of this type.
             0x0101013f
         };
         /**
-          <p>This symbol is the offset where the {@link pl.eastsidemandala.nyndrovnik.R.attr#android_minWidth}
+          <p>This symbol is the offset where the {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_minWidth}
           attribute's value can be found in the {@link #ActionMenuItemView} array.
           @attr name android:android_minWidth
         */
@@ -1646,11 +1648,11 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ActionMode_background pl.eastsidemandala.nyndrovnik:background}</code></td><td> Specifies a background for the action mode bar.</td></tr>
-           <tr><td><code>{@link #ActionMode_backgroundSplit pl.eastsidemandala.nyndrovnik:backgroundSplit}</code></td><td> Specifies a background for the split action mode bar.</td></tr>
-           <tr><td><code>{@link #ActionMode_height pl.eastsidemandala.nyndrovnik:height}</code></td><td> Specifies a fixed height for the action mode bar.</td></tr>
-           <tr><td><code>{@link #ActionMode_subtitleTextStyle pl.eastsidemandala.nyndrovnik:subtitleTextStyle}</code></td><td> Specifies a style to use for subtitle text.</td></tr>
-           <tr><td><code>{@link #ActionMode_titleTextStyle pl.eastsidemandala.nyndrovnik:titleTextStyle}</code></td><td> Specifies a style to use for title text.</td></tr>
+           <tr><td><code>{@link #ActionMode_background pl.eastsidemandala.nyndrovnik.debug:background}</code></td><td> Specifies a background for the action mode bar.</td></tr>
+           <tr><td><code>{@link #ActionMode_backgroundSplit pl.eastsidemandala.nyndrovnik.debug:backgroundSplit}</code></td><td> Specifies a background for the split action mode bar.</td></tr>
+           <tr><td><code>{@link #ActionMode_height pl.eastsidemandala.nyndrovnik.debug:height}</code></td><td> Specifies a fixed height for the action mode bar.</td></tr>
+           <tr><td><code>{@link #ActionMode_subtitleTextStyle pl.eastsidemandala.nyndrovnik.debug:subtitleTextStyle}</code></td><td> Specifies a style to use for subtitle text.</td></tr>
+           <tr><td><code>{@link #ActionMode_titleTextStyle pl.eastsidemandala.nyndrovnik.debug:titleTextStyle}</code></td><td> Specifies a style to use for title text.</td></tr>
            </table>
            @see #ActionMode_background
            @see #ActionMode_backgroundSplit
@@ -1736,9 +1738,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #ActivityChooserView_expandActivityOverflowButtonDrawable pl.eastsidemandala.nyndrovnik:expandActivityOverflowButtonDrawable}</code></td><td>
+           <tr><td><code>{@link #ActivityChooserView_expandActivityOverflowButtonDrawable pl.eastsidemandala.nyndrovnik.debug:expandActivityOverflowButtonDrawable}</code></td><td>
              The drawable to show in the button for expanding the activities overflow popup.</td></tr>
-           <tr><td><code>{@link #ActivityChooserView_initialActivityCount pl.eastsidemandala.nyndrovnik:initialActivityCount}</code></td><td> The maximal number of items initially shown in the activity list.</td></tr>
+           <tr><td><code>{@link #ActivityChooserView_initialActivityCount pl.eastsidemandala.nyndrovnik.debug:initialActivityCount}</code></td><td> The maximal number of items initially shown in the activity list.</td></tr>
            </table>
            @see #ActivityChooserView_expandActivityOverflowButtonDrawable
            @see #ActivityChooserView_initialActivityCount
@@ -1786,7 +1788,7 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #CompatTextView_textAllCaps pl.eastsidemandala.nyndrovnik:textAllCaps}</code></td><td> Present the text in ALL CAPS.</td></tr>
+           <tr><td><code>{@link #CompatTextView_textAllCaps pl.eastsidemandala.nyndrovnik.debug:textAllCaps}</code></td><td> Present the text in ALL CAPS.</td></tr>
            </table>
            @see #CompatTextView_textAllCaps
          */
@@ -1812,9 +1814,9 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #LinearLayoutICS_divider pl.eastsidemandala.nyndrovnik:divider}</code></td><td> Drawable to use as a vertical divider between buttons.</td></tr>
-           <tr><td><code>{@link #LinearLayoutICS_dividerPadding pl.eastsidemandala.nyndrovnik:dividerPadding}</code></td><td> Size of padding on either end of a divider.</td></tr>
-           <tr><td><code>{@link #LinearLayoutICS_showDividers pl.eastsidemandala.nyndrovnik:showDividers}</code></td><td> Setting for which dividers to show.</td></tr>
+           <tr><td><code>{@link #LinearLayoutICS_divider pl.eastsidemandala.nyndrovnik.debug:divider}</code></td><td> Drawable to use as a vertical divider between buttons.</td></tr>
+           <tr><td><code>{@link #LinearLayoutICS_dividerPadding pl.eastsidemandala.nyndrovnik.debug:dividerPadding}</code></td><td> Size of padding on either end of a divider.</td></tr>
+           <tr><td><code>{@link #LinearLayoutICS_showDividers pl.eastsidemandala.nyndrovnik.debug:showDividers}</code></td><td> Setting for which dividers to show.</td></tr>
            </table>
            @see #LinearLayoutICS_divider
            @see #LinearLayoutICS_dividerPadding
@@ -1880,14 +1882,14 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #MenuGroup_android_checkableBehavior pl.eastsidemandala.nyndrovnik:android_checkableBehavior}</code></td><td> Whether the items are capable of displaying a check mark.</td></tr>
-           <tr><td><code>{@link #MenuGroup_android_enabled pl.eastsidemandala.nyndrovnik:android_enabled}</code></td><td> Whether the items are enabled.</td></tr>
-           <tr><td><code>{@link #MenuGroup_android_id pl.eastsidemandala.nyndrovnik:android_id}</code></td><td> The ID of the group.</td></tr>
-           <tr><td><code>{@link #MenuGroup_android_menuCategory pl.eastsidemandala.nyndrovnik:android_menuCategory}</code></td><td>
+           <tr><td><code>{@link #MenuGroup_android_checkableBehavior pl.eastsidemandala.nyndrovnik.debug:android_checkableBehavior}</code></td><td> Whether the items are capable of displaying a check mark.</td></tr>
+           <tr><td><code>{@link #MenuGroup_android_enabled pl.eastsidemandala.nyndrovnik.debug:android_enabled}</code></td><td> Whether the items are enabled.</td></tr>
+           <tr><td><code>{@link #MenuGroup_android_id pl.eastsidemandala.nyndrovnik.debug:android_id}</code></td><td> The ID of the group.</td></tr>
+           <tr><td><code>{@link #MenuGroup_android_menuCategory pl.eastsidemandala.nyndrovnik.debug:android_menuCategory}</code></td><td>
              The category applied to all items within this group.</td></tr>
-           <tr><td><code>{@link #MenuGroup_android_orderInCategory pl.eastsidemandala.nyndrovnik:android_orderInCategory}</code></td><td>
+           <tr><td><code>{@link #MenuGroup_android_orderInCategory pl.eastsidemandala.nyndrovnik.debug:android_orderInCategory}</code></td><td>
              The order within the category applied to all items within this group.</td></tr>
-           <tr><td><code>{@link #MenuGroup_android_visible pl.eastsidemandala.nyndrovnik:android_visible}</code></td><td> Whether the items are shown/visible.</td></tr>
+           <tr><td><code>{@link #MenuGroup_android_visible pl.eastsidemandala.nyndrovnik.debug:android_visible}</code></td><td> Whether the items are shown/visible.</td></tr>
            </table>
            @see #MenuGroup_android_checkableBehavior
            @see #MenuGroup_android_enabled
@@ -1904,7 +1906,7 @@ containing a value of this type.
           <p>
           @attr description
            Whether the items are capable of displaying a check mark. 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_checkableBehavior}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_checkableBehavior}.
           @attr name android:android_checkableBehavior
         */
         public static final int MenuGroup_android_checkableBehavior = 5;
@@ -1912,7 +1914,7 @@ containing a value of this type.
           <p>
           @attr description
            Whether the items are enabled. 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_enabled}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_enabled}.
           @attr name android:android_enabled
         */
         public static final int MenuGroup_android_enabled = 0;
@@ -1920,7 +1922,7 @@ containing a value of this type.
           <p>
           @attr description
            The ID of the group. 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_id}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_id}.
           @attr name android:android_id
         */
         public static final int MenuGroup_android_id = 1;
@@ -1931,7 +1933,7 @@ containing a value of this type.
              The category applied to all items within this group.
              (This will be or'ed with the orderInCategory attribute.)
         
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_menuCategory}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_menuCategory}.
           @attr name android:android_menuCategory
         */
         public static final int MenuGroup_android_menuCategory = 3;
@@ -1942,7 +1944,7 @@ containing a value of this type.
              The order within the category applied to all items within this group.
              (This will be or'ed with the category attribute.)
         
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_orderInCategory}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_orderInCategory}.
           @attr name android:android_orderInCategory
         */
         public static final int MenuGroup_android_orderInCategory = 4;
@@ -1950,7 +1952,7 @@ containing a value of this type.
           <p>
           @attr description
            Whether the items are shown/visible. 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_visible}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_visible}.
           @attr name android:android_visible
         */
         public static final int MenuGroup_android_visible = 2;
@@ -1960,37 +1962,37 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #MenuItem_actionLayout pl.eastsidemandala.nyndrovnik:actionLayout}</code></td><td>
+           <tr><td><code>{@link #MenuItem_actionLayout pl.eastsidemandala.nyndrovnik.debug:actionLayout}</code></td><td>
              An optional layout to be used as an action view.</td></tr>
-           <tr><td><code>{@link #MenuItem_actionProviderClass pl.eastsidemandala.nyndrovnik:actionProviderClass}</code></td><td>
+           <tr><td><code>{@link #MenuItem_actionProviderClass pl.eastsidemandala.nyndrovnik.debug:actionProviderClass}</code></td><td>
              The name of an optional ActionProvider class to instantiate an action view
              and perform operations such as default action for that menu item.</td></tr>
-           <tr><td><code>{@link #MenuItem_actionViewClass pl.eastsidemandala.nyndrovnik:actionViewClass}</code></td><td>
+           <tr><td><code>{@link #MenuItem_actionViewClass pl.eastsidemandala.nyndrovnik.debug:actionViewClass}</code></td><td>
              The name of an optional View class to instantiate and use as an
              action view.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_alphabeticShortcut pl.eastsidemandala.nyndrovnik:android_alphabeticShortcut}</code></td><td>
+           <tr><td><code>{@link #MenuItem_android_alphabeticShortcut pl.eastsidemandala.nyndrovnik.debug:android_alphabeticShortcut}</code></td><td>
              The alphabetic shortcut key.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_checkable pl.eastsidemandala.nyndrovnik:android_checkable}</code></td><td> Whether the item is capable of displaying a check mark.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_checked pl.eastsidemandala.nyndrovnik:android_checked}</code></td><td>
+           <tr><td><code>{@link #MenuItem_android_checkable pl.eastsidemandala.nyndrovnik.debug:android_checkable}</code></td><td> Whether the item is capable of displaying a check mark.</td></tr>
+           <tr><td><code>{@link #MenuItem_android_checked pl.eastsidemandala.nyndrovnik.debug:android_checked}</code></td><td>
              Whether the item is checked.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_enabled pl.eastsidemandala.nyndrovnik:android_enabled}</code></td><td> Whether the item is enabled.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_icon pl.eastsidemandala.nyndrovnik:android_icon}</code></td><td>
+           <tr><td><code>{@link #MenuItem_android_enabled pl.eastsidemandala.nyndrovnik.debug:android_enabled}</code></td><td> Whether the item is enabled.</td></tr>
+           <tr><td><code>{@link #MenuItem_android_icon pl.eastsidemandala.nyndrovnik.debug:android_icon}</code></td><td>
              The icon associated with this item.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_id pl.eastsidemandala.nyndrovnik:android_id}</code></td><td> The ID of the item.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_menuCategory pl.eastsidemandala.nyndrovnik:android_menuCategory}</code></td><td>
+           <tr><td><code>{@link #MenuItem_android_id pl.eastsidemandala.nyndrovnik.debug:android_id}</code></td><td> The ID of the item.</td></tr>
+           <tr><td><code>{@link #MenuItem_android_menuCategory pl.eastsidemandala.nyndrovnik.debug:android_menuCategory}</code></td><td>
              The category applied to the item.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_numericShortcut pl.eastsidemandala.nyndrovnik:android_numericShortcut}</code></td><td>
+           <tr><td><code>{@link #MenuItem_android_numericShortcut pl.eastsidemandala.nyndrovnik.debug:android_numericShortcut}</code></td><td>
              The numeric shortcut key.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_onClick pl.eastsidemandala.nyndrovnik:android_onClick}</code></td><td>
+           <tr><td><code>{@link #MenuItem_android_onClick pl.eastsidemandala.nyndrovnik.debug:android_onClick}</code></td><td>
              Name of a method on the Context used to inflate the menu that will be
              called when the item is clicked.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_orderInCategory pl.eastsidemandala.nyndrovnik:android_orderInCategory}</code></td><td>
+           <tr><td><code>{@link #MenuItem_android_orderInCategory pl.eastsidemandala.nyndrovnik.debug:android_orderInCategory}</code></td><td>
              The order within the category applied to the item.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_title pl.eastsidemandala.nyndrovnik:android_title}</code></td><td> The title associated with the item.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_titleCondensed pl.eastsidemandala.nyndrovnik:android_titleCondensed}</code></td><td>
+           <tr><td><code>{@link #MenuItem_android_title pl.eastsidemandala.nyndrovnik.debug:android_title}</code></td><td> The title associated with the item.</td></tr>
+           <tr><td><code>{@link #MenuItem_android_titleCondensed pl.eastsidemandala.nyndrovnik.debug:android_titleCondensed}</code></td><td>
              The condensed title associated with the item.</td></tr>
-           <tr><td><code>{@link #MenuItem_android_visible pl.eastsidemandala.nyndrovnik:android_visible}</code></td><td> Whether the item is shown/visible.</td></tr>
-           <tr><td><code>{@link #MenuItem_showAsAction pl.eastsidemandala.nyndrovnik:showAsAction}</code></td><td> How this item should display in the Action Bar, if present.</td></tr>
+           <tr><td><code>{@link #MenuItem_android_visible pl.eastsidemandala.nyndrovnik.debug:android_visible}</code></td><td> Whether the item is shown/visible.</td></tr>
+           <tr><td><code>{@link #MenuItem_showAsAction pl.eastsidemandala.nyndrovnik.debug:showAsAction}</code></td><td> How this item should display in the Action Bar, if present.</td></tr>
            </table>
            @see #MenuItem_actionLayout
            @see #MenuItem_actionProviderClass
@@ -2081,7 +2083,7 @@ containing a value of this type.
              The alphabetic shortcut key.  This is the shortcut when using a keyboard
              with alphabetic keys.
         
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_alphabeticShortcut}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_alphabeticShortcut}.
           @attr name android:android_alphabeticShortcut
         */
         public static final int MenuItem_android_alphabeticShortcut = 9;
@@ -2089,7 +2091,7 @@ containing a value of this type.
           <p>
           @attr description
            Whether the item is capable of displaying a check mark. 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_checkable}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_checkable}.
           @attr name android:android_checkable
         */
         public static final int MenuItem_android_checkable = 11;
@@ -2100,7 +2102,7 @@ containing a value of this type.
              Whether the item is checked.  Note that you must first have enabled checking with
              the checkable attribute or else the check mark will not appear.
         
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_checked}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_checked}.
           @attr name android:android_checked
         */
         public static final int MenuItem_android_checked = 3;
@@ -2108,7 +2110,7 @@ containing a value of this type.
           <p>
           @attr description
            Whether the item is enabled. 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_enabled}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_enabled}.
           @attr name android:android_enabled
         */
         public static final int MenuItem_android_enabled = 1;
@@ -2119,7 +2121,7 @@ containing a value of this type.
              The icon associated with this item.  This icon will not always be shown, so
              the title should be sufficient in describing this item.
         
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_icon}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_icon}.
           @attr name android:android_icon
         */
         public static final int MenuItem_android_icon = 0;
@@ -2127,7 +2129,7 @@ containing a value of this type.
           <p>
           @attr description
            The ID of the item. 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_id}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_id}.
           @attr name android:android_id
         */
         public static final int MenuItem_android_id = 2;
@@ -2138,7 +2140,7 @@ containing a value of this type.
              The category applied to the item.
              (This will be or'ed with the orderInCategory attribute.)
         
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_menuCategory}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_menuCategory}.
           @attr name android:android_menuCategory
         */
         public static final int MenuItem_android_menuCategory = 5;
@@ -2149,7 +2151,7 @@ containing a value of this type.
              The numeric shortcut key.  This is the shortcut when using a numeric (e.g., 12-key)
              keyboard.
         
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_numericShortcut}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_numericShortcut}.
           @attr name android:android_numericShortcut
         */
         public static final int MenuItem_android_numericShortcut = 10;
@@ -2160,7 +2162,7 @@ containing a value of this type.
              Name of a method on the Context used to inflate the menu that will be
              called when the item is clicked.
         
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_onClick}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_onClick}.
           @attr name android:android_onClick
         */
         public static final int MenuItem_android_onClick = 12;
@@ -2171,7 +2173,7 @@ containing a value of this type.
              The order within the category applied to the item.
              (This will be or'ed with the category attribute.)
         
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_orderInCategory}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_orderInCategory}.
           @attr name android:android_orderInCategory
         */
         public static final int MenuItem_android_orderInCategory = 6;
@@ -2179,7 +2181,7 @@ containing a value of this type.
           <p>
           @attr description
            The title associated with the item. 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_title}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_title}.
           @attr name android:android_title
         */
         public static final int MenuItem_android_title = 7;
@@ -2190,7 +2192,7 @@ containing a value of this type.
              The condensed title associated with the item.  This is used in situations where the
              normal title may be too long to be displayed.
         
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_titleCondensed}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_titleCondensed}.
           @attr name android:android_titleCondensed
         */
         public static final int MenuItem_android_titleCondensed = 8;
@@ -2198,7 +2200,7 @@ containing a value of this type.
           <p>
           @attr description
            Whether the item is shown/visible. 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_visible}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_visible}.
           @attr name android:android_visible
         */
         public static final int MenuItem_android_visible = 4;
@@ -2249,14 +2251,14 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #MenuView_android_headerBackground pl.eastsidemandala.nyndrovnik:android_headerBackground}</code></td><td> Default background for the menu header.</td></tr>
-           <tr><td><code>{@link #MenuView_android_horizontalDivider pl.eastsidemandala.nyndrovnik:android_horizontalDivider}</code></td><td> Default horizontal divider between rows of menu items.</td></tr>
-           <tr><td><code>{@link #MenuView_android_itemBackground pl.eastsidemandala.nyndrovnik:android_itemBackground}</code></td><td> Default background for each menu item.</td></tr>
-           <tr><td><code>{@link #MenuView_android_itemIconDisabledAlpha pl.eastsidemandala.nyndrovnik:android_itemIconDisabledAlpha}</code></td><td> Default disabled icon alpha for each menu item that shows an icon.</td></tr>
-           <tr><td><code>{@link #MenuView_android_itemTextAppearance pl.eastsidemandala.nyndrovnik:android_itemTextAppearance}</code></td><td> Default appearance of menu item text.</td></tr>
-           <tr><td><code>{@link #MenuView_android_preserveIconSpacing pl.eastsidemandala.nyndrovnik:android_preserveIconSpacing}</code></td><td> Whether space should be reserved in layout when an icon is missing.</td></tr>
-           <tr><td><code>{@link #MenuView_android_verticalDivider pl.eastsidemandala.nyndrovnik:android_verticalDivider}</code></td><td> Default vertical divider between menu items.</td></tr>
-           <tr><td><code>{@link #MenuView_android_windowAnimationStyle pl.eastsidemandala.nyndrovnik:android_windowAnimationStyle}</code></td><td> Default animations for the menu.</td></tr>
+           <tr><td><code>{@link #MenuView_android_headerBackground pl.eastsidemandala.nyndrovnik.debug:android_headerBackground}</code></td><td> Default background for the menu header.</td></tr>
+           <tr><td><code>{@link #MenuView_android_horizontalDivider pl.eastsidemandala.nyndrovnik.debug:android_horizontalDivider}</code></td><td> Default horizontal divider between rows of menu items.</td></tr>
+           <tr><td><code>{@link #MenuView_android_itemBackground pl.eastsidemandala.nyndrovnik.debug:android_itemBackground}</code></td><td> Default background for each menu item.</td></tr>
+           <tr><td><code>{@link #MenuView_android_itemIconDisabledAlpha pl.eastsidemandala.nyndrovnik.debug:android_itemIconDisabledAlpha}</code></td><td> Default disabled icon alpha for each menu item that shows an icon.</td></tr>
+           <tr><td><code>{@link #MenuView_android_itemTextAppearance pl.eastsidemandala.nyndrovnik.debug:android_itemTextAppearance}</code></td><td> Default appearance of menu item text.</td></tr>
+           <tr><td><code>{@link #MenuView_android_preserveIconSpacing pl.eastsidemandala.nyndrovnik.debug:android_preserveIconSpacing}</code></td><td> Whether space should be reserved in layout when an icon is missing.</td></tr>
+           <tr><td><code>{@link #MenuView_android_verticalDivider pl.eastsidemandala.nyndrovnik.debug:android_verticalDivider}</code></td><td> Default vertical divider between menu items.</td></tr>
+           <tr><td><code>{@link #MenuView_android_windowAnimationStyle pl.eastsidemandala.nyndrovnik.debug:android_windowAnimationStyle}</code></td><td> Default animations for the menu.</td></tr>
            </table>
            @see #MenuView_android_headerBackground
            @see #MenuView_android_horizontalDivider
@@ -2275,7 +2277,7 @@ containing a value of this type.
           <p>
           @attr description
            Default background for the menu header. 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_headerBackground}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_headerBackground}.
           @attr name android:android_headerBackground
         */
         public static final int MenuView_android_headerBackground = 4;
@@ -2283,7 +2285,7 @@ containing a value of this type.
           <p>
           @attr description
            Default horizontal divider between rows of menu items. 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_horizontalDivider}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_horizontalDivider}.
           @attr name android:android_horizontalDivider
         */
         public static final int MenuView_android_horizontalDivider = 2;
@@ -2291,7 +2293,7 @@ containing a value of this type.
           <p>
           @attr description
            Default background for each menu item. 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_itemBackground}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_itemBackground}.
           @attr name android:android_itemBackground
         */
         public static final int MenuView_android_itemBackground = 5;
@@ -2299,7 +2301,7 @@ containing a value of this type.
           <p>
           @attr description
            Default disabled icon alpha for each menu item that shows an icon. 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_itemIconDisabledAlpha}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_itemIconDisabledAlpha}.
           @attr name android:android_itemIconDisabledAlpha
         */
         public static final int MenuView_android_itemIconDisabledAlpha = 6;
@@ -2307,7 +2309,7 @@ containing a value of this type.
           <p>
           @attr description
            Default appearance of menu item text. 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_itemTextAppearance}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_itemTextAppearance}.
           @attr name android:android_itemTextAppearance
         */
         public static final int MenuView_android_itemTextAppearance = 1;
@@ -2323,7 +2325,7 @@ containing a value of this type.
           <p>
           @attr description
            Default vertical divider between menu items. 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_verticalDivider}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_verticalDivider}.
           @attr name android:android_verticalDivider
         */
         public static final int MenuView_android_verticalDivider = 3;
@@ -2331,7 +2333,7 @@ containing a value of this type.
           <p>
           @attr description
            Default animations for the menu. 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_windowAnimationStyle}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_windowAnimationStyle}.
           @attr name android:android_windowAnimationStyle
         */
         public static final int MenuView_android_windowAnimationStyle = 0;
@@ -2341,12 +2343,12 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #SearchView_android_imeOptions pl.eastsidemandala.nyndrovnik:android_imeOptions}</code></td><td> The IME options to set on the query text field.</td></tr>
-           <tr><td><code>{@link #SearchView_android_inputType pl.eastsidemandala.nyndrovnik:android_inputType}</code></td><td> The input type to set on the query text field.</td></tr>
-           <tr><td><code>{@link #SearchView_android_maxWidth pl.eastsidemandala.nyndrovnik:android_maxWidth}</code></td><td> An optional maximum width of the SearchView.</td></tr>
-           <tr><td><code>{@link #SearchView_iconifiedByDefault pl.eastsidemandala.nyndrovnik:iconifiedByDefault}</code></td><td>
+           <tr><td><code>{@link #SearchView_android_imeOptions pl.eastsidemandala.nyndrovnik.debug:android_imeOptions}</code></td><td> The IME options to set on the query text field.</td></tr>
+           <tr><td><code>{@link #SearchView_android_inputType pl.eastsidemandala.nyndrovnik.debug:android_inputType}</code></td><td> The input type to set on the query text field.</td></tr>
+           <tr><td><code>{@link #SearchView_android_maxWidth pl.eastsidemandala.nyndrovnik.debug:android_maxWidth}</code></td><td> An optional maximum width of the SearchView.</td></tr>
+           <tr><td><code>{@link #SearchView_iconifiedByDefault pl.eastsidemandala.nyndrovnik.debug:iconifiedByDefault}</code></td><td>
              The default state of the SearchView.</td></tr>
-           <tr><td><code>{@link #SearchView_queryHint pl.eastsidemandala.nyndrovnik:queryHint}</code></td><td> An optional query hint string to be displayed in the empty query field.</td></tr>
+           <tr><td><code>{@link #SearchView_queryHint pl.eastsidemandala.nyndrovnik.debug:queryHint}</code></td><td> An optional query hint string to be displayed in the empty query field.</td></tr>
            </table>
            @see #SearchView_android_imeOptions
            @see #SearchView_android_inputType
@@ -2362,7 +2364,7 @@ containing a value of this type.
           <p>
           @attr description
            The IME options to set on the query text field. 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_imeOptions}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_imeOptions}.
           @attr name android:android_imeOptions
         */
         public static final int SearchView_android_imeOptions = 2;
@@ -2370,7 +2372,7 @@ containing a value of this type.
           <p>
           @attr description
            The input type to set on the query text field. 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_inputType}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_inputType}.
           @attr name android:android_inputType
         */
         public static final int SearchView_android_inputType = 1;
@@ -2378,7 +2380,7 @@ containing a value of this type.
           <p>
           @attr description
            An optional maximum width of the SearchView. 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_maxWidth}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_maxWidth}.
           @attr name android:android_maxWidth
         */
         public static final int SearchView_android_maxWidth = 0;
@@ -2423,24 +2425,24 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #Spinner_android_dropDownHorizontalOffset pl.eastsidemandala.nyndrovnik:android_dropDownHorizontalOffset}</code></td><td>
+           <tr><td><code>{@link #Spinner_android_dropDownHorizontalOffset pl.eastsidemandala.nyndrovnik.debug:android_dropDownHorizontalOffset}</code></td><td>
              Horizontal offset from the spinner widget for positioning the dropdown
              in spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #Spinner_android_dropDownSelector pl.eastsidemandala.nyndrovnik:android_dropDownSelector}</code></td><td> List selector to use for spinnerMode="dropdown" display.</td></tr>
-           <tr><td><code>{@link #Spinner_android_dropDownVerticalOffset pl.eastsidemandala.nyndrovnik:android_dropDownVerticalOffset}</code></td><td>
+           <tr><td><code>{@link #Spinner_android_dropDownSelector pl.eastsidemandala.nyndrovnik.debug:android_dropDownSelector}</code></td><td> List selector to use for spinnerMode="dropdown" display.</td></tr>
+           <tr><td><code>{@link #Spinner_android_dropDownVerticalOffset pl.eastsidemandala.nyndrovnik.debug:android_dropDownVerticalOffset}</code></td><td>
              Vertical offset from the spinner widget for positioning the dropdown in
              spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #Spinner_android_dropDownWidth pl.eastsidemandala.nyndrovnik:android_dropDownWidth}</code></td><td> Width of the dropdown in spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #Spinner_android_gravity pl.eastsidemandala.nyndrovnik:android_gravity}</code></td><td> Gravity setting for positioning the currently selected item.</td></tr>
-           <tr><td><code>{@link #Spinner_android_popupBackground pl.eastsidemandala.nyndrovnik:android_popupBackground}</code></td><td> Background drawable to use for the dropdown in spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #Spinner_disableChildrenWhenDisabled pl.eastsidemandala.nyndrovnik:disableChildrenWhenDisabled}</code></td><td>
+           <tr><td><code>{@link #Spinner_android_dropDownWidth pl.eastsidemandala.nyndrovnik.debug:android_dropDownWidth}</code></td><td> Width of the dropdown in spinnerMode="dropdown".</td></tr>
+           <tr><td><code>{@link #Spinner_android_gravity pl.eastsidemandala.nyndrovnik.debug:android_gravity}</code></td><td> Gravity setting for positioning the currently selected item.</td></tr>
+           <tr><td><code>{@link #Spinner_android_popupBackground pl.eastsidemandala.nyndrovnik.debug:android_popupBackground}</code></td><td> Background drawable to use for the dropdown in spinnerMode="dropdown".</td></tr>
+           <tr><td><code>{@link #Spinner_disableChildrenWhenDisabled pl.eastsidemandala.nyndrovnik.debug:disableChildrenWhenDisabled}</code></td><td>
              Whether this spinner should mark child views as enabled/disabled when
              the spinner itself is enabled/disabled.</td></tr>
-           <tr><td><code>{@link #Spinner_popupPromptView pl.eastsidemandala.nyndrovnik:popupPromptView}</code></td><td>
+           <tr><td><code>{@link #Spinner_popupPromptView pl.eastsidemandala.nyndrovnik.debug:popupPromptView}</code></td><td>
              Reference to a layout to use for displaying a prompt in the dropdown for
              spinnerMode="dropdown".</td></tr>
-           <tr><td><code>{@link #Spinner_prompt pl.eastsidemandala.nyndrovnik:prompt}</code></td><td> The prompt to display when the spinner's dialog is shown.</td></tr>
-           <tr><td><code>{@link #Spinner_spinnerMode pl.eastsidemandala.nyndrovnik:spinnerMode}</code></td><td> Display mode for spinner options.</td></tr>
+           <tr><td><code>{@link #Spinner_prompt pl.eastsidemandala.nyndrovnik.debug:prompt}</code></td><td> The prompt to display when the spinner's dialog is shown.</td></tr>
+           <tr><td><code>{@link #Spinner_spinnerMode pl.eastsidemandala.nyndrovnik.debug:spinnerMode}</code></td><td> Display mode for spinner options.</td></tr>
            </table>
            @see #Spinner_android_dropDownHorizontalOffset
            @see #Spinner_android_dropDownSelector
@@ -2465,7 +2467,7 @@ containing a value of this type.
              Horizontal offset from the spinner widget for positioning the dropdown
              in spinnerMode="dropdown".
         
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_dropDownHorizontalOffset}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_dropDownHorizontalOffset}.
           @attr name android:android_dropDownHorizontalOffset
         */
         public static final int Spinner_android_dropDownHorizontalOffset = 4;
@@ -2473,7 +2475,7 @@ containing a value of this type.
           <p>
           @attr description
            List selector to use for spinnerMode="dropdown" display. 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_dropDownSelector}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_dropDownSelector}.
           @attr name android:android_dropDownSelector
         */
         public static final int Spinner_android_dropDownSelector = 1;
@@ -2484,7 +2486,7 @@ containing a value of this type.
              Vertical offset from the spinner widget for positioning the dropdown in
              spinnerMode="dropdown".
         
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_dropDownVerticalOffset}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_dropDownVerticalOffset}.
           @attr name android:android_dropDownVerticalOffset
         */
         public static final int Spinner_android_dropDownVerticalOffset = 5;
@@ -2492,7 +2494,7 @@ containing a value of this type.
           <p>
           @attr description
            Width of the dropdown in spinnerMode="dropdown". 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_dropDownWidth}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_dropDownWidth}.
           @attr name android:android_dropDownWidth
         */
         public static final int Spinner_android_dropDownWidth = 3;
@@ -2500,7 +2502,7 @@ containing a value of this type.
           <p>
           @attr description
            Gravity setting for positioning the currently selected item. 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_gravity}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_gravity}.
           @attr name android:android_gravity
         */
         public static final int Spinner_android_gravity = 0;
@@ -2508,7 +2510,7 @@ containing a value of this type.
           <p>
           @attr description
            Background drawable to use for the dropdown in spinnerMode="dropdown". 
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_popupBackground}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_popupBackground}.
           @attr name android:android_popupBackground
         */
         public static final int Spinner_android_popupBackground = 2;
@@ -2587,12 +2589,12 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #Theme_actionDropDownStyle pl.eastsidemandala.nyndrovnik:actionDropDownStyle}</code></td><td> Default ActionBar dropdown style.</td></tr>
-           <tr><td><code>{@link #Theme_dropdownListPreferredItemHeight pl.eastsidemandala.nyndrovnik:dropdownListPreferredItemHeight}</code></td><td> The preferred item height for dropdown lists.</td></tr>
-           <tr><td><code>{@link #Theme_listChoiceBackgroundIndicator pl.eastsidemandala.nyndrovnik:listChoiceBackgroundIndicator}</code></td><td> Drawable used as a background for selected list items.</td></tr>
-           <tr><td><code>{@link #Theme_panelMenuListTheme pl.eastsidemandala.nyndrovnik:panelMenuListTheme}</code></td><td> Default Panel Menu style.</td></tr>
-           <tr><td><code>{@link #Theme_panelMenuListWidth pl.eastsidemandala.nyndrovnik:panelMenuListWidth}</code></td><td> Default Panel Menu width.</td></tr>
-           <tr><td><code>{@link #Theme_popupMenuStyle pl.eastsidemandala.nyndrovnik:popupMenuStyle}</code></td><td> Default PopupMenu style.</td></tr>
+           <tr><td><code>{@link #Theme_actionDropDownStyle pl.eastsidemandala.nyndrovnik.debug:actionDropDownStyle}</code></td><td> Default ActionBar dropdown style.</td></tr>
+           <tr><td><code>{@link #Theme_dropdownListPreferredItemHeight pl.eastsidemandala.nyndrovnik.debug:dropdownListPreferredItemHeight}</code></td><td> The preferred item height for dropdown lists.</td></tr>
+           <tr><td><code>{@link #Theme_listChoiceBackgroundIndicator pl.eastsidemandala.nyndrovnik.debug:listChoiceBackgroundIndicator}</code></td><td> Drawable used as a background for selected list items.</td></tr>
+           <tr><td><code>{@link #Theme_panelMenuListTheme pl.eastsidemandala.nyndrovnik.debug:panelMenuListTheme}</code></td><td> Default Panel Menu style.</td></tr>
+           <tr><td><code>{@link #Theme_panelMenuListWidth pl.eastsidemandala.nyndrovnik.debug:panelMenuListWidth}</code></td><td> Default Panel Menu width.</td></tr>
+           <tr><td><code>{@link #Theme_popupMenuStyle pl.eastsidemandala.nyndrovnik.debug:popupMenuStyle}</code></td><td> Default PopupMenu style.</td></tr>
            </table>
            @see #Theme_actionDropDownStyle
            @see #Theme_dropdownListPreferredItemHeight
@@ -2695,10 +2697,10 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #View_android_focusable pl.eastsidemandala.nyndrovnik:android_focusable}</code></td><td>
+           <tr><td><code>{@link #View_android_focusable pl.eastsidemandala.nyndrovnik.debug:android_focusable}</code></td><td>
              Boolean that controls whether a view can take focus.</td></tr>
-           <tr><td><code>{@link #View_paddingEnd pl.eastsidemandala.nyndrovnik:paddingEnd}</code></td><td> Sets the padding, in pixels, of the end edge; see {@link android.R.attr#padding}.</td></tr>
-           <tr><td><code>{@link #View_paddingStart pl.eastsidemandala.nyndrovnik:paddingStart}</code></td><td> Sets the padding, in pixels, of the start edge; see {@link android.R.attr#padding}.</td></tr>
+           <tr><td><code>{@link #View_paddingEnd pl.eastsidemandala.nyndrovnik.debug:paddingEnd}</code></td><td> Sets the padding, in pixels, of the end edge; see {@link android.R.attr#padding}.</td></tr>
+           <tr><td><code>{@link #View_paddingStart pl.eastsidemandala.nyndrovnik.debug:paddingStart}</code></td><td> Sets the padding, in pixels, of the start edge; see {@link android.R.attr#padding}.</td></tr>
            </table>
            @see #View_android_focusable
            @see #View_paddingEnd
@@ -2718,7 +2720,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
              always request focus regardless of this view.  It only impacts where
              focus navigation will try to move focus.
         
-          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.R.attr#android_focusable}.
+          <p>This corresponds to the global attribute          resource symbol {@link pl.eastsidemandala.nyndrovnik.debug.R.attr#android_focusable}.
           @attr name android:android_focusable
         */
         public static final int View_android_focusable = 0;

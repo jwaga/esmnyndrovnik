@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="@android:color/background_light">
 
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:id="@+id/splash_logo"
         android:src="@drawable/esm"
-        android:layout_marginTop="31dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:adjustViewBounds="false" />
+        android:adjustViewBounds="false"
+        android:padding="16dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,7 +23,8 @@
         android:id="@+id/textView"
         android:layout_below="@+id/splash_logo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp" />
+        android:layout_marginTop="8dp"
+        android:textColor="@android:color/black" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -29,33 +32,45 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:text="@string/splash_text"
         android:id="@+id/splash_text_view"
-        android:layout_marginTop="24dp"
         android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/splash_more"
-        android:id="@+id/splash_button_more"
-        android:layout_marginTop="30dp"
-        android:layout_below="@+id/space"
-        android:layout_alignLeft="@+id/splash_text_view"
-        style="@style/transparentButton" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/splash_go"
-        android:id="@+id/splash_button_go"
-        android:layout_alignTop="@+id/splash_button_more"
-        android:layout_alignRight="@+id/splash_text_view" />
-
-    <Space
-        android:layout_width="20px"
-        android:layout_height="20px"
-        android:layout_below="@+id/splash_text_view"
         android:layout_centerHorizontal="true"
-        android:id="@+id/space" />
+        android:layout_marginTop="8dp"
+        android:layout_alignLeft="@+id/textView"
+        android:textColor="@android:color/black" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/splash_text_view"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/splash_more"
+            android:id="@+id/splash_button_more"
+            style="@style/transparentButton"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:layout_below="@+id/space"
+            android:layout_alignLeft="@+id/textView"
+            android:layout_weight="1"
+            android:textColor="@android:color/black"
+            android:textColorHighlight="@android:color/white" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/splash_go"
+            android:id="@+id/splash_button_go"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            style="@style/transparentButton"
+            android:layout_alignTop="@+id/splash_button_more"
+            android:layout_alignRight="@+id/textView"
+            android:layout_weight="1"
+            android:textColor="@android:color/black"
+            android:textColorHighlight="@android:color/white" />
+    </LinearLayout>
 
 </RelativeLayout>

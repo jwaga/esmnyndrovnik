@@ -34,6 +34,8 @@
     <string name="prostrations_short">POKŁONY</string>
     <string name="splash_go">Praktykuj!</string>
     <string name="splash_more">Więcej o ESM...</string>
-    <string name="splash_text">Jeśli polubisz naszą aplikację, wesprzyj nasz projekt.</string>
+    <string name="splash_text">Jeśli polubisz naszą aplikację,\nwesprzyj nasz projekt.</string>
+    <string name="website">http://www.eastsidemandala.pl</string>
+    <string name="website_button_text">Nasza strona</string>
 
 </resources>

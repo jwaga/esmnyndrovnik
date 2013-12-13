@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Nyndrownik ESM</string>
+    <string name="app_name">Licznik Nyndro ESM</string>
     <string name="action_edit_counter">Edytuj licznik</string>
     <string name="action_undo">Cofnij</string>
     <string name="ok">OK</string>
@@ -22,13 +22,15 @@
     <string name="mandala_offering_short">MANDALA</string>
     <string name="guru_yoga">powtórzeń Guru Jogi</string>
     <string name="guru_yoga_short">GURU JOGA</string>
-    <string name="dm_lock">Kiedy zrobisz 30 000 pokłonów, zacznij medytację Diamentowego Umysłu</string>
+    <string name="dm_lock">Kiedy zrobisz 70 000 pokłonów, zacznij medytację Diamentowego Umysłu</string>
     <string name="mandala_lock">Kiedy skończysz Diamentowy Umysł, zacznij Podarowanie Mandali</string>
     <string name="guru_yoga_lock">Kiedy skończysz Podarowanie Mandali, zacznij Guru Jogę</string>
     <string name="finish_date_dialog_title">Chcę skończyć do:</string>
     <string name="action_about">O projekcie ESM…</string>
     <string name="good_luck">Powodzenia w praktyce!</string>
-    <string name="splash_text">Jeśli polubisz naszą aplikację, wesprzyj nasz projekt.</string>
+    <string name="splash_text">Jeśli polubisz naszą aplikację,\nwesprzyj nasz projekt.</string>
     <string name="splash_more">Więcej o ESM...</string>
     <string name="splash_go">Praktykuj!</string>
+    <string name="website">http://www.eastsidemandala.pl</string>
+    <string name="website_button_text">Nasza strona</string>
 </resources>

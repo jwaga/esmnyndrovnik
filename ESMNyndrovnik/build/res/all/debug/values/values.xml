@@ -551,7 +551,7 @@
     <!-- From: file:/Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values/strings.xml -->
     <eat-comment />
 
-    <string name="action_about">About the ESM Project...</string>
+    <string name="action_about">About the ESM Project…</string>
     <string name="action_add_repetitions">Add repetitions</string>
     <string name="action_edit_counter">Edit Counter</string>
     <string name="action_edit_pace">Set repetitions per day</string>
@@ -565,6 +565,7 @@
     <string name="finish_date_dialog_title">Finish before:</string>
     <string name="finish_date_label">Finish by:</string>
     <string name="finished">Finished!</string>
+    <string name="good_luck">Good luck in your practice!</string>
     <string name="guru_yoga">Guru Yoga mantras</string>
     <string name="guru_yoga_lock">Kiedy skończysz Podarowanie Mandali, zacznij\nGuru Jogę</string>
     <string name="guru_yoga_short">Guru Yoga</string>
@@ -580,7 +581,12 @@
     <string name="prostrations">prostrations</string>
     <string name="prostrations_pace_to_date">By doing %1$d prostrations a day,\n you will finish them on %2$tB %2$te %2$tY§.</string>
     <string name="prostrations_short">Prostrations</string>
+    <string name="splash_go">Practice!</string>
+    <string name="splash_more">About ESM…</string>
+    <string name="splash_text">If you like our app,\nsupport our project</string>
     <string name="title_activity_about">O Projekcie ESM</string>
+    <string name="website">http://www.eastsidemandala.pl/eng_index.html</string>
+    <string name="website_button_text">Website</string>
     <!-- From: file:/Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values/styles.xml -->
     <eat-comment />
 
@@ -1253,6 +1259,7 @@
 
     <style name="transparentButton">
         <item name="android:background">@drawable/transparent_button</item>
+        <item name="android:padding">8dp</item>
     </style>
 
 </resources>

@@ -122,7 +122,9 @@ public class PracticeData {
         MainActivity activity = (MainActivity) this.activity;
         switch (this.mPractice) {
             case PROSTRATIONS:
-                activity.dmUnlocked = (this.mMainCounter >= 70000);
+//                disabled until further notice
+//                activity.dmUnlocked = (this.mMainCounter >= 70000);
+                activity.dmUnlocked = true;
                 break;
             case DIAMOND_MIND:
                 activity.mandalaUnlocked = (this.mMainCounter == 111111);

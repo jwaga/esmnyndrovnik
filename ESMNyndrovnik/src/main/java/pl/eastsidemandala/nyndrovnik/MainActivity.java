@@ -21,7 +21,7 @@ public class MainActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SharedPreferences prefs = getPreferences(this.MODE_PRIVATE);
-        dmUnlocked = prefs.getBoolean("dm_unlocked", false);
+        dmUnlocked = prefs.getBoolean("dm_unlocked", true);
         mandalaUnlocked = prefs.getBoolean("mandala_unlocked", false);
         guruYogaUnlocked = prefs.getBoolean("guru_yoga_unlocked", false);
         mActivePractice = Practice.valueOf(

@@ -875,8 +875,8 @@ containing a value of this type.
     }
     public static final class id {
         public static final int about_textview=0x7f080043;
-        public static final int action_about=0x7f08005e;
-        public static final int action_add_repetitions=0x7f08005d;
+        public static final int action_about=0x7f08005d;
+        public static final int action_add_repetitions=0x7f08005c;
         public static final int action_bar=0x7f08001a;
         public static final int action_bar_activity_content=0x7f080014;
         public static final int action_bar_container=0x7f080019;
@@ -885,15 +885,14 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f080021;
         public static final int action_bar_title=0x7f080020;
         public static final int action_context_bar=0x7f08001b;
-        public static final int action_edit_counter=0x7f08005b;
-        public static final int action_edit_pace=0x7f08005c;
+        public static final int action_edit_counter=0x7f08005a;
+        public static final int action_edit_pace=0x7f08005b;
         public static final int action_menu_divider=0x7f080015;
         public static final int action_menu_presenter=0x7f080016;
         public static final int action_mode_bar=0x7f08002f;
         public static final int action_mode_bar_stub=0x7f08002e;
         public static final int action_mode_close_button=0x7f080022;
-        public static final int action_settings=0x7f080059;
-        public static final int action_undo=0x7f08005a;
+        public static final int action_undo=0x7f080059;
         public static final int activity_chooser_view_content=0x7f080023;
         public static final int add_repetitions_button=0x7f08004d;
         public static final int always=0x7f08000f;
@@ -1007,8 +1006,7 @@ containing a value of this type.
         public static final int test_layout=0x7f03001e;
     }
     public static final class menu {
-        public static final int about=0x7f0d0000;
-        public static final int main=0x7f0d0001;
+        public static final int main=0x7f0d0000;
     }
     public static final class string {
         public static final int abc_action_bar_home_description=0x7f0b0000;
@@ -1029,36 +1027,36 @@ containing a value of this type.
         public static final int action_add_repetitions=0x7f0b000f;
         public static final int action_edit_counter=0x7f0b0010;
         public static final int action_edit_pace=0x7f0b0011;
-        public static final int action_settings=0x7f0b0012;
-        public static final int action_undo=0x7f0b0013;
-        public static final int app_name=0x7f0b0014;
-        public static final int cancel=0x7f0b0015;
-        public static final int diamond_mind=0x7f0b0016;
-        public static final int diamond_mind_short=0x7f0b0017;
-        public static final int dm_lock=0x7f0b0018;
-        public static final int finish_date_dialog_title=0x7f0b0019;
-        public static final int finish_date_label=0x7f0b001a;
-        public static final int finished=0x7f0b001b;
-        public static final int good_luck=0x7f0b001c;
-        public static final int guru_yoga=0x7f0b001d;
-        public static final int guru_yoga_lock=0x7f0b001e;
-        public static final int guru_yoga_short=0x7f0b001f;
-        public static final int hello_world=0x7f0b0020;
-        public static final int last_practice=0x7f0b0021;
-        public static final int mandala_lock=0x7f0b0022;
-        public static final int mandala_offering=0x7f0b0023;
-        public static final int mandala_offering_short=0x7f0b0024;
-        public static final int never=0x7f0b0025;
-        public static final int ok=0x7f0b0026;
-        public static final int pace_label=0x7f0b0027;
-        public static final int pick_pace=0x7f0b0028;
-        public static final int prostrations=0x7f0b0029;
-        public static final int prostrations_pace_to_date=0x7f0b002a;
-        public static final int prostrations_short=0x7f0b002b;
-        public static final int splash_go=0x7f0b002c;
-        public static final int splash_more=0x7f0b002d;
-        public static final int splash_text=0x7f0b002e;
-        public static final int title_activity_about=0x7f0b002f;
+        public static final int action_undo=0x7f0b0012;
+        public static final int app_name=0x7f0b0013;
+        public static final int cancel=0x7f0b0014;
+        public static final int diamond_mind=0x7f0b0015;
+        public static final int diamond_mind_short=0x7f0b0016;
+        public static final int dm_lock=0x7f0b0017;
+        public static final int finish_date_dialog_title=0x7f0b0018;
+        public static final int finish_date_label=0x7f0b0019;
+        public static final int finished=0x7f0b001a;
+        public static final int good_luck=0x7f0b001b;
+        public static final int guru_yoga=0x7f0b001c;
+        public static final int guru_yoga_lock=0x7f0b001d;
+        public static final int guru_yoga_short=0x7f0b001e;
+        public static final int last_practice=0x7f0b001f;
+        public static final int last_practice_date=0x7f0b0020;
+        public static final int mandala_lock=0x7f0b0021;
+        public static final int mandala_offering=0x7f0b0022;
+        public static final int mandala_offering_short=0x7f0b0023;
+        public static final int never=0x7f0b0024;
+        public static final int ok=0x7f0b0025;
+        public static final int pace_label=0x7f0b0026;
+        public static final int pick_pace=0x7f0b0027;
+        public static final int prostrations=0x7f0b0028;
+        public static final int prostrations_pace_to_date=0x7f0b0029;
+        public static final int prostrations_short=0x7f0b002a;
+        public static final int splash_go=0x7f0b002b;
+        public static final int splash_more=0x7f0b002c;
+        public static final int splash_text=0x7f0b002d;
+        public static final int title_activity_about=0x7f0b002e;
+        public static final int until=0x7f0b002f;
         public static final int website=0x7f0b0030;
         public static final int website_button_text=0x7f0b0031;
     }

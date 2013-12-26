@@ -26,6 +26,7 @@
     <string name="mandala_lock">Kiedy skończysz Diamentowy Umysł, zacznij Podarowanie Mandali</string>
     <string name="guru_yoga_lock">Kiedy skończysz Podarowanie Mandali, zacznij Guru Jogę</string>
     <string name="finish_date_dialog_title">Chcę skończyć do:</string>
+    <string name="title_activity_about">About ESM</string>
     <string name="action_about">O projekcie ESM…</string>
     <string name="good_luck">Powodzenia w praktyce!</string>
     <string name="splash_text">Jeśli polubisz naszą aplikację,\nwesprzyj nasz projekt.</string>
@@ -33,4 +34,6 @@
     <string name="splash_go">Praktykuj!</string>
     <string name="website">http://www.eastsidemandala.pl</string>
     <string name="website_button_text">Nasza strona</string>
+    <string name="last_practice_date">ostatnio %1$te %1$tB %1$tY o %1$tH:%1$tM</string>
+    <string name="until">do %1$te %1$tB %1$tY</string>
 </resources>

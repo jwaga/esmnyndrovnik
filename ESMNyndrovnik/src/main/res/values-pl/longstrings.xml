@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about_esm">
+        <![CDATA[
+        <h3>East Side Mandala to projekt, którego celem jest zdobycie miejsca na ośrodek buddyzmu w Lublinie.</h3>
+        <p> Nabycie ośrodka pozwoli większej ilości osób wejść w kontakt z naukami buddyjskimi i skorzystać z ich bogactwa.</p>
+        <p>Po latach wynajmowania lokali chcemy nabyć nieruchomość na stworzenie miejskiego ośrodka buddyjskiego aby nasza działalność mogła być w stabilny sposób kontynuowana w przyszłości. Nasze aktywności są finansowane ze składek członkowskich oraz darowizn przekazywanych na nasze konto lub otrzymywanych podczas wykładów, kursów i innych wydarzeń.</p>
+        <p>Projekt East Side Mandala charakteryzuje współpraca wielu osób z Zamościa, Radzynia Podlaskiego, Kraśnika i Chełma oraz oczywiście Lublina. Stąd też nazwa projektu East Side Madala czyli „Wschodnia Mandala” składająca się z miast wschodniej Polski. Współpraca osób z całego województwa Lubelskiego jest niezaprzeczalnym atutem tego projektu.</p>
+        <p>Jesteśmy otwarci na uzyskanie budynku który moglibyśmy zaadoptować na cele ośrodka buddyjskiego. Z chęcią podejmiemy się remontu i renowacji również zabytkowych budynków.</p>
+
+        <p>Dążymy do zakupu nieruchomości gromadząc małe, regularne wpłaty od możliwie jak największej ilości osób.
+        Możesz wesprzeć ten projekt przez ustawienie w swoim banku zlecenia stałego w kwocie 10zł 80gr lub większej, na konto podane poniżej.
+        </p>
+        <p>Dziękujemy za wsparcie.</p>
+           <h4>Nr konta:</h4>
+            <h3>6711602202 0000 0000 3566 3879</h3>
+            <p>Tytuł wpłaty: East Side Mandala, darowizna na cele kultu religijnego</p>
+            <p>Darowizna podlega odliczeniu podatkowemu</p>
+
+        ]]>
+    </string>
+</resources>

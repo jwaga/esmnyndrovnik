@@ -351,11 +351,11 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         NyndroProgressView progressView = (NyndroProgressView) getView().findViewById(R.id.progress);
         progressView.setCount(mData.getMainCounter());
         pace.setText("+" + String.valueOf(mData.getmPace()));
-        dateView.setText(String.format("ostatnio %te %<tB %<tY o %<tH:%<tM", mData.getmDateOfLastPractice()));
+        dateView.setText(String.format(getResources().getString(R.string.last_practice_date), mData.getmDateOfLastPractice()));
 //        pace.setText(String.valueOf(mPace));
 //        computeProjectedFinishDate();
         if (mData.getmPace() != 0 && mData.getMainCounter() != 111111) {
-            date.setText(String.format("do %te %<tB %<tY", mData.getmProjectedFinishDate()));
+            date.setText(String.format(getResources().getString(R.string.until), mData.getmProjectedFinishDate()));
         } else if (mData.getMainCounter() == 111111 ) {
             date.setText(R.string.finished);
         } else if (mData.getmPace() == 0 ) {

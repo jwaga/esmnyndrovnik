@@ -321,7 +321,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     }
 
 //  Internal methods
-    private void computeProjectedFinishDate() {
+    protected void computeProjectedFinishDate() {
 //      remaining repetitions divided by currently selected pace, plus one day for the remainder
         int remainingDays = 0;
         if (mData.getmPace() > 0) {
@@ -344,7 +344,6 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     protected void refresh() {
         TextView counterView = (TextView) getView().findViewById(R.id.main_counter);
         TextView dateView = (TextView) getView().findViewById(R.id.date_of_last_practice);
-        Button plus = (Button) getView().findViewById(R.id.add_repetitions_button);
         Button pace = (Button) getView().findViewById(R.id.pace_button);
         Button date = (Button) getView().findViewById(R.id.date_button);
         counterView.setText(String.format("%,d", (Integer) mData.getMainCounter()));

@@ -8,8 +8,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.content.LocalBroadcastManager;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Stack;
@@ -87,7 +85,6 @@ public class PracticeData {
         this.mProjectedFinishDate = mProjectedFinishDate;
     }
 
-    DateFormat mDateFormat = SimpleDateFormat.getDateInstance();
     NyndroFragment.Practice mPractice;
 
     public NyndroFragment.Practice getPractice() {

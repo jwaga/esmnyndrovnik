@@ -21,6 +21,12 @@ public class NyndroProgressView extends View {
     float mRadius;
     float mStrokeWidth;
     int mCount;
+
+    public void setMax(int mMax) {
+        this.mMax = mMax;
+    }
+
+    int mMax;
     RectF mRect;
 
 
@@ -70,10 +76,13 @@ public class NyndroProgressView extends View {
     protected void onDraw(Canvas c) {
         float r = mRadius;
         float s = mRadius*3;
+        float rows = mMax/20000 + 1;
+        float cols = 20;
+        float lastRow = (mMax % 20000)/1000;
         int counter = 0;
 // this is where most of the magic happens!
-        for (float y = r+ mStrokeWidth; y < s*6; y += s) {
-            for (float x = r+ mStrokeWidth; x < s*11 || (y < s*5 && x <= s*20) ; x+= s) {
+        for (float y = r+ mStrokeWidth; y < s*rows; y += s) {
+            for (float x = r+ mStrokeWidth; x < s*lastRow || (y < s*(rows-1) && x <= s*cols) ; x+= s) {
                 mRect.set(x-r, y-r, x+r, y+r);
                 RectF clip = new RectF();
                 clip.set(mRect);

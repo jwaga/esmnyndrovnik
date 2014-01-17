@@ -20,7 +20,11 @@ public class PracticeData {
     public static final String ACTIVE_PRACTICE_KEY = "active_practice";
     static final int DEFAULT_PACE = 100;
     public static final String PREVIOUS_COUNT_KEY = "_previous_count";
+    private int mRepetitionsMax;
 
+    public int getmRepetitionsMax() {
+        return mRepetitionsMax;
+    }
 
     public Activity getActivity() {
         return activity;
@@ -93,6 +97,7 @@ public class PracticeData {
 
     public void setmPractice(NyndroFragment.Practice mPractice) {
         this.mPractice = mPractice;
+        this.mRepetitionsMax = mPractice.getRepetitionsMax();
     }
 
     boolean mUpdated = false;
@@ -109,8 +114,8 @@ public class PracticeData {
     }
 
     public void setMainCounter(int mMainCounter) {
-        if (mMainCounter > 111111) {
-            this.mMainCounter = 111111;
+        if (mMainCounter > this.getmRepetitionsMax()) {
+            this.mMainCounter = this.getmRepetitionsMax();
         } else if (mMainCounter < 0) {
             this.mMainCounter = 0;
         } else {
@@ -124,10 +129,10 @@ public class PracticeData {
                 activity.dmUnlocked = true;
                 break;
             case DIAMOND_MIND:
-                activity.mandalaUnlocked = (this.mMainCounter == 111111);
+                activity.mandalaUnlocked = (this.mMainCounter == this.getmRepetitionsMax());
                 break;
             case MANDALA_OFFERING:
-                activity.guruYogaUnlocked = (this.mMainCounter == 111111);
+                activity.guruYogaUnlocked = (this.mMainCounter == this.getmRepetitionsMax());
                 break;
         }
         LocalBroadcastManager.getInstance(this.activity).sendBroadcast(

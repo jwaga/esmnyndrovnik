@@ -28,13 +28,13 @@ public class PracticePagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 4;
+        return 6;
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-        int[] practice_page_names = {R.string.prostrations_short, R.string.diamond_mind_short,
-            R.string.mandala_offering_short, R.string.guru_yoga_short};
+        int[] practice_page_names = {R.string.short_refuge_short, R.string.prostrations_short, R.string.diamond_mind_short,
+            R.string.mandala_offering_short, R.string.guru_yoga_short, R.string.amitabha_short};
         return mContext.getResources().getString(practice_page_names[position]);
 
     }

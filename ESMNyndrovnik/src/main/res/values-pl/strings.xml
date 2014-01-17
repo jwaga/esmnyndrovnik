@@ -36,4 +36,8 @@
     <string name="website_button_text">Nasza strona</string>
     <string name="last_practice_date">ostatnio %1$te %1$tB %1$tY o %1$tH:%1$tM</string>
     <string name="until">do %1$te %1$tB %1$tY</string>
+    <string name="short_refuge_short">KRÓTKIE SCHRONIENIE</string>
+    <string name="short_refuge">powtórzeń krótkiego schronienia</string>
+    <string name="amitabha">mantr Om Ami Deła Hri</string>
+    <string name="amitabha_short">PRZYGOTOWANIE DO PHOWA</string>
 </resources>

@@ -36,4 +36,8 @@
     <string name="website_button_text">Website</string>
     <string name="last_practice_date">last on %1$tB %1$te, %1$tY at %1$tl:%1$tM %1$tp</string>
     <string name="until">finish %1$tB %1$te, %1$tY</string>
+    <string name="short_refuge">Short refuge formulas</string>
+    <string name="short_refuge_short">Short refuge</string>
+    <string name="amitabha">Om Ami Dewa Hrih mantras</string>
+    <string name="amitabha_short">Phowa Preparation</string>
 </resources>

@@ -34,21 +34,28 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
 
 
     public static enum Practice {
-        PROSTRATIONS(R.string.prostrations, R.drawable.prostr),
-        DIAMOND_MIND(R.string.diamond_mind, R.drawable.dm),
-        MANDALA_OFFERING(R.string.mandala_offering, R.drawable.mandala),
-        GURU_YOGA(R.string.guru_yoga, R.drawable.guru);
+        SHORT_REFUGE(R.string.short_refuge, R.drawable.refuge, 11000),
+        PROSTRATIONS(R.string.prostrations, R.drawable.prostr, 111111),
+        DIAMOND_MIND(R.string.diamond_mind, R.drawable.dm, 111111),
+        MANDALA_OFFERING(R.string.mandala_offering, R.drawable.mandala, 111111),
+        GURU_YOGA(R.string.guru_yoga, R.drawable.guru, 111111),
+        AMITABHA(R.string.amitabha, R.drawable.phowa, 100000);
         int name_res;
         int image_res;
-        Practice(int name_res, int image_res) {
+        int repetitions_max;
+        Practice(int name_res, int image_res, int repetitions_max) {
             this.name_res = name_res;
             this.image_res = image_res;
+            this.repetitions_max = repetitions_max;
         }
         public int getNameRes() {
             return this.name_res;
         }
         public int getImageRes() {
             return this.image_res;
+        }
+        public int getRepetitionsMax() {
+            return this.repetitions_max;
         }
     }
 
@@ -325,7 +332,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
 //      remaining repetitions divided by currently selected pace, plus one day for the remainder
         int remainingDays = 0;
         if (mData.getmPace() > 0) {
-             remainingDays = (111111 - mData.getMainCounter()) / mData.getmPace() + 1;
+             remainingDays = (mData.getPractice().getRepetitionsMax() - mData.getMainCounter()) / mData.getmPace() + 1;
         }
         Calendar c = Calendar.getInstance();
         c.add(Calendar.DAY_OF_YEAR, remainingDays);
@@ -336,7 +343,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         long now = new Date().getTime();
         long then = mData.getmProjectedFinishDate().getTime();
         int days = (int) ((then - now) / (1000 * 60 * 60 * 24))+1;
-        int pace = (111111 - mData.getMainCounter()) / days ;
+        int pace = (mData.getmRepetitionsMax() - mData.getMainCounter()) / days ;
 //        round up to the nearest 100: add 100 - remainder if remainder > 0
         mData.setPace(pace + (pace % 100 > 0 ? 100 - (pace % 100) : 0));
     }
@@ -348,14 +355,15 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         Button date = (Button) getView().findViewById(R.id.date_button);
         counterView.setText(String.format("%,d", (Integer) mData.getMainCounter()));
         NyndroProgressView progressView = (NyndroProgressView) getView().findViewById(R.id.progress);
+        progressView.setMax(mData.getmRepetitionsMax());
         progressView.setCount(mData.getMainCounter());
         pace.setText("+" + String.valueOf(mData.getmPace()));
         dateView.setText(String.format(getResources().getString(R.string.last_practice_date), mData.getmDateOfLastPractice()));
 //        pace.setText(String.valueOf(mPace));
 //        computeProjectedFinishDate();
-        if (mData.getmPace() != 0 && mData.getMainCounter() != 111111) {
+        if (mData.getmPace() != 0 && mData.getMainCounter() != mData.getmRepetitionsMax()) {
             date.setText(String.format(getResources().getString(R.string.until), mData.getmProjectedFinishDate()));
-        } else if (mData.getMainCounter() == 111111 ) {
+        } else if (mData.getMainCounter() == mData.getmRepetitionsMax()) {
             date.setText(R.string.finished);
         } else if (mData.getmPace() == 0 ) {
             date.setText(R.string.never);

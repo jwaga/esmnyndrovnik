@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ESM Contador de Ngöndro </string>
+    <string name="action_undo">Deshacer</string>
+    <string name="action_edit_counter">Editar Contador</string>
+    <string name="ok">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="last_practice">Tu última práctica fue:</string>
+    <string name="prostrations_pace_to_date">Haciendo %1$d postraciones por día,\n lo habrás terminado el %2$tB %2$te %2$tY§.</string>
+    <string name="pace_label">Repeticiones:</string>
+    <string name="finish_date_label">Termina el:</string>
+    <string name="pick_pace">Repeticiones por sesión</string>
+    <string name="never">Nunca!!!</string>
+    <string name="finished">Terminado!</string>
+    <string name="action_edit_pace">Ajustar repeticiones por día</string>
+    <string name="action_add_repetitions">Añadir repeticiones</string>
+    <string name="prostrations">postraciones</string>
+    <string name="prostrations_short">Postraciones</string>
+    <string name="diamond_mind">Mantras de Mente de Diamante </string>
+    <string name="diamond_mind_short">Mente de Diamante</string>
+    <string name="mandala_offering">Mandalas ofrecidas</string>
+    <string name="mandala_offering_short">Mandala</string>
+    <string name="guru_yoga">Mantras de Guru Yoga</string>
+    <string name="guru_yoga_short">Guru Yoga</string>
+    <string name="dm_lock">Luego de hacer por lo menos 70000 postraciones, inicia Mente de Diamante</string>
+    <string name="mandala_lock">Luego de terminar Mente de Diamante, inicia Ofrecimiento de Mandala</string>
+    <string name="guru_yoga_lock">Luego de terminar Ofecimiento de Mandala, inicia Guru Yoga</string>
+    <string name="finish_date_dialog_title">Termina antes de:</string>
+    <string name="title_activity_about">Sobre ESM</string>
+    <string name="action_about">Sobre el proyecto ESM</string>
+    <string name="good_luck">Buena suerte en tu práctica!</string>
+    <string name="splash_text">Si te gusta nuestra App, \n apoya nuestro proyecto</string>
+    <string name="splash_more">Sobre ESM…</string>
+    <string name="splash_go">Practica!</string>
+    <string name="website">http://www.eastsidemandala.pl/eng_index.html</string>
+    <string name="website_button_text">Página Web</string>
+    <string name="last_practice_date">última vez %1$tB %1$te, %1$tY %1$tl:%1$tM %1$tp</string>
+    <string name="until">termina %1$tB %1$te, %1$tY</string>
+    <string name="short_refuge">Short refuge formulas</string>
+    <string name="amitabha">Amitabha Buddha mantras</string>
+</resources> 

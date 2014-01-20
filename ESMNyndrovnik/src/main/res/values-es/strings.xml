@@ -37,5 +37,7 @@
     <string name="last_practice_date">última vez %1$tB %1$te, %1$tY %1$tl:%1$tM %1$tp</string>
     <string name="until">termina %1$tB %1$te, %1$tY</string>
     <string name="short_refuge">Short refuge formulas</string>
-    <string name="amitabha">Amitabha Buddha mantras</string>
-</resources> 
+    <string name="short_refuge_short">Short refuge</string>
+    <string name="amitabha">Om Ami Dewa Hrih mantras</string>
+    <string name="amitabha_short">Phowa Preparation</string>
+</resources>

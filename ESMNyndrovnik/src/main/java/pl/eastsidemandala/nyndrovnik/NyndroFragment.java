@@ -30,7 +30,7 @@ import java.util.Date;
 // TODO: encapsulate mPace and round to full hundreds on set
 public class NyndroFragment extends Fragment implements View.OnClickListener {
 
-    private final PracticeData mData = new PracticeData();
+    final PracticeData mData = new PracticeData();
 
 
     public static enum Practice {
@@ -243,6 +243,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
     public void onPaceClick(View view) {
         PacePickerFragment frag = new PacePickerFragment();
         frag.setListener(new SetPaceDialogListener());
+        frag.setmParentFragment(this);
         frag.show(getActivity().getSupportFragmentManager(), "pace_dialog");
     }
 
@@ -299,7 +300,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    private class EditPaceDialogListener implements SingleEditDialogFragment.SingleEditDialogListener {
+     public class EditPaceDialogListener implements SingleEditDialogFragment.SingleEditDialogListener {
         @Override
         public void onSingleEditDialogPositiveClick(int value) {
             mData.setPace(value);

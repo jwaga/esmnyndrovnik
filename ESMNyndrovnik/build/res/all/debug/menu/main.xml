@@ -1,31 +1,35 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <!--<item android:id="@+id/action_settings"-->
-        <!--android:title="@string/action_settings"-->
-        <!--android:orderInCategory="100"-->
-        <!--android:showAsAction="never" />-->
+    <!--android:title="@string/action_settings"-->
+    <!--android:orderInCategory="100"-->
+    <!--android:showAsAction="never" />-->
     <item android:id="@+id/action_undo"
-          android:title="@string/action_undo"
-          android:orderInCategory="40"
-          android:showAsAction="never"
-          android:icon="@drawable/undo"
-          android:enabled="false"
-          />
+        android:title="@string/action_undo"
+        android:orderInCategory="40"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/undo"
+        android:enabled="false"
+        />
     <item android:id="@+id/action_edit_counter"
-          android:title="@string/action_edit_counter"
-          android:orderInCategory="50"
-          android:showAsAction="never"
-          android:icon="@drawable/content_edit"  />
+        android:title="@string/action_edit_counter"
+        android:orderInCategory="50"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/content_edit"  />
     <item android:id="@+id/action_edit_pace"
-          android:title="@string/action_edit_pace"
-          android:orderInCategory="110"
-          />
+        android:title="@string/action_edit_pace"
+        android:orderInCategory="110"
+        android:visible="false"
+        />
     <item android:id="@+id/action_add_repetitions"
-          android:title="@string/action_add_repetitions"
-          android:orderInCategory="150"
-          />
+        android:title="@string/action_add_repetitions"
+        android:orderInCategory="150"
+        android:visible="false"
+        />
     <item android:id="@+id/action_about"
-          android:title="@string/action_about"
-          android:orderInCategory="170"
+        android:title="@string/action_about"
+        android:orderInCategory="170"
+        android:showAsAction="ifRoom"
+        android:icon="@drawable/action_about"
         />
 
 </menu>

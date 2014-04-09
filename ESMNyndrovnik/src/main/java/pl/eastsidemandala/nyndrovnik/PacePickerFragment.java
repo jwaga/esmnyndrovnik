@@ -13,6 +13,16 @@ public class PacePickerFragment extends DialogFragment implements AlertDialog.On
 
     OnPaceSelectedListener mListener;
 
+    public NyndroFragment getmParentFragment() {
+        return mParentFragment;
+    }
+
+    public void setmParentFragment(NyndroFragment mParentFragment) {
+        this.mParentFragment = mParentFragment;
+    }
+
+    NyndroFragment mParentFragment;
+
     public interface OnPaceSelectedListener {
         public void onPaceSelected(int pace);
 
@@ -38,9 +48,18 @@ public class PacePickerFragment extends DialogFragment implements AlertDialog.On
     }
     @Override
     public void onClick(DialogInterface dialogInterface, int which) {
-        String value = getResources().getStringArray(R.array.pace_values)[which];
+        String[] values = getResources().getStringArray(R.array.pace_values);
+        String value = values[which];
+        if (which == values.length-1) {
+            SingleEditDialogFragment paceDialog = new SingleEditDialogFragment();
+            paceDialog.setInitialValue(mParentFragment.mData.getmPace());
+            paceDialog.setListener(mParentFragment.new EditPaceDialogListener());
+            paceDialog.setTitle(R.string.action_edit_pace);
+            paceDialog.show(getActivity().getSupportFragmentManager(), "pace_edit");
+        } else {
         int count = Integer.valueOf(value);
         mListener.onPaceSelected(count);
+        }
     }
 
 }

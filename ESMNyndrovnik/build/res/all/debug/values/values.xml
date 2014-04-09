@@ -11,6 +11,7 @@
         <item>200</item>
         <item>300</item>
         <item>500</item>
+        <item>Other number...</item>
     </string-array>
     <!-- From: file:/Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/build/exploded-bundles/ComAndroidSupportAppcompatV71800.aar/res/values/values.xml -->
     <eat-comment />

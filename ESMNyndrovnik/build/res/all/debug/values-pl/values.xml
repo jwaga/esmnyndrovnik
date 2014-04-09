@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- From: file:/Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values-pl/arrays.xml -->
+    <eat-comment />
+
+    <string-array name="pace_values">
+        <item>0</item>
+        <item>50</item>
+        <item>100</item>
+        <item>200</item>
+        <item>300</item>
+        <item>500</item>
+        <item>Inna liczba...</item>
+    </string-array>
     <!-- From: file:/Users/konrad/AndroidStudioProjects/ESMNyndrovnikProject/ESMNyndrovnik/src/main/res/values-pl/longstrings.xml -->
     <eat-comment />
 

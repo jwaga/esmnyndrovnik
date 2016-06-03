@@ -89,13 +89,13 @@ public class PracticeData {
         this.mProjectedFinishDate = mProjectedFinishDate;
     }
 
-    NyndroFragment.Practice mPractice;
+    Practice mPractice;
 
-    public NyndroFragment.Practice getPractice() {
+    public Practice getPractice() {
         return mPractice;
     }
 
-    public void setmPractice(NyndroFragment.Practice mPractice) {
+    public void setmPractice(Practice mPractice) {
         this.mPractice = mPractice;
         this.mRepetitionsMax = mPractice.getRepetitionsMax();
     }

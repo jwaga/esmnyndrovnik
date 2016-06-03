@@ -26,43 +26,10 @@ import android.widget.TextView;
 import java.util.Calendar;
 import java.util.Date;
 
-
 // TODO: encapsulate mPace and round to full hundreds on set
 public class NyndroFragment extends Fragment implements View.OnClickListener {
 
     final PracticeData mData = new PracticeData();
-
-
-    public static enum Practice {
-        SHORT_REFUGE(R.string.short_refuge, R.drawable.refuge, 11000),
-        PROSTRATIONS(R.string.prostrations, R.drawable.prostr, 111111),
-        DIAMOND_MIND(R.string.diamond_mind, R.drawable.dm, 111111),
-        MANDALA_OFFERING(R.string.mandala_offering, R.drawable.mandala, 111111),
-        GURU_YOGA(R.string.guru_yoga, R.drawable.guru, 111111),
-        AMITABHA(R.string.amitabha, R.drawable.phowa, 100000);
-        int name_res;
-        int image_res;
-        int repetitions_max;
-        Practice(int name_res, int image_res, int repetitions_max) {
-            this.name_res = name_res;
-            this.image_res = image_res;
-            this.repetitions_max = repetitions_max;
-        }
-        public int getNameRes() {
-            return this.name_res;
-        }
-        public int getImageRes() {
-            return this.image_res;
-        }
-        public int getRepetitionsMax() {
-            return this.repetitions_max;
-        }
-    }
-
-
-    // Overriden superclass methods
-
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -87,7 +54,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         mData.setActivity(getActivity());
         Log.d(getTag(), "fragment.onActivityCreated:" + mData.getPractice());
         TextView name =  (TextView) getView().findViewById(R.id.practice_name);
-        name.setText(mData.getPractice().getNameRes());
+        name.setText(mData.getPractice().getTextRes());
         getView().findViewById(R.id.add_repetitions_button).setOnClickListener(this);
         getView().findViewById(R.id.pace_button).setOnClickListener(this);
         getView().findViewById(R.id.date_button).setOnClickListener(this);

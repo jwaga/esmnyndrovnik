@@ -58,6 +58,17 @@
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="+100"
+                    android:id="@+id/feedback"
+                    android:textColor="#cc0000"
+                    android:visibility="invisible"
+                    android:layout_alignBottom="@+id/add_repetitions_button"
+                    android:layout_toRightOf="@+id/add_repetitions_button"
+                    android:layout_marginBottom="12dp" />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:id="@+id/main_counter"
                     android:textSize="40sp"
                     android:text="100 000"

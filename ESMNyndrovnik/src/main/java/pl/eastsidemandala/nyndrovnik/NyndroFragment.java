@@ -235,7 +235,6 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         refresh();
         TextView feedback = (TextView) getView().findViewById(R.id.feedback);
         feedback.setText(String.format("+%s", String.valueOf(mData.getmPace())));
-//        feedback.setVisibility(View.VISIBLE);
         Animation feedbackAnimation = AnimationUtils.loadAnimation(getActivity(), R.anim.add_feedback);
         feedback.startAnimation(feedbackAnimation);
     }

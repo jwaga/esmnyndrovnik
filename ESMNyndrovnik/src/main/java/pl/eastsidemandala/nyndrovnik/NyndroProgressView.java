@@ -9,34 +9,50 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
 
+import java.util.HashMap;
+
 /**
  * Created by konrad on 20.06.2013.
  */
 public class NyndroProgressView extends View {
+
+    // Computations constants
+    private static final int VIEW_ROWS = 6;
+    private static final int VIEW_COLS = 20;
+    private static final float DESIRED_HEIGHT_FACTOR = (float) VIEW_ROWS / (float) VIEW_COLS;
+    private static final HashMap<Practice, Integer> PRACTICE_PROGRESS_ROW_VALUE_MAP = new HashMap<>();
+
+    // Other constants
     private static final float STROKE_WIDTH_DP = 1;
 
-    private Paint mPaint, mFillPaint;
-    float mWidth;
-    float mHeight;
-    float mRadius;
-    float mStrokeWidth;
-    int mCount;
-
-    public void setMax(int mMax) {
-        this.mMax = mMax;
+    // Static init
+    {
+        PRACTICE_PROGRESS_ROW_VALUE_MAP.put(Practice.SHORT_REFUGE, 2000);
+        PRACTICE_PROGRESS_ROW_VALUE_MAP.put(Practice.PROSTRATIONS, 20000);
+        PRACTICE_PROGRESS_ROW_VALUE_MAP.put(Practice.DIAMOND_MIND, 20000);
+        PRACTICE_PROGRESS_ROW_VALUE_MAP.put(Practice.MANDALA_OFFERING, 20000);
+        PRACTICE_PROGRESS_ROW_VALUE_MAP.put(Practice.GURU_YOGA, 20000);
+        PRACTICE_PROGRESS_ROW_VALUE_MAP.put(Practice.AMITABHA, 20000);
+        PRACTICE_PROGRESS_ROW_VALUE_MAP.put(Practice.LOVING_EYES, 200000);
     }
 
-    int mMax;
-    RectF mRect;
+    // Below Instance members etc.
 
+    private Paint mPaint;
+    private Paint mFillPaint;
+    private float mStrokeWidth;
 
+    private Practice mPractice;
+    private int mCurrentPracticeCount;
+    private int mCellValue;
+    private int mRowsNeeded;
+    private int mLastRowCols;
+
+    private float mCellSize;
+    private float mCircleRadius;
 
     public NyndroProgressView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init();
-    }
-
-    private void init() {
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setARGB(0xFF, 0xCC, 0, 0);
         mStrokeWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, STROKE_WIDTH_DP, getResources().getDisplayMetrics());
@@ -44,73 +60,69 @@ public class NyndroProgressView extends View {
         mPaint.setStrokeWidth(mStrokeWidth);
         mFillPaint = new Paint(mPaint);
         mFillPaint.setStyle(Paint.Style.FILL_AND_STROKE);
-
-
     }
 
-    public void setCount(int c) {
-        mCount = c;
+    public void setPractice(Practice practice) {
+        this.mPractice = practice;
+    }
+
+    public void setCurrentPracticeCount(int value) {
+        mCurrentPracticeCount = value;
+        int rowValue = PRACTICE_PROGRESS_ROW_VALUE_MAP.get(mPractice);
+        mCellValue = rowValue / VIEW_COLS;
+        mRowsNeeded = (mPractice.getRepetitionsMax() / rowValue) + 1;
+        mLastRowCols = (mPractice.getRepetitionsMax() % rowValue) / mCellValue;
         invalidate();
-    }
-
-    int getCount() {
-        return mCount;
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
-        mWidth = w;
-        mHeight = h;
-        mRadius = (w/20.0f)/3.0f;
-        mRect = new RectF();
+        mCellSize = (float) w / (float) VIEW_COLS;
+        mCircleRadius = mCellSize / 3.0f;
     }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int reqWidth = MeasureSpec.getSize(widthMeasureSpec);
-        int height = reqWidth * 6/20;
-        setMeasuredDimension(reqWidth, height);
+        int desiredHeight = (int) (reqWidth * DESIRED_HEIGHT_FACTOR); // (view width / cols) * rows
+        setMeasuredDimension(reqWidth, desiredHeight);
     }
 
     @Override
     protected void onDraw(Canvas c) {
-        float r = mRadius;
-        float s = mRadius*3;
-        float rows = mMax/20000 + 1;
-        float cols = 20;
-        float lastRow = (mMax % 20000)/1000;
+
         int counter = 0;
-// this is where most of the magic happens!
-        for (float y = r+ mStrokeWidth; y < s*rows; y += s) {
-            for (float x = r+ mStrokeWidth; x < s*lastRow || (y < s*(rows-1) && x <= s*cols) ; x+= s) {
-                mRect.set(x-r, y-r, x+r, y+r);
+        RectF rectF = new RectF();
+
+        // this is where most of the magic happens!
+        for (float y = mCircleRadius + mStrokeWidth; y < mCellSize * mRowsNeeded; y += mCellSize) {
+            for (float x = mCircleRadius + mStrokeWidth; x < mCellSize * mLastRowCols || (y < mCellSize * (mRowsNeeded - 1) && x <= mCellSize * VIEW_COLS); x += mCellSize) {
+                rectF.set(x - mCircleRadius, y - mCircleRadius, x + mCircleRadius, y + mCircleRadius);
                 RectF clip = new RectF();
-                clip.set(mRect);
-                if (counter < mCount/1000) {
+                clip.set(rectF);
+                if (counter < mCurrentPracticeCount / mCellValue) {
                     // draw filled circles
-                    c.drawOval(mRect, mFillPaint);
+                    c.drawOval(rectF, mFillPaint);
+                } else if (counter >= (mCurrentPracticeCount / mCellValue) + 1) {
+                    // draw empty circles
+                    c.clipRect(0, 0, c.getWidth(), c.getHeight(), Region.Op.REPLACE);
+                    c.drawOval(rectF, mPaint);
                 } else {
-                    if (counter >= (mCount/1000)+1) {
-                        // draw empty circles
-                        c.clipRect(0, 0, c.getWidth(), c.getHeight(), Region.Op.REPLACE);
-                        c.drawOval(mRect, mPaint);
-                    } else {
-                        // draw a partially filled circle
-                        c.drawOval(mRect, mPaint);
-                        double fillLevel = (mCount % 1000)/1000.0;
-                        // scale it to be less linear
-//                        fillLevel = ((fillLevel - 0.5f)*Math.abs(fillLevel-0.5f)*2) + 0.5f;
-//                        fillLevel = (fillLevel - 0.5)*Math.sqrt(Math.abs(fillLevel-0.5))*Math.sqrt(2) + 0.5;
-//                        this nicely approximates filling a cyllindrical tank: x^(0.768+x^2)
-//                        fillLevel = Math.pow(fillLevel, 0.768+Math.pow(fillLevel, 2));
-//                        and this is the formula for a spherical tank: (3-2x)(2x)^2/4
-//                        fillLevel = (3-2*fillLevel)*Math.pow(2*fillLevel, 2)/4;
-                        fillLevel = Math.pow(fillLevel, 0.57+fillLevel);
-                        clip.bottom += 2*r - fillLevel*2*r;
-                        clip.top += 2*r - fillLevel*2*r;
-                        c.clipRect(clip);
-                        c.drawOval(mRect, mFillPaint);
-                    }
+                    // draw a partially filled circle
+                    c.drawOval(rectF, mPaint);
+                    double fillLevel = (mCurrentPracticeCount % mCellValue) / (float) mCellValue;
+//                    scale it to be less linear
+//                    fillLevel = ((fillLevel - 0.5f)*Math.abs(fillLevel-0.5f)*2) + 0.5f;
+//                    fillLevel = (fillLevel - 0.5)*Math.sqrt(Math.abs(fillLevel-0.5))*Math.sqrt(2) + 0.5;
+//                    this nicely approximates filling a cyllindrical tank: x^(0.768+x^2)
+//                    fillLevel = Math.pow(fillLevel, 0.768+Math.pow(fillLevel, 2));
+//                    and this is the formula for a spherical tank: (3-2x)(2x)^2/4
+//                    fillLevel = (3-2*fillLevel)*Math.pow(2*fillLevel, 2)/4;
+                    fillLevel = Math.pow(fillLevel, 0.57 + fillLevel);
+                    clip.bottom += 2 * mCircleRadius - fillLevel * 2 * mCircleRadius;
+                    clip.top += 2 * mCircleRadius - fillLevel * 2 * mCircleRadius;
+                    c.clipRect(clip);
+                    c.drawOval(rectF, mFillPaint);
                 }
                 counter++;
             }

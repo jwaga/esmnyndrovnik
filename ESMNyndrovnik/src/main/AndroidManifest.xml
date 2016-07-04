@@ -2,11 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pl.eastsidemandala.nyndrovnik"
     android:versionCode="17"
-    android:versionName="1.1.5">
+    android:versionName="1.2.0">
 
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="17" />
+        android:targetSdkVersion="23" />
 
     <application
         android:allowBackup="true"
@@ -20,7 +20,6 @@
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

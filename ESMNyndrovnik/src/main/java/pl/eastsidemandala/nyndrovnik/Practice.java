@@ -11,7 +11,7 @@ public enum Practice {
     DIAMOND_MIND(R.string.diamond_mind_short, R.string.diamond_mind, R.drawable.dm, 111111),
     MANDALA_OFFERING(R.string.mandala_offering_short, R.string.mandala_offering, R.drawable.mandala, 111111),
     GURU_YOGA(R.string.guru_yoga_short, R.string.guru_yoga, R.drawable.guru, 111111),
-    AMITABHA(R.string.amitabha_short, R.string.amitabha, R.drawable.phowa, 100000),
+    AMITABHA(R.string.amitabha_short, R.string.amitabha, R.drawable.phowa, 500000),
     LOVING_EYES(R.string.lovingeyes_short, R.string.lovingeyes, R.drawable.lovingeyes, 1000000);
 
     int name_res;

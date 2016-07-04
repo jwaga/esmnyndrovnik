@@ -6,8 +6,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 
-import pl.eastsidemandala.nyndrovnik.NyndroFragment.Practice;
-
 /**
  * Created by konrad on 13.06.2013.
  */

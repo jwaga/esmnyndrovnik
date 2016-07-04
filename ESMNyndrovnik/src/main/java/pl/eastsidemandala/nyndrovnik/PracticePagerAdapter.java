@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentPagerAdapter;
  * Created by konrad on 14.06.2013.
  */
 public class PracticePagerAdapter extends FragmentPagerAdapter {
+
     Context mContext;
 
     public PracticePagerAdapter(FragmentManager fm, Context c) {
@@ -21,21 +22,19 @@ public class PracticePagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int i) {
         NyndroFragment fragment = new NyndroFragment();
         Bundle args = new Bundle();
-        args.putString("practice", NyndroFragment.Practice.values()[i].toString());
+        args.putString("practice", Practice.values()[i].toString());
         fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public int getCount() {
-        return 6;
+        return Practice.values().length;
     }
 
     @Override
     public CharSequence getPageTitle(int position) {
-        int[] practice_page_names = {R.string.short_refuge_short, R.string.prostrations_short, R.string.diamond_mind_short,
-            R.string.mandala_offering_short, R.string.guru_yoga_short, R.string.amitabha_short};
-        return mContext.getResources().getString(practice_page_names[position]);
+        return mContext.getResources().getString(Practice.values()[position].getNameRes());
 
     }
 }

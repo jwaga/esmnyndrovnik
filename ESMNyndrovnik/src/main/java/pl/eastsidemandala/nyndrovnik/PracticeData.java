@@ -65,7 +65,7 @@ public class PracticeData {
         }
     }
 
-    Stack mUndo = new Stack<PracticeSession>();
+    Stack<PracticeSession> mUndo = new Stack<>();
 
     int mPreviousCount;
 

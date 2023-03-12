@@ -224,7 +224,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
 
     public void onUndoClick() {
         if (! mData.mUndo.empty()) {
-                PracticeData.PracticeSession previous = (PracticeData.PracticeSession) mData.mUndo.pop();
+                PracticeData.PracticeSession previous = mData.mUndo.pop();
                 mData.setMainCounter(previous.counter);
                 mData.setDateOfLastPractice(previous.date);
             if (Build.VERSION.SDK_INT >= 11) {

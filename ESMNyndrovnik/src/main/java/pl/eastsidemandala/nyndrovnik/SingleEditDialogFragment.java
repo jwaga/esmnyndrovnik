@@ -1,9 +1,9 @@
 package pl.eastsidemandala.nyndrovnik;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.support.v4.app.DialogFragment;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.InputType;
@@ -40,10 +40,10 @@ public class SingleEditDialogFragment extends DialogFragment {
     }
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        if (mListener == null) {
-            mListener = (SingleEditDialogListener) activity;
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (mListener == null && context instanceof SingleEditDialogListener) {
+            mListener = (SingleEditDialogListener) context;
         }
     }
 

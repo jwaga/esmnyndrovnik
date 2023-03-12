@@ -4,12 +4,13 @@ buildscript {
         google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.3'
+        classpath 'com.android.tools.build:gradle:3.6.4'
     }
 }
 apply plugin: 'com.android.application'
 
 repositories {
+    mavenCentral()
     google()
 }
 
@@ -22,7 +23,7 @@ android {
 
     defaultConfig {
         minSdkVersion 8
-        targetSdkVersion 23
+        targetSdkVersion 26
         resConfigs "en", "es", "pl"
     }
 

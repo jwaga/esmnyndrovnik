@@ -7,6 +7,7 @@ buildscript {
         classpath 'com.android.tools.build:gradle:3.6.4'
     }
 }
+
 apply plugin: 'com.android.application'
 
 repositories {
@@ -15,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.android.support:appcompat-v7:24.1.1'
+    implementation 'com.android.support:appcompat-v7:25.0.1'
 }
 
 android {

@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Region;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.View;
@@ -98,8 +99,6 @@ public class NyndroProgressView extends View {
         for (float y = mCircleRadius + mStrokeWidth; y < mCellSize * mRowsNeeded; y += mCellSize) {
             for (float x = mCircleRadius + mStrokeWidth; x < mCellSize * mLastRowCols || (y < mCellSize * (mRowsNeeded - 1) && x <= mCellSize * VIEW_COLS); x += mCellSize) {
                 rectF.set(x - mCircleRadius, y - mCircleRadius, x + mCircleRadius, y + mCircleRadius);
-                RectF clip = new RectF();
-                clip.set(rectF);
                 if (counter < mCurrentPracticeCount / mCellValue) {
                     // draw filled circles
                     c.drawOval(rectF, mFillPaint);
@@ -111,14 +110,9 @@ public class NyndroProgressView extends View {
                     // draw a partially filled circle
                     c.drawOval(rectF, mPaint);
                     double fillLevel = (mCurrentPracticeCount % mCellValue) / (float) mCellValue;
-//                    scale it to be less linear
-//                    fillLevel = ((fillLevel - 0.5f)*Math.abs(fillLevel-0.5f)*2) + 0.5f;
-//                    fillLevel = (fillLevel - 0.5)*Math.sqrt(Math.abs(fillLevel-0.5))*Math.sqrt(2) + 0.5;
-//                    this nicely approximates filling a cyllindrical tank: x^(0.768+x^2)
-//                    fillLevel = Math.pow(fillLevel, 0.768+Math.pow(fillLevel, 2));
-//                    and this is the formula for a spherical tank: (3-2x)(2x)^2/4
-//                    fillLevel = (3-2*fillLevel)*Math.pow(2*fillLevel, 2)/4;
                     fillLevel = Math.pow(fillLevel, 0.57 + fillLevel);
+                    RectF clip = new RectF();
+                    clip.set(rectF);
                     clip.bottom += 2 * mCircleRadius - fillLevel * 2 * mCircleRadius;
                     clip.top += 2 * mCircleRadius - fillLevel * 2 * mCircleRadius;
                     c.clipRect(clip);

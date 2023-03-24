@@ -104,7 +104,6 @@ public class NyndroProgressView extends View {
                     c.drawOval(rectF, mFillPaint);
                 } else if (counter >= (mCurrentPracticeCount / mCellValue) + 1) {
                     // draw empty circles
-                    c.clipRect(0, 0, c.getWidth(), c.getHeight(), Region.Op.REPLACE);
                     c.drawOval(rectF, mPaint);
                 } else {
                     // draw a partially filled circle
@@ -115,8 +114,10 @@ public class NyndroProgressView extends View {
                     clip.set(rectF);
                     clip.bottom += 2 * mCircleRadius - fillLevel * 2 * mCircleRadius;
                     clip.top += 2 * mCircleRadius - fillLevel * 2 * mCircleRadius;
+                    c.save();
                     c.clipRect(clip);
                     c.drawOval(rectF, mFillPaint);
+                    c.restore();
                 }
                 counter++;
             }

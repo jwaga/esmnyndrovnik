@@ -22,9 +22,6 @@
     <string name="mandala_offering_short">Mandala</string>
     <string name="guru_yoga">Guru Yoga mantras</string>
     <string name="guru_yoga_short">Guru Yoga</string>
-    <string name="dm_lock">After doing at least 70,000 prostrations, begin Diamond Mind</string>
-    <string name="mandala_lock">After finishing Diamond Mind, begin Mandala Offering</string>
-    <string name="guru_yoga_lock">After finishing Mandala Offering, begin Guru Yoga</string>
     <string name="finish_date_dialog_title">Finish before:</string>
     <string name="title_activity_about">About ESM</string>
     <string name="action_about">About the ESM Project…</string>

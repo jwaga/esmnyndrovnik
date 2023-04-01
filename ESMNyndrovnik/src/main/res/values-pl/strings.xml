@@ -22,9 +22,6 @@
     <string name="mandala_offering_short">MANDALA</string>
     <string name="guru_yoga">powtórzeń Guru Jogi</string>
     <string name="guru_yoga_short">GURU JOGA</string>
-    <string name="dm_lock">Kiedy zrobisz 70 000 pokłonów, zacznij medytację Diamentowego Umysłu</string>
-    <string name="mandala_lock">Kiedy skończysz Diamentowy Umysł, zacznij Podarowanie Mandali</string>
-    <string name="guru_yoga_lock">Kiedy skończysz Podarowanie Mandali, zacznij Guru Jogę</string>
     <string name="finish_date_dialog_title">Chcę skończyć do:</string>
     <string name="title_activity_about">About ESM</string>
     <string name="action_about">O projekcie ESM…</string>

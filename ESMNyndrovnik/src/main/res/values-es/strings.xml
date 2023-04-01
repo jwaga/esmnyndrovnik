@@ -22,9 +22,6 @@
     <string name="mandala_offering_short">Mandala</string>
     <string name="guru_yoga">Mantras de Guru Yoga</string>
     <string name="guru_yoga_short">Guru Yoga</string>
-    <string name="dm_lock">Luego de hacer por lo menos 70000 postraciones, inicia Mente de Diamante</string>
-    <string name="mandala_lock">Luego de terminar Mente de Diamante, inicia Ofrecimiento de Mandala</string>
-    <string name="guru_yoga_lock">Luego de terminar Ofecimiento de Mandala, inicia Guru Yoga</string>
     <string name="finish_date_dialog_title">Termina antes de:</string>
     <string name="title_activity_about">Sobre ESM</string>
     <string name="action_about">Sobre el proyecto ESM</string>

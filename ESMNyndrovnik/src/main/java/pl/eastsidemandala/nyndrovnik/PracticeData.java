@@ -121,24 +121,6 @@ public class PracticeData {
         } else {
             this.mMainCounter = mMainCounter;
         }
-        MainActivity activity = (MainActivity) this.activity;
-        switch (this.mPractice) {
-            case PROSTRATIONS:
-//                disabled until further notice
-//                activity.dmUnlocked = (this.mMainCounter >= 70000);
-                activity.dmUnlocked = true;
-                break;
-            case DIAMOND_MIND:
-                activity.mandalaUnlocked = (this.mMainCounter == this.getmRepetitionsMax());
-                break;
-            case MANDALA_OFFERING:
-                activity.guruYogaUnlocked = (this.mMainCounter == this.getmRepetitionsMax());
-                break;
-        }
-        LocalBroadcastManager.getInstance(this.activity).sendBroadcast(
-                new Intent().setAction("pl.eastsidemandala.nyndrovnik.PRACTICE_UNLOCKED")
-        );
-
     }
 
     public void updateMainCounter(int count) {

@@ -140,22 +140,6 @@
 
         </RelativeLayout>
     </LinearLayout>
-    <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/dm_lock"
-            android:id="@+id/lock_text"
-            android:visibility="gone"
-            android:fontFamily="sans-serif-light"
-            android:textSize="36dp"
-            android:gravity="center_vertical"
-            android:paddingLeft="16dp"
-            android:textIsSelectable="false"
-            android:background="#EEFFFFFF"
-            android:autoText="true"
-            android:textColor="#4a4a4a"/>
-
 </FrameLayout>
 
 

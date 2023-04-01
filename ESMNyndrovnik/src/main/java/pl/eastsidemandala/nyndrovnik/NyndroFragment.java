@@ -1,15 +1,14 @@
 package pl.eastsidemandala.nyndrovnik;
 
+import java.util.Calendar;
+import java.util.Date;
+
 import android.app.Activity;
 import android.app.DatePickerDialog;
-import android.content.BroadcastReceiver;
-import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -22,9 +21,6 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.util.Calendar;
-import java.util.Date;
 
 // TODO: encapsulate mPace and round to full hundreds on set
 public class NyndroFragment extends Fragment implements View.OnClickListener {
@@ -59,14 +55,6 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         getView().findViewById(R.id.pace_button).setOnClickListener(this);
         getView().findViewById(R.id.date_button).setOnClickListener(this);
         mData.loadData(this);
-
-        IntentFilter filter = new IntentFilter();
-        filter.addAction("pl.eastsidemandala.nyndrovnik.PRACTICE_UNLOCKED");
-        LocalBroadcastManager.getInstance(getActivity()).registerReceiver(new PracticeUnlockReceiver(),
-                filter);
-        if (getView() != null) {
-            updatePracticeLock();
-        }
         computeProjectedFinishDate();
         refresh();
     }
@@ -81,47 +69,10 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    public void updatePracticeLock() {
-        TextView lock = (TextView) getView().findViewById(R.id.lock_text);
-        MainActivity activity = (MainActivity) getActivity();
-        switch (mData.getPractice()) {
-            case PROSTRATIONS:
-                lock.setVisibility(View.GONE);
-                break;
-            case DIAMOND_MIND:
-                if  (! activity.dmUnlocked) {
-                    lock.setVisibility(View.VISIBLE);
-                } else {
-                    lock.setVisibility(View.GONE);
-                }
-                break;
-            case MANDALA_OFFERING:
-                if  (! activity.mandalaUnlocked) {
-                    lock.setVisibility(View.VISIBLE);
-                    lock.setText(R.string.mandala_lock);
-                } else {
-                    lock.setVisibility(View.GONE);
-                }
-                break;
-            case GURU_YOGA:
-                if  (! activity.guruYogaUnlocked) {
-                    lock.setVisibility(View.VISIBLE);
-                    lock.setText(R.string.guru_yoga_lock);
-                } else {
-                    lock.setVisibility(View.GONE);
-                }
-                break;
-
-
-            }
-    }
-
     @Override
     public void onResume() {
         super.onResume();
-
     }
-
 
     @Override
     public void onStop() {
@@ -284,17 +235,7 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    private class PracticeUnlockReceiver extends BroadcastReceiver {
-
-        @Override
-        public void onReceive(Context context, Intent intent) {
-            if (getView() != null) {
-                updatePracticeLock();
-            }
-        }
-    }
-
-//  Internal methods
+    //  Internal methods
     protected void computeProjectedFinishDate() {
 //      remaining repetitions divided by currently selected pace, plus one day for the remainder
         int remainingDays = 0;

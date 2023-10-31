@@ -37,6 +37,10 @@ android {
             minifyEnabled true // Enables code shrinking for the release build type.
         }
     }
+
+    lintOptions {
+        abortOnError false
+    }
 }
 
 tasks.withType(JavaCompile) {

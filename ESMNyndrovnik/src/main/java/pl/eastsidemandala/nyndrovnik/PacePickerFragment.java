@@ -58,7 +58,7 @@ public class PacePickerFragment extends DialogFragment implements AlertDialog.On
             paceDialog.setTitle(R.string.action_edit_pace);
             paceDialog.show(getActivity().getSupportFragmentManager(), "pace_edit");
         } else {
-            int count = Integer.valueOf(value);
+            int count = Integer.parseInt(value);
             mListener.onPaceSelected(count);
         }
     }

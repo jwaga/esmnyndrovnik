@@ -23,7 +23,7 @@ android {
     compileSdkVersion 33
 
     defaultConfig {
-        minSdkVersion 10
+        minSdkVersion 15
         targetSdkVersion 33
         resConfigs "en", "es", "pl"
     }

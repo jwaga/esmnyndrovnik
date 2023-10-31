@@ -217,13 +217,18 @@ public class NyndroFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-     public class EditPaceDialogListener implements SingleEditDialogFragment.SingleEditDialogListener {
+    public class EditPaceDialogListener implements SingleEditDialogFragment.SingleEditDialogListener {
         @Override
         public void onSingleEditDialogPositiveClick(int value) {
             mData.setPace(value);
             computeProjectedFinishDate();
             refresh();
         }
+    }
+
+    // so that this inner non-static class can be instantiated outside on api < 19
+    public EditPaceDialogListener newEditPaceDialogListener() {
+        return new EditPaceDialogListener();
     }
 
     private class AddRepetitionsDialogListener implements SingleEditDialogFragment.SingleEditDialogListener {

@@ -29,7 +29,7 @@
     <string name="splash_text">Si te gusta nuestra App, \n apoya nuestro proyecto</string>
     <string name="splash_more">Sobre ESM…</string>
     <string name="splash_go">Practica!</string>
-    <string name="website">http://www.eastsidemandala.pl/eng_index.html</string>
+    <string name="website">https://lublin.buddyzm.pl/</string>
     <string name="website_button_text">Página Web</string>
     <string name="last_practice_date">última vez %1$tB %1$te, %1$tY %1$tl:%1$tM %1$tp</string>
     <string name="until">termina %1$tB %1$te, %1$tY</string>

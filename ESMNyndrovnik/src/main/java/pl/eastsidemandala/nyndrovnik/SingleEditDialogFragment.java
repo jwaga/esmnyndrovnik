@@ -65,7 +65,10 @@ public class SingleEditDialogFragment extends DialogFragment {
             .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
-                    mListener.onSingleEditDialogPositiveClick(Integer.parseInt(edit.getText().toString()));
+                    String text = edit.getText().toString();
+                    if (!text.isEmpty()) {
+                        mListener.onSingleEditDialogPositiveClick(Integer.parseInt(text));
+                    }
                 }
             }).setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
                     @Override

@@ -98,4 +98,4 @@ crashlytics.properties
 crashlytics-build.properties
 
 # Idea release artifacts
-/release/output.json
+release

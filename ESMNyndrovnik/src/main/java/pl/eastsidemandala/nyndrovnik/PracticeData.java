@@ -2,11 +2,9 @@ package pl.eastsidemandala.nyndrovnik;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.content.LocalBroadcastManager;
 
 import java.util.Calendar;
 import java.util.Date;

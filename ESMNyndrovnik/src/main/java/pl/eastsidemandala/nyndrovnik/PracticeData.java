@@ -67,7 +67,7 @@ public class PracticeData {
 
     int mPreviousCount;
 
-    Date mDateOfLastPractice;
+    Date mDateOfLastPractice = new Date();
 
     public Date getmDateOfLastPractice() {
         return mDateOfLastPractice;
